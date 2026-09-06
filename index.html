@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My SS2 Notes</title>
+</head>
+
+<body>
+
+  <h1>📚 My SS2 Notes</h1>
+
+  <p>Welcome! Here you can find my class notes and assignments.</p>
+
+  <h2>Subjects</h2>
+
+  <button onclick="showSubject('biology')">Biology</button>
+  <button onclick="showSubject('chemistry')">Chemistry</button>
+  <button onclick="showSubject('physics')">Physics</button>
+  <button onclick="showSubject('math')">Mathematics</button>
+
+  <div id="notes">
+    <p>👆 Choose a subject above.</p>
+  </div>
+
+  <script>
+    function showSubject(subject) {
+
+      let notes = document.getElementById("notes");
+
+      if (subject === "biology") {
+        notes.innerHTML = `
+          <h2>Biology</h2>
+          <h3>Nutrition</h3>
+          <p>
+            Nutrition is the process by which living organisms
+            obtain and use food for growth, energy and repair.
+          </p>
+
+          <h3>Classes of Food</h3>
+          <ul>
+            <li>Carbohydrates</li>
+            <li>Proteins</li>
+            <li>Fats and oils</li>
+            <li>Vitamins</li>
+            <li>Mineral salts</li>
+            <li>Water</li>
+          </ul>
+        `;
+      }
+
+      else if (subject === "chemistry") {
+        notes.innerHTML =
+          "<h2>Chemistry</h2><p>My Chemistry notes will go here.</p>";
+      }
+
+      else if (subject === "physics") {
+        notes.innerHTML =
+          "<h2>Physics</h2><p>My Physics notes will go here.</p>";
+      }
+
+      else if (subject === "math") {
+        notes.innerHTML =
+          "<h2>Mathematics</h2><p>My Mathematics notes will go here.</p>";
+      }
+    }
+  </script>
+
+</body>
+</html>
