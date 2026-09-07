@@ -1,129 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My SS2 Study Hub</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 35px 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            font-size: 17px;
+            margin-bottom: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 25px 15px;
+        }
+
+        .welcome {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #172554;
+            text-align: center;
+        }
+
+        .subjects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        button {
+            border: none;
+            border-radius: 12px;
+            padding: 20px 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            background: white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        .biology {
+            background: #e8f5e9;
+        }
+
+        .chemistry {
+            background: #fff3e0;
+        }
+
+        .physics {
+            background: #e3f2fd;
+        }
+
+        .math {
+            background: #f3e5f5;
+        }
+
+        #content {
+            background: white;
+            margin-top: 25px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        #content h2 {
+            text-align: left;
+        }
+
+        .topic {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 15px;
+            text-align: left;
+            background: #f1f5f9;
+            box-shadow: none;
+        }
+
+        .topic:hover {
+            background: #e2e8f0;
+        }
+
+        .lesson {
+            line-height: 1.7;
+        }
+
+        .lesson h3 {
+            color: #172554;
+        }
+
+        .lesson li {
+            margin-bottom: 8px;
+        }
+
+        .question {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+            background: #172554;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 26px;
+            }
+
+            .subjects {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
 <body>
 
-    <header>
-        <h1>📚 My SS2 Study Hub</h1>
-        <p>Learn • Revise • Understand • Succeed</p>
-    </header>
+<header>
 
-    <div class="container">
+    <h1>📚 My SS2 Study Hub</h1>
 
-        <h2>Choose a Subject</h2>
+    <p>Learn • Revise • Understand • Succeed</p>
 
-        <div class="subjects">
+</header>
 
-            <button onclick="showSubject('biology')">
-                🧬 Biology
-            </button>
 
-            <button onclick="showSubject('chemistry')">
-                ⚗️ Chemistry
-            </button>
+<div class="container">
 
-            <button onclick="showSubject('physics')">
-                ⚡ Physics
-            </button>
+    <div class="welcome">
 
-            <button onclick="showSubject('math')">
-                📐 Mathematics
-            </button>
+        <h2>Welcome! 👋</h2>
 
-        </div>
+        <p>
+            Welcome to your SS2 Study Hub.
+            Choose a subject below to start learning.
+        </p>
 
-        <div id="notes">
-            <p>👆 Choose a subject above to see its notes.</p>
-        </div>
+        <p>
+            Study your lessons, revise important points,
+            and test yourself with questions.
+        </p>
 
     </div>
 
-    <footer>
-        <p>My SS2 Study Hub © 2026</p>
-    </footer>
 
-    <script>
+    <h2>📚 Choose a Subject</h2>
 
-        function showSubject(subject) {
 
-            let notes = document.getElementById("notes");
+    <div class="subjects">
 
-            if (subject === "biology") {
+        <button class="biology" onclick="showBiology()">
+            🧬 Biology
+        </button>
 
-                notes.innerHTML = `
-                    <h3>🧬 Biology</h3>
-                    <p><strong>Welcome to Biology!</strong></p>
-                    <p>Here you will find Biology notes, topics and revision materials.</p>
+        <button class="chemistry" onclick="showChemistry()">
+            ⚗️ Chemistry
+        </button>
 
-                    <h4>Topics</h4>
-                    <ul>
-                        <li>Nutrition</li>
-                        <li>Digestive System</li>
-                        <li>Enzymes</li>
-                        <li>Respiration</li>
-                        <li>Transport System</li>
-                    </ul>
-                `;
+        <button class="physics" onclick="showPhysics()">
+            ⚡ Physics
+        </button>
 
-            }
+        <button class="math" onclick="showMath()">
+            📐 Mathematics
+        </button>
 
-            else if (subject === "chemistry") {
+    </div>
 
-                notes.innerHTML = `
-                    <h3>⚗️ Chemistry</h3>
-                    <p><strong>Welcome to Chemistry!</strong></p>
-                    <p>Here you will find Chemistry notes and revision materials.</p>
 
-                    <h4>Topics</h4>
-                    <ul>
-                        <li>Atomic Structure</li>
-                        <li>Chemical Bonding</li>
-                        <li>Gas Laws</li>
-                        <li>Acids and Bases</li>
-                        <li>Periodic Table</li>
-                    </ul>
-                `;
+    <div id="content">
 
-            }
+        <p>
+            👆 Choose a subject to see its topics.
+        </p>
 
-            else if (subject === "physics") {
+    </div>
 
-                notes.innerHTML = `
-                    <h3>⚡ Physics</h3>
-                    <p><strong>Welcome to Physics!</strong></p>
-                    <p>Here you will find Physics notes and revision materials.</p>
+</div>
 
-                    <h4>Topics</h4>
-                    <ul>
-                        <li>Heat Transfer</li>
-                        <li>Electricity</li>
-                        <li>Ohm's Law</li>
-                        <li>Motion</li>
-                        <li>Waves</li>
-                    </ul>
-                `;
 
-            }
+<footer>
 
-            else if (subject === "math") {
+    <p>My SS2 Study Hub © 2026</p>
 
-                notes.innerHTML = `
-                    <h3>📐 Mathematics</h3>
-                    <p><strong>Welcome to Mathematics!</strong></p>
-                    <p>Here you will find Mathematics topics and revision materials.</p>
+</footer>
 
-                    <h4>Topics</h4>
-                    <ul>
-                        <li>Algebra</li>
-                        <li>Quadratic Equations</li>
-                        <li>Trigonometry</li>
-                        <li>Statistics</li>
-                        <li>Probability</li>
-                    </ul>
-                `;
 
-            }
+<script>
 
-        }
+function showBiology() {
 
-    </script>
+    document.getElementById("content").innerHTML = `
+
+        <h2>🧬 Biology</h2>
+
+        <p>
+            Choose a Biology topic to begin studying.
+        </p>
+
+        <button class="topic" onclick="showNutrition()">
+            📖 Nutrition
+        </button>
+
+        <button class="topic">
+            🧪 Enzymes
+        </button>
+
+        <button class="topic">
+            🦷 Dentition
+        </button>
+
+        <button class="topic">
+            🫁 Respiration
+        </button>
+
+        <button class="topic">
+            ❤️ Transport System
+        </button>
+
+        <button class="topic">
+            🌱 Photosynthesis
+        </button>
+
+    `;
+}
+
+
+function showNutrition() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>📖 Nutrition</h2>
+
+            <h3>What is Nutrition?</h3>
+
+            <p>
+                Nutrition is the process by which living organisms
+                obtain and use food for energy, growth, repair,
+                maintenance and other life processes.
+            </p>
+
+
+            <h3>Why is Food Important?</h3>
+
+            <ul>
+
+                <li>It provides energy for activities.</li>
+
+                <li>It helps the body grow.</li>
+
+                <li>It helps repair damaged tissues.</li>
+
+                <li>It helps maintain the body.</li>
+
+                <li>It helps organisms carry out life processes.</li>
+
+            </ul>
+
+
+            <h3>Types of Nutrition</h3>
+
+            <p>
+                There are two major types of nutrition:
+            </p>
+
+            <ol>
+
+                <li>
+                    <strong>Autotrophic nutrition</strong> –
+                    an organism makes its own food.
+                </li>
+
+                <li>
+                    <strong>Heterotrophic nutrition</strong> –
+                    an organism obtains food from other organisms
+                    or organic materials.
+                </li>
+
+            </ol>
+
+
+            <h3>Examples</h3>
+
+            <ul>
+
+                <li>
+                    Green plants are examples of organisms
+                    that carry out autotrophic nutrition.
+                </li>
+
+                <li>
+                    Humans are examples of organisms
+                    that carry out heterotrophic nutrition.
+                </li>
+
+            </ul>
+
+
+            <h3>🧠 Quick Revision</h3>
+
+
+            <div class="question">
+
+                <strong>1. What is nutrition?</strong>
+
+                <p>
+                    Nutrition is the process by which organisms
+                    obtain and use food.
+                </p>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>2. Name the two major types of nutrition.</strong>
+
+                <p>
+                    Autotrophic nutrition and heterotrophic nutrition.
+                </p>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>3. Give one example of an organism
+                that carries out autotrophic nutrition.</strong>
+
+                <p>
+                    Green plants.
+                </p>
+
+            </div>
+
+
+            <br>
+
+            <button class="topic" onclick="showBiology()">
+                ← Back to Biology Topics
+            </button>
+
+        </div>
+
+    `;
+}
+
+
+function showChemistry() {
+
+    document.getElementById("content").innerHTML = `
+
+        <h2>⚗️ Chemistry</h2>
+
+        <p>
+            Chemistry lessons will be added here.
+        </p>
+
+        <ul>
+
+            <li>Atomic Structure</li>
+
+            <li>Chemical Bonding</li>
+
+            <li>Gas Laws</li>
+
+            <li>Acids and Bases</li>
+
+            <li>Periodic Table</li>
+
+        </ul>
+
+    `;
+}
+
+
+function showPhysics() {
+
+    document.getElementById("content").innerHTML = `
+
+        <h2>⚡ Physics</h2>
+
+        <p>
+            Physics lessons will be added here.
+        </p>
+
+        <ul>
+
+            <li>Heat Transfer</li>
+
+            <li>Electricity</li>
+
+            <li>Ohm's Law</li>
+
+            <li>Motion</li>
+
+            <li>Waves</li>
+
+        </ul>
+
+    `;
+}
+
+
+function showMath() {
+
+    document.getElementById("content").innerHTML = `
+
+        <h2>📐 Mathematics</h2>
+
+        <p>
+            Mathematics lessons will be added here.
+        </p>
+
+        <ul>
+
+            <li>Algebra</li>
+
+            <li>Quadratic Equations</li>
+
+            <li>Trigonometry</li>
+
+            <li>Statistics</li>
+
+            <li>Probability</li>
+
+        </ul>
+
+    `;
+}
+
+</script>
 
 </body>
 </html>
