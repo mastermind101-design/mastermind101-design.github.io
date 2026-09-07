@@ -1,235 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My SS2 Study Hub</title>
+<title>My SS2 Study Hub</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #f8fafc;
-            background:
-                radial-gradient(circle at 5% 10%, rgba(37, 99, 235, 0.18), transparent 28%),
-                radial-gradient(circle at 95% 25%, rgba(124, 58, 237, 0.15), transparent 30%),
-                radial-gradient(circle at 50% 100%, rgba(14, 165, 233, 0.10), transparent 30%),
-                #030303;
-            min-height: 100vh;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #f8fafc;
+    background:
+        radial-gradient(circle at 5% 10%, rgba(37, 99, 235, 0.18), transparent 28%),
+        radial-gradient(circle at 95% 25%, rgba(124, 58, 237, 0.16), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(14, 165, 233, 0.10), transparent 30%),
+        #030303;
+    min-height: 100vh;
+}
 
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            box-shadow:
-                inset 0 0 100px rgba(37, 99, 235, 0.08),
-                inset 0 0 180px rgba(124, 58, 237, 0.07);
-        }
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    box-shadow:
+        inset 0 0 100px rgba(37, 99, 235, 0.08),
+        inset 0 0 180px rgba(124, 58, 237, 0.07);
+}
 
-        header {
-            text-align: center;
-            padding: 55px 20px 45px;
-            background: rgba(3, 7, 18, 0.88);
-            border-bottom: 1px solid rgba(96, 165, 250, 0.18);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.45);
-        }
+header {
+    text-align: center;
+    padding: 55px 20px 45px;
+    background: rgba(3, 7, 18, 0.90);
+    border-bottom: 1px solid rgba(96, 165, 250, 0.18);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.45);
+}
 
-        .logo {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
+.logo {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 34px;
-            letter-spacing: 1px;
-        }
+header h1 {
+    margin: 0;
+    font-size: 34px;
+    letter-spacing: 1px;
+}
 
-        header p {
-            color: #a5b4fc;
-            margin: 12px 0 0;
-            font-size: 14px;
-            letter-spacing: 2px;
-        }
+header p {
+    color: #a5b4fc;
+    margin: 12px 0 0;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
 
-        .container {
-            width: 100%;
-            max-width: 950px;
-            margin: auto;
-            padding: 30px 16px 50px;
-        }
+.container {
+    width: 100%;
+    max-width: 950px;
+    margin: auto;
+    padding: 30px 16px 50px;
+}
 
-        .welcome,
-        #content {
-            background: rgba(15, 23, 42, 0.78);
-            border: 1px solid rgba(148, 163, 184, 0.13);
-            border-radius: 18px;
-            box-shadow:
-                0 15px 45px rgba(0, 0, 0, 0.4),
-                0 0 35px rgba(37, 99, 235, 0.04);
-        }
+.welcome,
+#content {
+    background: rgba(15, 23, 42, 0.80);
+    border: 1px solid rgba(148, 163, 184, 0.13);
+    border-radius: 18px;
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.4),
+        0 0 35px rgba(37, 99, 235, 0.04);
+}
 
-        .welcome {
-            padding: 25px;
-            margin-bottom: 30px;
-        }
+.welcome {
+    padding: 25px;
+    margin-bottom: 30px;
+}
 
-        h2 {
-            color: #bfdbfe;
-        }
+h2 {
+    color: #bfdbfe;
+}
 
-        .welcome h2 {
-            margin-top: 0;
-        }
+.welcome h2 {
+    margin-top: 0;
+}
 
-        .section-title {
-            text-align: center;
-            margin: 35px 0 18px;
-        }
+.section-title {
+    text-align: center;
+    margin: 35px 0 18px;
+}
 
-        .subjects {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-        }
+.subjects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
 
-        button {
-            border: 1px solid rgba(255, 255, 255, 0.10);
-            border-radius: 15px;
-            padding: 20px 15px;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.25s ease;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
-        }
+button {
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 15px;
+    padding: 20px 15px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
 
-        button:hover {
-            transform: translateY(-3px);
-        }
+button:hover {
+    transform: translateY(-3px);
+}
 
-        .biology {
-            background: linear-gradient(135deg, #123524, #07150f);
-        }
+.biology {
+    background: linear-gradient(135deg, #123524, #07150f);
+}
 
-        .chemistry {
-            background: linear-gradient(135deg, #3b250e, #170e05);
-        }
+.chemistry {
+    background: linear-gradient(135deg, #3b250e, #170e05);
+}
 
-        .physics {
-            background: linear-gradient(135deg, #102d49, #06111c);
-        }
+.physics {
+    background: linear-gradient(135deg, #102d49, #06111c);
+}
 
-        .math {
-            background: linear-gradient(135deg, #30204a, #10091a);
-        }
+.math {
+    background: linear-gradient(135deg, #30204a, #10091a);
+}
 
-        #content {
-            margin-top: 30px;
-            padding: 25px;
-        }
+#content {
+    margin-top: 30px;
+    padding: 25px;
+}
 
-        #content h2 {
-            text-align: left;
-        }
+.lesson {
+    line-height: 1.75;
+}
 
-        .lesson {
-            line-height: 1.75;
-        }
+.lesson h3 {
+    color: #93c5fd;
+    margin-top: 25px;
+}
 
-        .lesson h3 {
-            color: #93c5fd;
-            margin-top: 25px;
-        }
+.topic {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+    padding: 16px;
+    text-align: left;
+    background: #111827;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    box-shadow: none;
+}
 
-        .topic {
-            display: block;
-            width: 100%;
-            margin: 12px 0;
-            padding: 16px;
-            text-align: left;
-            background: #111827;
-            border: 1px solid rgba(148, 163, 184, 0.12);
-            box-shadow: none;
-        }
+.topic:hover {
+    background: #182235;
+}
 
-        .topic:hover {
-            background: #182235;
-        }
+.question {
+    background: #090f1b;
+    padding: 18px;
+    border-radius: 13px;
+    margin-top: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.10);
+}
 
-        .question {
-            background: #090f1b;
-            padding: 18px;
-            border-radius: 13px;
-            margin-top: 16px;
-            border: 1px solid rgba(148, 163, 184, 0.10);
-        }
+.question label {
+    display: block;
+    padding: 7px 0;
+    cursor: pointer;
+}
 
-        .question label {
-            display: block;
-            padding: 7px 0;
-            cursor: pointer;
-        }
+.question input {
+    margin-right: 8px;
+}
 
-        .question input {
-            margin-right: 8px;
-        }
+.assignment {
+    border-left: 3px solid #60a5fa;
+    padding: 18px;
+    margin-top: 20px;
+    background: #0b1220;
+    border-radius: 10px;
+}
 
-        .assignment {
-            border-left: 3px solid #60a5fa;
-            padding: 18px;
-            margin-top: 20px;
-            background: #0b1220;
-            border-radius: 10px;
-        }
+.small-note {
+    color: #94a3b8;
+    font-size: 14px;
+}
 
-        .small-note {
-            color: #94a3b8;
-            font-size: 14px;
-        }
+.score {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    background: #111827;
+    border-radius: 12px;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px 15px;
-            background: #020202;
-            border-top: 1px solid rgba(96, 165, 250, 0.15);
-            color: #94a3b8;
-        }
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    background: #020202;
+    border-top: 1px solid rgba(96, 165, 250, 0.15);
+    color: #94a3b8;
+}
 
-        @media (max-width: 600px) {
-            header {
-                padding: 40px 15px 35px;
-            }
+@media (max-width: 600px) {
 
-            header h1 {
-                font-size: 27px;
-            }
+    header {
+        padding: 40px 15px 35px;
+    }
 
-            .logo {
-                font-size: 40px;
-            }
+    header h1 {
+        font-size: 27px;
+    }
 
-            .subjects {
-                grid-template-columns: 1fr;
-            }
+    .logo {
+        font-size: 40px;
+    }
 
-            #content {
-                padding: 20px;
-            }
-        }
-    </style>
+    .subjects {
+        grid-template-columns: 1fr;
+    }
+
+    #content {
+        padding: 20px;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -251,8 +256,8 @@
         </p>
 
         <p class="small-note">
-            Study lessons, revise important points,
-            complete assignments and test yourself with quizzes.
+            Study lessons, revise important points, complete assignments
+            and test yourself with quizzes.
         </p>
     </div>
 
@@ -286,13 +291,22 @@
 
 <footer>
     <p>My SS2 Study Hub © 2026</p>
-    <p class="small-note">Study smart • Stay consistent • Keep learning</p>
+    <p class="small-note">
+        Study smart • Stay consistent • Keep learning
+    </p>
 </footer>
+
 
 <script>
 
+/* =========================
+   BIOLOGY
+========================= */
+
 function showBiology() {
+
     document.getElementById("content").innerHTML = `
+
         <div class="lesson">
 
             <h2>🧬 Biology</h2>
@@ -301,35 +315,38 @@ function showBiology() {
                 Choose a Biology topic to begin studying.
             </p>
 
-            <button class="topic" onclick="showNutrition()">
+            <button class="topic" onclick="showBioNutrition()">
                 📖 Nutrition
             </button>
 
-            <button class="topic">
+            <button class="topic" onclick="showBioEnzymes()">
                 🧪 Enzymes
             </button>
 
-            <button class="topic">
+            <button class="topic" onclick="showBioDentition()">
                 🦷 Dentition
             </button>
 
-            <button class="topic">
+            <button class="topic" onclick="showBioRespiration()">
                 🫁 Respiration
             </button>
 
-            <button class="topic">
+            <button class="topic" onclick="showBioTransport()">
                 ❤️ Transport System
             </button>
 
-            <button class="topic">
+            <button class="topic" onclick="showBioPhotosynthesis()">
                 🌱 Photosynthesis
             </button>
 
             <div class="assignment">
+
                 <h3>📝 Biology Assignments</h3>
-                <p class="small-note">
-                    Your Biology assignments will appear here.
+
+                <p>
+                    Complete the assignments inside each topic.
                 </p>
+
             </div>
 
         </div>
@@ -337,11 +354,13 @@ function showBiology() {
 }
 
 
-function showNutrition() {
+function showBioNutrition() {
+
     document.getElementById("content").innerHTML = `
+
         <div class="lesson">
 
-            <h2>📖 Nutrition</h2>
+            <h2>📖 Biology — Nutrition</h2>
 
             <h3>What is Nutrition?</h3>
 
@@ -351,75 +370,47 @@ function showNutrition() {
                 maintenance and other life processes.
             </p>
 
-            <h3>Why is Food Important?</h3>
+            <h3>Importance of Food</h3>
 
             <ul>
-                <li>It provides energy for activities.</li>
-                <li>It helps the body grow.</li>
-                <li>It helps repair damaged tissues.</li>
-                <li>It helps maintain the body.</li>
-                <li>It supports important life processes.</li>
+                <li>Provides energy.</li>
+                <li>Supports growth.</li>
+                <li>Repairs damaged tissues.</li>
+                <li>Helps maintain the body.</li>
+                <li>Supports life processes.</li>
             </ul>
 
             <h3>Types of Nutrition</h3>
 
             <ol>
                 <li>
-                    <strong>Autotrophic nutrition</strong> –
-                    an organism makes its own food.
+                    <strong>Autotrophic nutrition</strong> —
+                    organisms make their own food.
                 </li>
 
                 <li>
-                    <strong>Heterotrophic nutrition</strong> –
-                    an organism obtains food from other organisms
+                    <strong>Heterotrophic nutrition</strong> —
+                    organisms obtain food from other organisms
                     or organic materials.
                 </li>
             </ol>
 
-            <h3>🧠 Quick Revision</h3>
-
-            <div class="question">
-                <strong>1. What is nutrition?</strong>
-                <p>
-                    Nutrition is the process by which organisms
-                    obtain and use food.
-                </p>
-            </div>
-
-            <div class="question">
-                <strong>2. Name the two major types of nutrition.</strong>
-                <p>
-                    Autotrophic nutrition and heterotrophic nutrition.
-                </p>
-            </div>
-
-            <div class="question">
-                <strong>
-                    3. Give one example of an autotrophic organism.
-                </strong>
-                <p>Green plants.</p>
-            </div>
-
-            <h3>📝 Assignment</h3>
-
             <div class="assignment">
-                <p>
-                    1. Define nutrition.
-                </p>
+
+                <h3>📝 Assignment</h3>
+
+                <p>1. Define nutrition.</p>
+
+                <p>2. State two types of nutrition.</p>
 
                 <p>
-                    2. State two types of nutrition.
+                    3. Explain the difference between autotrophic
+                    and heterotrophic nutrition.
                 </p>
 
-                <p>
-                    3. Explain the difference between
-                    autotrophic and heterotrophic nutrition.
-                </p>
             </div>
 
-            <br>
-
-            <button class="topic" onclick="showNutritionQuiz()">
+            <button class="topic" onclick="showBioNutritionQuiz()">
                 🧠 Take Nutrition Quiz
             </button>
 
@@ -432,37 +423,43 @@ function showNutrition() {
 }
 
 
-function showNutritionQuiz() {
+function showBioNutritionQuiz() {
+
     document.getElementById("content").innerHTML = `
+
         <div class="lesson">
 
             <h2>🧠 Nutrition Quiz</h2>
 
-            <p>Choose the best answer for each question.</p>
+            <p>
+                Choose the best answer.
+            </p>
 
             <div class="question">
 
                 <p>
-                    <strong>1. What is nutrition?</strong>
+                    <strong>
+                        1. What is nutrition?
+                    </strong>
                 </p>
 
                 <label>
-                    <input type="radio" name="q1" value="A">
+                    <input type="radio" name="bn1" value="A">
                     A. The process of breathing
                 </label>
 
                 <label>
-                    <input type="radio" name="q1" value="B">
+                    <input type="radio" name="bn1" value="B">
                     B. The process of obtaining and using food
                 </label>
 
                 <label>
-                    <input type="radio" name="q1" value="C">
+                    <input type="radio" name="bn1" value="C">
                     C. The process of removing waste
                 </label>
 
                 <label>
-                    <input type="radio" name="q1" value="D">
+                    <input type="radio" name="bn1" value="D">
                     D. The process of reproduction
                 </label>
 
@@ -473,28 +470,28 @@ function showNutritionQuiz() {
 
                 <p>
                     <strong>
-                        2. Which type of nutrition allows
-                        an organism to make its own food?
+                        2. Which type of nutrition allows an organism
+                        to make its own food?
                     </strong>
                 </p>
 
                 <label>
-                    <input type="radio" name="q2" value="A">
+                    <input type="radio" name="bn2" value="A">
                     A. Heterotrophic
                 </label>
 
                 <label>
-                    <input type="radio" name="q2" value="B">
+                    <input type="radio" name="bn2" value="B">
                     B. Autotrophic
                 </label>
 
                 <label>
-                    <input type="radio" name="q2" value="C">
+                    <input type="radio" name="bn2" value="C">
                     C. Parasitic
                 </label>
 
                 <label>
-                    <input type="radio" name="q2" value="D">
+                    <input type="radio" name="bn2" value="D">
                     D. Saprophytic
                 </label>
 
@@ -505,40 +502,40 @@ function showNutritionQuiz() {
 
                 <p>
                     <strong>
-                        3. Which of these is an example
-                        of an autotrophic organism?
+                        3. Which is an example of an autotrophic organism?
                     </strong>
                 </p>
 
                 <label>
-                    <input type="radio" name="q3" value="A">
+                    <input type="radio" name="bn3" value="A">
                     A. Human
                 </label>
 
                 <label>
-                    <input type="radio" name="q3" value="B">
+                    <input type="radio" name="bn3" value="B">
                     B. Lion
                 </label>
 
                 <label>
-                    <input type="radio" name="q3" value="C">
+                    <input type="radio" name="bn3" value="C">
                     C. Green plant
                 </label>
 
                 <label>
-                    <input type="radio" name="q3" value="D">
+                    <input type="radio" name="bn3" value="D">
                     D. Dog
                 </label>
 
             </div>
 
-            <button class="topic" onclick="checkNutritionQuiz()">
+
+            <button class="topic" onclick="checkBioNutritionQuiz()">
                 ✅ Submit Quiz
             </button>
 
             <div id="quizResult"></div>
 
-            <button class="topic" onclick="showNutrition()">
+            <button class="topic" onclick="showBioNutrition()">
                 ← Back to Nutrition
             </button>
 
@@ -547,29 +544,37 @@ function showNutritionQuiz() {
 }
 
 
-function checkNutritionQuiz() {
+function checkBioNutritionQuiz() {
 
     let score = 0;
 
-    if (document.querySelector('input[name="q1"]:checked')?.value === "B") {
+    if (
+        document.querySelector('input[name="bn1"]:checked')?.value === "B"
+    ) {
         score++;
     }
 
-    if (document.querySelector('input[name="q2"]:checked')?.value === "B") {
+    if (
+        document.querySelector('input[name="bn2"]:checked')?.value === "B"
+    ) {
         score++;
     }
 
-    if (document.querySelector('input[name="q3"]:checked')?.value === "C") {
+    if (
+        document.querySelector('input[name="bn3"]:checked')?.value === "C"
+    ) {
         score++;
     }
 
     document.getElementById("quizResult").innerHTML = `
-        <div class="question">
+
+        <div class="score">
 
             <h3>🎉 Quiz Complete!</h3>
 
             <p>
-                Your score is <strong>${score}/3</strong>
+                Your score is
+                <strong>${score}/3</strong>
             </p>
 
             <p>
@@ -581,130 +586,1699 @@ function checkNutritionQuiz() {
             </p>
 
         </div>
+
     `;
 }
 
 
-function showChemistry() {
+function showBioEnzymes() {
+
     document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>🧪 Biology — Enzymes</h2>
+
+            <h3>What are Enzymes?</h3>
+
+            <p>
+                Enzymes are biological catalysts produced by living
+                organisms. They speed up chemical reactions without
+                being used up in the reaction.
+            </p>
+
+            <h3>Properties of Enzymes</h3>
+
+            <ul>
+                <li>They are biological catalysts.</li>
+                <li>They are usually proteins.</li>
+                <li>They are specific in their action.</li>
+                <li>Temperature affects their activity.</li>
+                <li>pH affects their activity.</li>
+            </ul>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. Define an enzyme.
+                </p>
+
+                <p>
+                    2. State three properties of enzymes.
+                </p>
+
+                <p>
+                    3. Explain why temperature affects enzyme activity.
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showBiology()">
+                ← Back to Biology
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showBioDentition() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>🦷 Biology — Dentition</h2>
+
+            <h3>Meaning of Dentition</h3>
+
+            <p>
+                Dentition refers to the number, arrangement and
+                types of teeth found in an organism.
+            </p>
+
+            <h3>Types of Human Teeth</h3>
+
+            <ul>
+                <li><strong>Incisors</strong> — used mainly for cutting.</li>
+                <li><strong>Canines</strong> — used mainly for tearing.</li>
+                <li><strong>Premolars</strong> — help crush food.</li>
+                <li><strong>Molars</strong> — help grind food.</li>
+            </ul>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. Define dentition.
+                </p>
+
+                <p>
+                    2. Name the four types of human teeth.
+                </p>
+
+                <p>
+                    3. State one function of incisors.
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showBiology()">
+                ← Back to Biology
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showBioRespiration() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>🫁 Biology — Respiration</h2>
+
+            <h3>Meaning of Respiration</h3>
+
+            <p>
+                Respiration is the process by which cells release
+                energy from food.
+            </p>
+
+            <h3>Aerobic Respiration</h3>
+
+            <p>
+                Aerobic respiration uses oxygen to release energy
+                from food.
+            </p>
+
+            <h3>Anaerobic Respiration</h3>
+
+            <p>
+                Anaerobic respiration releases energy without
+                using oxygen.
+            </p>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. Define respiration.
+                </p>
+
+                <p>
+                    2. Differentiate between aerobic and anaerobic
+                    respiration.
+                </p>
+
+                <p>
+                    3. State why respiration is important.
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showBiology()">
+                ← Back to Biology
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showBioTransport() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>❤️ Biology — Transport System</h2>
+
+            <h3>Meaning</h3>
+
+            <p>
+                Transport involves the movement of substances
+                from one part of an organism to another.
+            </p>
+
+            <h3>Transport in Humans</h3>
+
+            <p>
+                The circulatory system transports substances such
+                as oxygen, nutrients and waste products around the body.
+            </p>
+
+            <h3>Blood</h3>
+
+            <ul>
+                <li>Red blood cells</li>
+                <li>White blood cells</li>
+                <li>Platelets</li>
+                <li>Plasma</li>
+            </ul>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. What is transport?
+                </p>
+
+                <p>
+                    2. Name four components of blood.
+                </p>
+
+                <p>
+                    3. State one function of red blood cells.
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showBiology()">
+                ← Back to Biology
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showBioPhotosynthesis() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>🌱 Biology — Photosynthesis</h2>
+
+            <h3>Meaning</h3>
+
+            <p>
+                Photosynthesis is the process by which green plants
+                manufacture food using light energy.
+            </p>
+
+            <h3>Requirements</h3>
+
+            <ul>
+                <li>Light</li>
+                <li>Carbon dioxide</li>
+                <li>Water</li>
+                <li>Chlorophyll</li>
+            </ul>
+
+            <h3>Importance</h3>
+
+            <p>
+                Photosynthesis provides food for plants and contributes
+                oxygen to the atmosphere.
+            </p>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. Define photosynthesis.
+                </p>
+
+                <p>
+                    2. State four requirements for photosynthesis.
+                </p>
+
+                <p>
+                    3. State two importance of photosynthesis.
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showBiology()">
+                ← Back to Biology
+            </button>
+
+        </div>
+    `;
+}
+
+
+/* =========================
+   CHEMISTRY
+========================= */
+
+function showChemistry() {
+
+    document.getElementById("content").innerHTML = `
+
         <div class="lesson">
 
             <h2>⚗️ Chemistry</h2>
 
             <p>
-                Choose a Chemistry topic to begin studying.
+                Choose a Chemistry topic.
             </p>
 
-            <button class="topic">
+            <button class="topic" onclick="showChemAtomic()">
                 ⚛️ Atomic Structure
             </button>
 
-            <button class="topic">
+            <button class="topic" onclick="showChemBonding()">
                 🔗 Chemical Bonding
             </button>
 
-            <button class="topic">
+            <button class="topic" onclick="showChemGas()">
                 💨 Gas Laws
             </button>
 
-            <button class="topic">
+            <button class="topic" onclick="showChemAcids()">
                 🧪 Acids and Bases
             </button>
 
-            <button class="topic">
+            <button class="topic" onclick="showChemPeriodic()">
                 🧩 Periodic Table
             </button>
 
-            <div class="assignment">
-                <h3>📝 Chemistry Assignments</h3>
-                <p class="small-note">
-                    Your Chemistry assignments will appear here.
-                </p>
-            </div>
+            <button class="topic" onclick="showChemQuiz()">
+                🧠 Chemistry Quiz
+            </button>
 
         </div>
     `;
 }
 
 
-function showPhysics() {
+function showChemAtomic() {
+
     document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>⚛️ Atomic Structure</h2>
+
+            <p>
+                An atom is the smallest unit of an element that
+                retains the chemical properties of that element.
+            </p>
+
+            <h3>Subatomic Particles</h3>
+
+            <ul>
+                <li><strong>Protons</strong> — positively charged.</li>
+                <li><strong>Neutrons</strong> — have no charge.</li>
+                <li><strong>Electrons</strong> — negatively charged.</li>
+            </ul>
+
+            <h3>Quick Revision</h3>
+
+            <p>
+                The nucleus contains protons and neutrons.
+                Electrons occupy regions around the nucleus.
+            </p>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. Define an atom.
+                </p>
+
+                <p>
+                    2. Name the three main subatomic particles.
+                </p>
+
+                <p>
+                    3. State the charge of each particle.
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showChemistry()">
+                ← Back to Chemistry
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showChemBonding() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>🔗 Chemical Bonding</h2>
+
+            <h3>Meaning</h3>
+
+            <p>
+                Chemical bonding is the force that holds atoms or
+                ions together in a substance.
+            </p>
+
+            <h3>Major Types</h3>
+
+            <ul>
+                <li><strong>Ionic bonding</strong></li>
+                <li><strong>Covalent bonding</strong></li>
+                <li><strong>Metallic bonding</strong></li>
+            </ul>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. What is chemical bonding?
+                </p>
+
+                <p>
+                    2. Name three types of chemical bonding.
+                </p>
+
+                <p>
+                    3. Distinguish between ionic and covalent bonding.
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showChemistry()">
+                ← Back to Chemistry
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showChemGas() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>💨 Gas Laws</h2>
+
+            <h3>Boyle's Law</h3>
+
+            <p>
+                At constant temperature, the pressure of a fixed mass
+                of gas is inversely proportional to its volume.
+            </p>
+
+            <h3>Charles' Law</h3>
+
+            <p>
+                At constant pressure, the volume of a fixed mass of gas
+                is directly proportional to its absolute temperature.
+            </p>
+
+            <h3>Pressure Law</h3>
+
+            <p>
+                At constant volume, the pressure of a fixed mass of gas
+                is directly proportional to its absolute temperature.
+            </p>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. State Boyle's law.
+                </p>
+
+                <p>
+                    2. State Charles' law.
+                </p>
+
+                <p>
+                    3. What must remain constant in Boyle's law?
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showChemistry()">
+                ← Back to Chemistry
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showChemAcids() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>🧪 Acids and Bases</h2>
+
+            <h3>Acids</h3>
+
+            <p>
+                Acids are substances that produce hydrogen ions
+                in aqueous solution.
+            </p>
+
+            <h3>Bases</h3>
+
+            <p>
+                Bases are substances that react with acids and can
+                neutralize them.
+            </p>
+
+            <h3>pH Scale</h3>
+
+            <p>
+                The pH scale is used to indicate how acidic or alkaline
+                a solution is.
+            </p>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. Define an acid.
+                </p>
+
+                <p>
+                    2. Define a base.
+                </p>
+
+                <p>
+                    3. What is the purpose of the pH scale?
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showChemistry()">
+                ← Back to Chemistry
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showChemPeriodic() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>🧩 Periodic Table</h2>
+
+            <p>
+                The periodic table is an arrangement of elements
+                according to increasing atomic number and recurring
+                chemical properties.
+            </p>
+
+            <h3>Groups</h3>
+
+            <p>
+                Elements in the same group generally have similar
+                chemical properties because they have related
+                outer-electron arrangements.
+            </p>
+
+            <h3>Periods</h3>
+
+            <p>
+                Horizontal rows of the periodic table are called periods.
+            </p>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. What is the periodic table?
+                </p>
+
+                <p>
+                    2. What are vertical columns called?
+                </p>
+
+                <p>
+                    3. What are horizontal rows called?
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showChemistry()">
+                ← Back to Chemistry
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showChemQuiz() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>🧠 Chemistry Quiz</h2>
+
+            <div class="question">
+
+                <p>
+                    <strong>
+                        1. Which particle has a negative charge?
+                    </strong>
+                </p>
+
+                <label>
+                    <input type="radio" name="cq1" value="A">
+                    A. Proton
+                </label>
+
+                <label>
+                    <input type="radio" name="cq1" value="B">
+                    B. Neutron
+                </label>
+
+                <label>
+                    <input type="radio" name="cq1" value="C">
+                    C. Electron
+                </label>
+
+                <label>
+                    <input type="radio" name="cq1" value="D">
+                    D. Nucleus
+                </label>
+
+            </div>
+
+            <div class="question">
+
+                <p>
+                    <strong>
+                        2. Which law relates gas pressure and volume
+                        at constant temperature?
+                    </strong>
+                </p>
+
+                <label>
+                    <input type="radio" name="cq2" value="A">
+                    A. Boyle's law
+                </label>
+
+                <label>
+                    <input type="radio" name="cq2" value="B">
+                    B. Charles' law
+                </label>
+
+                <label>
+                    <input type="radio" name="cq2" value="C">
+                    C. Ohm's law
+                </label>
+
+                <label>
+                    <input type="radio" name="cq2" value="D">
+                    D. Hooke's law
+                </label>
+
+            </div>
+
+            <div class="question">
+
+                <p>
+                    <strong>
+                        3. What is the pH scale used to indicate?
+                    </strong>
+                </p>
+
+                <label>
+                    <input type="radio" name="cq3" value="A">
+                    A. Mass
+                </label>
+
+                <label>
+                    <input type="radio" name="cq3" value="B">
+                    B. Acidity or alkalinity
+                </label>
+
+                <label>
+                    <input type="radio" name="cq3" value="C">
+                    C. Density
+                </label>
+
+                <label>
+                    <input type="radio" name="cq3" value="D">
+                    D. Temperature
+                </label>
+
+            </div>
+
+            <button class="topic" onclick="checkChemQuiz()">
+                ✅ Submit Quiz
+            </button>
+
+            <div id="chemQuizResult"></div>
+
+            <button class="topic" onclick="showChemistry()">
+                ← Back to Chemistry
+            </button>
+
+        </div>
+    `;
+}
+
+
+function checkChemQuiz() {
+
+    let score = 0;
+
+    if (
+        document.querySelector('input[name="cq1"]:checked')?.value === "C"
+    ) score++;
+
+    if (
+        document.querySelector('input[name="cq2"]:checked')?.value === "A"
+    ) score++;
+
+    if (
+        document.querySelector('input[name="cq3"]:checked')?.value === "B"
+    ) score++;
+
+    document.getElementById("chemQuizResult").innerHTML = `
+
+        <div class="score">
+
+            <h3>🎉 Chemistry Quiz Complete!</h3>
+
+            <p>
+                Your score is
+                <strong>${score}/3</strong>
+            </p>
+
+            <p>
+                ${
+                    score === 3
+                    ? "Excellent work! 🌟"
+                    : "Good effort! Review the topics and try again. 💪"
+                }
+            </p>
+
+        </div>
+    `;
+}
+
+
+/* =========================
+   PHYSICS
+========================= */
+
+function showPhysics() {
+
+    document.getElementById("content").innerHTML = `
+
         <div class="lesson">
 
             <h2>⚡ Physics</h2>
 
             <p>
-                Choose a Physics topic to begin studying.
+                Choose a Physics topic.
             </p>
 
-            <button class="topic">
+            <button class="topic" onclick="showPhysicsHeat()">
                 🔥 Heat Transfer
             </button>
 
-            <button class="topic">
+            <button class="topic" onclick="showPhysicsElectricity()">
                 🔌 Electricity
             </button>
 
-            <button class="topic">
+            <button class="topic" onclick="showPhysicsOhm()">
                 📏 Ohm's Law
             </button>
 
-            <button class="topic">
+            <button class="topic" onclick="showPhysicsMotion()">
                 🚗 Motion
             </button>
 
-            <button class="topic">
+            <button class="topic" onclick="showPhysicsWaves()">
                 🌊 Waves
             </button>
 
-            <div class="assignment">
-                <h3>📝 Physics Assignments</h3>
-                <p class="small-note">
-                    Your Physics assignments will appear here.
-                </p>
-            </div>
+            <button class="topic" onclick="showPhysicsQuiz()">
+                🧠 Physics Quiz
+            </button>
 
         </div>
     `;
 }
 
 
-function showMath() {
+function showPhysicsHeat() {
+
     document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>🔥 Physics — Heat Transfer</h2>
+
+            <h3>Conduction</h3>
+
+            <p>
+                Conduction is the transfer of heat through a substance
+                without bulk movement of the substance.
+            </p>
+
+            <h3>Convection</h3>
+
+            <p>
+                Convection involves heat transfer through the movement
+                of a fluid.
+            </p>
+
+            <h3>Radiation</h3>
+
+            <p>
+                Radiation transfers heat through electromagnetic waves
+                and does not require a material medium.
+            </p>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. Define conduction.
+                </p>
+
+                <p>
+                    2. Define convection.
+                </p>
+
+                <p>
+                    3. Name the three methods of heat transfer.
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showPhysics()">
+                ← Back to Physics
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showPhysicsElectricity() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>🔌 Physics — Electricity</h2>
+
+            <h3>Electric Current</h3>
+
+            <p>
+                Electric current is the rate of flow of electric charge.
+            </p>
+
+            <h3>Voltage</h3>
+
+            <p>
+                Voltage is the potential difference between two points
+                in an electric circuit.
+            </p>
+
+            <h3>Resistance</h3>
+
+            <p>
+                Resistance is the opposition to the flow of electric current.
+            </p>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. Define electric current.
+                </p>
+
+                <p>
+                    2. Define voltage.
+                </p>
+
+                <p>
+                    3. What is electrical resistance?
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showPhysics()">
+                ← Back to Physics
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showPhysicsOhm() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>📏 Physics — Ohm's Law</h2>
+
+            <h3>Statement</h3>
+
+            <p>
+                Ohm's law states that, at constant temperature,
+                the current through a conductor is directly proportional
+                to the potential difference across it.
+            </p>
+
+            <h3>Formula</h3>
+
+            <p>
+                V = IR
+            </p>
+
+            <p>
+                V = voltage, I = current, R = resistance.
+            </p>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. State Ohm's law.
+                </p>
+
+                <p>
+                    2. Write the formula for Ohm's law.
+                </p>
+
+                <p>
+                    3. State what V, I and R represent.
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showPhysics()">
+                ← Back to Physics
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showPhysicsMotion() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>🚗 Physics — Motion</h2>
+
+            <h3>Meaning of Motion</h3>
+
+            <p>
+                Motion is the change in position of an object with time
+                relative to a reference point.
+            </p>
+
+            <h3>Speed</h3>
+
+            <p>
+                Speed is the distance travelled per unit time.
+            </p>
+
+            <p>
+                Speed = Distance ÷ Time
+            </p>
+
+            <h3>Velocity</h3>
+
+            <p>
+                Velocity is speed in a specified direction.
+            </p>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. Define motion.
+                </p>
+
+                <p>
+                    2. Define speed.
+                </p>
+
+                <p>
+                    3. Distinguish between speed and velocity.
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showPhysics()">
+                ← Back to Physics
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showPhysicsWaves() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>🌊 Physics — Waves</h2>
+
+            <h3>Meaning</h3>
+
+            <p>
+                A wave is a disturbance that transfers energy from
+                one place to another.
+            </p>
+
+            <h3>Types of Waves</h3>
+
+            <ul>
+                <li>Transverse waves</li>
+                <li>Longitudinal waves</li>
+            </ul>
+
+            <h3>Examples</h3>
+
+            <p>
+                Light is an example of a transverse electromagnetic wave,
+                while sound in air is a longitudinal mechanical wave.
+            </p>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. Define a wave.
+                </p>
+
+                <p>
+                    2. Name two types of waves.
+                </p>
+
+                <p>
+                    3. Give one example of each type.
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showPhysics()">
+                ← Back to Physics
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showPhysicsQuiz() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>🧠 Physics Quiz</h2>
+
+            <div class="question">
+
+                <p>
+                    <strong>
+                        1. Which method of heat transfer can occur
+                        through empty space?
+                    </strong>
+                </p>
+
+                <label>
+                    <input type="radio" name="pq1" value="A">
+                    A. Conduction
+                </label>
+
+                <label>
+                    <input type="radio" name="pq1" value="B">
+                    B. Convection
+                </label>
+
+                <label>
+                    <input type="radio" name="pq1" value="C">
+                    C. Radiation
+                </label>
+
+                <label>
+                    <input type="radio" name="pq1" value="D">
+                    D. Evaporation
+                </label>
+
+            </div>
+
+            <div class="question">
+
+                <p>
+                    <strong>
+                        2. Which equation represents Ohm's law?
+                    </strong>
+                </p>
+
+                <label>
+                    <input type="radio" name="pq2" value="A">
+                    A. V = IR
+                </label>
+
+                <label>
+                    <input type="radio" name="pq2" value="B">
+                    B. P = IV²
+                </label>
+
+                <label>
+                    <input type="radio" name="pq2" value="C">
+                    C. F = ma²
+                </label>
+
+                <label>
+                    <input type="radio" name="pq2" value="D">
+                    D. E = mc
+                </label>
+
+            </div>
+
+            <div class="question">
+
+                <p>
+                    <strong>
+                        3. What is speed?
+                    </strong>
+                </p>
+
+                <label>
+                    <input type="radio" name="pq3" value="A">
+                    A. Distance divided by time
+                </label>
+
+                <label>
+                    <input type="radio" name="pq3" value="B">
+                    B. Time divided by distance
+                </label>
+
+                <label>
+                    <input type="radio" name="pq3" value="C">
+                    C. Mass divided by time
+                </label>
+
+                <label>
+                    <input type="radio" name="pq3" value="D">
+                    D. Force divided by distance
+                </label>
+
+            </div>
+
+            <button class="topic" onclick="checkPhysicsQuiz()">
+                ✅ Submit Quiz
+            </button>
+
+            <div id="physicsQuizResult"></div>
+
+            <button class="topic" onclick="showPhysics()">
+                ← Back to Physics
+            </button>
+
+        </div>
+    `;
+}
+
+
+function checkPhysicsQuiz() {
+
+    let score = 0;
+
+    if (
+        document.querySelector('input[name="pq1"]:checked')?.value === "C"
+    ) score++;
+
+    if (
+        document.querySelector('input[name="pq2"]:checked')?.value === "A"
+    ) score++;
+
+    if (
+        document.querySelector('input[name="pq3"]:checked')?.value === "A"
+    ) score++;
+
+    document.getElementById("physicsQuizResult").innerHTML = `
+
+        <div class="score">
+
+            <h3>🎉 Physics Quiz Complete!</h3>
+
+            <p>
+                Your score is
+                <strong>${score}/3</strong>
+            </p>
+
+            <p>
+                ${
+                    score === 3
+                    ? "Excellent work! 🌟"
+                    : "Good effort! Review the topics and try again. 💪"
+                }
+            </p>
+
+        </div>
+    `;
+}
+
+
+/* =========================
+   MATHEMATICS
+========================= */
+
+function showMath() {
+
+    document.getElementById("content").innerHTML = `
+
         <div class="lesson">
 
             <h2>📐 Mathematics</h2>
 
             <p>
-                Choose a Mathematics topic to begin studying.
+                Choose a Mathematics topic.
             </p>
 
-            <button class="topic">
+            <button class="topic" onclick="showMathAlgebra()">
                 🔢 Algebra
             </button>
 
-            <button class="topic">
+            <button class="topic" onclick="showMathQuadratic()">
                 🟦 Quadratic Equations
             </button>
 
-            <button class="topic">
+            <button class="topic" onclick="showMathTrig()">
                 📐 Trigonometry
             </button>
 
-            <button class="topic">
+            <button class="topic" onclick="showMathStatistics()">
                 📊 Statistics
             </button>
 
-            <button class="topic">
+            <button class="topic" onclick="showMathProbability()">
                 🎲 Probability
             </button>
 
+            <button class="topic" onclick="showMathQuiz()">
+                🧠 Mathematics Quiz
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showMathAlgebra() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>🔢 Mathematics — Algebra</h2>
+
+            <h3>Meaning</h3>
+
+            <p>
+                Algebra is a branch of mathematics that uses letters,
+                symbols and numbers to represent quantities and
+                relationships.
+            </p>
+
+            <h3>Example</h3>
+
+            <p>
+                If x + 5 = 12, then x = 7.
+            </p>
+
             <div class="assignment">
-                <h3>📝 Mathematics Assignments</h3>
-                <p class="small-note">
-                    Your Mathematics assignments will appear here.
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. Solve: x + 8 = 15.
                 </p>
+
+                <p>
+                    2. Solve: 2x = 18.
+                </p>
+
+                <p>
+                    3. Solve: x − 6 = 10.
+                </p>
+
             </div>
+
+            <button class="topic" onclick="showMath()">
+                ← Back to Mathematics
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showMathQuadratic() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>🟦 Mathematics — Quadratic Equations</h2>
+
+            <h3>Meaning</h3>
+
+            <p>
+                A quadratic equation is an equation that can be written
+                in the form ax² + bx + c = 0, where a is not zero.
+            </p>
+
+            <h3>Example</h3>
+
+            <p>
+                x² − 5x + 6 = 0
+            </p>
+
+            <p>
+                This can be factorised as:
+                (x − 2)(x − 3) = 0
+            </p>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. Define a quadratic equation.
+                </p>
+
+                <p>
+                    2. Identify a, b and c in
+                    2x² + 5x − 3 = 0.
+                </p>
+
+                <p>
+                    3. Factorise x² − 7x + 12.
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showMath()">
+                ← Back to Mathematics
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showMathTrig() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>📐 Mathematics — Trigonometry</h2>
+
+            <h3>Basic Ratios</h3>
+
+            <p>
+                In a right-angled triangle:
+            </p>
+
+            <ul>
+                <li>sin θ = opposite ÷ hypotenuse</li>
+                <li>cos θ = adjacent ÷ hypotenuse</li>
+                <li>tan θ = opposite ÷ adjacent</li>
+            </ul>
+
+            <h3>Memory Aid</h3>
+
+            <p>
+                SOH — CAH — TOA
+            </p>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. State the formula for sin θ.
+                </p>
+
+                <p>
+                    2. State the formula for cos θ.
+                </p>
+
+                <p>
+                    3. State the formula for tan θ.
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showMath()">
+                ← Back to Mathematics
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showMathStatistics() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>📊 Mathematics — Statistics</h2>
+
+            <h3>Meaning</h3>
+
+            <p>
+                Statistics is concerned with collecting, presenting,
+                analysing and interpreting data.
+            </p>
+
+            <h3>Mean</h3>
+
+            <p>
+                Mean = Sum of observations ÷ Number of observations
+            </p>
+
+            <h3>Median</h3>
+
+            <p>
+                The median is the middle value when data is arranged
+                in order.
+            </p>
+
+            <h3>Mode</h3>
+
+            <p>
+                The mode is the value that occurs most frequently.
+            </p>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. Define mean.
+                </p>
+
+                <p>
+                    2. Define median.
+                </p>
+
+                <p>
+                    3. Define mode.
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showMath()">
+                ← Back to Mathematics
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showMathProbability() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>🎲 Mathematics — Probability</h2>
+
+            <h3>Meaning</h3>
+
+            <p>
+                Probability is a measure of how likely an event is
+                to occur.
+            </p>
+
+            <h3>Basic Formula</h3>
+
+            <p>
+                Probability =
+                Number of favourable outcomes ÷
+                Total number of equally likely outcomes
+            </p>
+
+            <p>
+                Probability lies between 0 and 1 inclusive.
+            </p>
+
+            <div class="assignment">
+
+                <h3>📝 Assignment</h3>
+
+                <p>
+                    1. Define probability.
+                </p>
+
+                <p>
+                    2. State the basic probability formula.
+                </p>
+
+                <p>
+                    3. What is the probability of an impossible event?
+                </p>
+
+            </div>
+
+            <button class="topic" onclick="showMath()">
+                ← Back to Mathematics
+            </button>
+
+        </div>
+    `;
+}
+
+
+function showMathQuiz() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="lesson">
+
+            <h2>🧠 Mathematics Quiz</h2>
+
+            <div class="question">
+
+                <p>
+                    <strong>
+                        1. Solve: x + 5 = 12.
+                    </strong>
+                </p>
+
+                <label>
+                    <input type="radio" name="mq1" value="A">
+                    A. 5
+                </label>
+
+                <label>
+                    <input type="radio" name="mq1" value="B">
+                    B. 6
+                </label>
+
+                <label>
+                    <input type="radio" name="mq1" value="C">
+                    C. 7
+                </label>
+
+                <label>
+                    <input type="radio" name="mq1" value="D">
+                    D. 8
+                </label>
+
+            </div>
+
+            <div class="question">
+
+                <p>
+                    <strong>
+                        2. What is the mode of 2, 3, 3, 4, 5?
+                    </strong>
+                </p>
+
+                <label>
+                    <input type="radio" name="mq2" value="A">
+                    A. 2
+                </label>
+
+                <label>
+                    <input type="radio" name="mq2" value="B">
+                    B. 3
+                </label>
+
+                <label>
+                    <input type="radio" name="mq2" value="C">
+                    C. 4
+                </label>
+
+                <label>
+                    <input type="radio" name="mq2" value="D">
+                    D. 5
+                </label>
+
+            </div>
+
+            <div class="question">
+
+                <p>
+                    <strong>
+                        3. Which formula represents tan θ
+                        in a right-angled triangle?
+                    </strong>
+                </p>
+
+                <label>
+                    <input type="radio" name="mq3" value="A">
+                    A. Adjacent ÷ hypotenuse
+                </label>
+
+                <label>
+                    <input type="radio" name="mq3" value="B">
+                    B. Opposite ÷ hypotenuse
+                </label>
+
+                <label>
+                    <input type="radio" name="mq3" value="C">
+                    C. Opposite ÷ adjacent
+                </label>
+
+                <label>
+                    <input type="radio" name="mq3" value="D">
+                    D. Hypotenuse ÷ opposite
+                </label>
+
+            </div>
+
+            <button class="topic" onclick="checkMathQuiz()">
+                ✅ Submit Quiz
+            </button>
+
+            <div id="mathQuizResult"></div>
+
+            <button class="topic" onclick="showMath()">
+                ← Back to Mathematics
+            </button>
+
+        </div>
+    `;
+}
+
+
+function checkMathQuiz() {
+
+    let score = 0;
+
+    if (
+        document.querySelector('input[name="mq1"]:checked')?.value === "C"
+    ) score++;
+
+    if (
+        document.querySelector('input[name="mq2"]:checked')?.value === "B"
+    ) score++;
+
+    if (
+        document.querySelector('input[name="mq3"]:checked')?.value === "C"
+    ) score++;
+
+    document.getElementById("mathQuizResult").innerHTML = `
+
+        <div class="score">
+
+            <h3>🎉 Mathematics Quiz Complete!</h3>
+
+            <p>
+                Your score is
+                <strong>${score}/3</strong>
+            </p>
+
+            <p>
+                ${
+                    score === 3
+                    ? "Excellent work! 🌟"
+                    : "Good effort! Review the topics and try again. 💪"
+                }
+            </p>
 
         </div>
     `;
@@ -713,4 +2287,4 @@ function showMath() {
 </script>
 
 </body>
-</html>
+    </html>
