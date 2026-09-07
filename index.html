@@ -1,68 +1,231 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My SS2 Notes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My SS2 Study Hub</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 17px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 25px 15px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #172554;
+        }
+
+        .subjects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        button {
+            border: none;
+            border-radius: 12px;
+            padding: 20px 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            background: white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        #notes {
+            background: white;
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+            min-height: 120px;
+        }
+
+        #notes h3 {
+            color: #172554;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+            background: #172554;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 26px;
+            }
+
+            .subjects {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <h1>📚 My SS2 Notes</h1>
+    <header>
+        <h1>📚 My SS2 Study Hub</h1>
+        <p>Learn • Revise • Understand • Succeed</p>
+    </header>
 
-  <p>Welcome! Here you can find my class notes and assignments.</p>
+    <div class="container">
 
-  <h2>Subjects</h2>
+        <h2>Choose a Subject</h2>
 
-  <button onclick="showSubject('biology')">Biology</button>
-  <button onclick="showSubject('chemistry')">Chemistry</button>
-  <button onclick="showSubject('physics')">Physics</button>
-  <button onclick="showSubject('math')">Mathematics</button>
+        <div class="subjects">
 
-  <div id="notes">
-    <p>👆 Choose a subject above.</p>
-  </div>
+            <button onclick="showSubject('biology')">
+                🧬 Biology
+            </button>
 
-  <script>
-    function showSubject(subject) {
+            <button onclick="showSubject('chemistry')">
+                ⚗️ Chemistry
+            </button>
 
-      let notes = document.getElementById("notes");
+            <button onclick="showSubject('physics')">
+                ⚡ Physics
+            </button>
 
-      if (subject === "biology") {
-        notes.innerHTML = `
-          <h2>Biology</h2>
-          <h3>Nutrition</h3>
-          <p>
-            Nutrition is the process by which living organisms
-            obtain and use food for growth, energy and repair.
-          </p>
+            <button onclick="showSubject('math')">
+                📐 Mathematics
+            </button>
 
-          <h3>Classes of Food</h3>
-          <ul>
-            <li>Carbohydrates</li>
-            <li>Proteins</li>
-            <li>Fats and oils</li>
-            <li>Vitamins</li>
-            <li>Mineral salts</li>
-            <li>Water</li>
-          </ul>
-        `;
-      }
+        </div>
 
-      else if (subject === "chemistry") {
-        notes.innerHTML =
-          "<h2>Chemistry</h2><p>My Chemistry notes will go here.</p>";
-      }
+        <div id="notes">
+            <p>👆 Choose a subject above to see its notes.</p>
+        </div>
 
-      else if (subject === "physics") {
-        notes.innerHTML =
-          "<h2>Physics</h2><p>My Physics notes will go here.</p>";
-      }
+    </div>
 
-      else if (subject === "math") {
-        notes.innerHTML =
-          "<h2>Mathematics</h2><p>My Mathematics notes will go here.</p>";
-      }
-    }
-  </script>
+    <footer>
+        <p>My SS2 Study Hub © 2026</p>
+    </footer>
+
+    <script>
+
+        function showSubject(subject) {
+
+            let notes = document.getElementById("notes");
+
+            if (subject === "biology") {
+
+                notes.innerHTML = `
+                    <h3>🧬 Biology</h3>
+                    <p><strong>Welcome to Biology!</strong></p>
+                    <p>Here you will find Biology notes, topics and revision materials.</p>
+
+                    <h4>Topics</h4>
+                    <ul>
+                        <li>Nutrition</li>
+                        <li>Digestive System</li>
+                        <li>Enzymes</li>
+                        <li>Respiration</li>
+                        <li>Transport System</li>
+                    </ul>
+                `;
+
+            }
+
+            else if (subject === "chemistry") {
+
+                notes.innerHTML = `
+                    <h3>⚗️ Chemistry</h3>
+                    <p><strong>Welcome to Chemistry!</strong></p>
+                    <p>Here you will find Chemistry notes and revision materials.</p>
+
+                    <h4>Topics</h4>
+                    <ul>
+                        <li>Atomic Structure</li>
+                        <li>Chemical Bonding</li>
+                        <li>Gas Laws</li>
+                        <li>Acids and Bases</li>
+                        <li>Periodic Table</li>
+                    </ul>
+                `;
+
+            }
+
+            else if (subject === "physics") {
+
+                notes.innerHTML = `
+                    <h3>⚡ Physics</h3>
+                    <p><strong>Welcome to Physics!</strong></p>
+                    <p>Here you will find Physics notes and revision materials.</p>
+
+                    <h4>Topics</h4>
+                    <ul>
+                        <li>Heat Transfer</li>
+                        <li>Electricity</li>
+                        <li>Ohm's Law</li>
+                        <li>Motion</li>
+                        <li>Waves</li>
+                    </ul>
+                `;
+
+            }
+
+            else if (subject === "math") {
+
+                notes.innerHTML = `
+                    <h3>📐 Mathematics</h3>
+                    <p><strong>Welcome to Mathematics!</strong></p>
+                    <p>Here you will find Mathematics topics and revision materials.</p>
+
+                    <h4>Topics</h4>
+                    <ul>
+                        <li>Algebra</li>
+                        <li>Quadratic Equations</li>
+                        <li>Trigonometry</li>
+                        <li>Statistics</li>
+                        <li>Probability</li>
+                    </ul>
+                `;
+
+            }
+
+        }
+
+    </script>
 
 </body>
 </html>
