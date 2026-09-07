@@ -11,147 +11,222 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f4f7fb;
-            color: #222;
+            color: #f8fafc;
+            background:
+                radial-gradient(circle at 5% 10%, rgba(37, 99, 235, 0.18), transparent 28%),
+                radial-gradient(circle at 95% 25%, rgba(124, 58, 237, 0.15), transparent 30%),
+                radial-gradient(circle at 50% 100%, rgba(14, 165, 233, 0.10), transparent 30%),
+                #030303;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            box-shadow:
+                inset 0 0 100px rgba(37, 99, 235, 0.08),
+                inset 0 0 180px rgba(124, 58, 237, 0.07);
         }
 
         header {
-            background: #172554;
-            color: white;
             text-align: center;
-            padding: 35px 15px;
+            padding: 55px 20px 45px;
+            background: rgba(3, 7, 18, 0.88);
+            border-bottom: 1px solid rgba(96, 165, 250, 0.18);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.45);
+        }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 10px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 32px;
+            font-size: 34px;
+            letter-spacing: 1px;
         }
 
         header p {
-            font-size: 17px;
-            margin-bottom: 0;
+            color: #a5b4fc;
+            margin: 12px 0 0;
+            font-size: 14px;
+            letter-spacing: 2px;
         }
 
         .container {
-            max-width: 900px;
+            width: 100%;
+            max-width: 950px;
             margin: auto;
-            padding: 25px 15px;
+            padding: 30px 16px 50px;
+        }
+
+        .welcome,
+        #content {
+            background: rgba(15, 23, 42, 0.78);
+            border: 1px solid rgba(148, 163, 184, 0.13);
+            border-radius: 18px;
+            box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.4),
+                0 0 35px rgba(37, 99, 235, 0.04);
         }
 
         .welcome {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 25px;
+            margin-bottom: 30px;
         }
 
         h2 {
-            color: #172554;
+            color: #bfdbfe;
+        }
+
+        .welcome h2 {
+            margin-top: 0;
+        }
+
+        .section-title {
             text-align: center;
+            margin: 35px 0 18px;
         }
 
         .subjects {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            gap: 16px;
         }
 
         button {
-            border: none;
-            border-radius: 12px;
-            padding: 20px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 15px;
+            padding: 20px 15px;
+            color: white;
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
-            background: white;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+            transition: 0.25s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
         }
 
         button:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
         .biology {
-            background: #e8f5e9;
+            background: linear-gradient(135deg, #123524, #07150f);
         }
 
         .chemistry {
-            background: #fff3e0;
+            background: linear-gradient(135deg, #3b250e, #170e05);
         }
 
         .physics {
-            background: #e3f2fd;
+            background: linear-gradient(135deg, #102d49, #06111c);
         }
 
         .math {
-            background: #f3e5f5;
+            background: linear-gradient(135deg, #30204a, #10091a);
         }
 
         #content {
-            background: white;
-            margin-top: 25px;
+            margin-top: 30px;
             padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
         #content h2 {
             text-align: left;
         }
 
+        .lesson {
+            line-height: 1.75;
+        }
+
+        .lesson h3 {
+            color: #93c5fd;
+            margin-top: 25px;
+        }
+
         .topic {
             display: block;
             width: 100%;
-            margin: 10px 0;
-            padding: 15px;
+            margin: 12px 0;
+            padding: 16px;
             text-align: left;
-            background: #f1f5f9;
+            background: #111827;
+            border: 1px solid rgba(148, 163, 184, 0.12);
             box-shadow: none;
         }
 
         .topic:hover {
-            background: #e2e8f0;
-        }
-
-        .lesson {
-            line-height: 1.7;
-        }
-
-        .lesson h3 {
-            color: #172554;
-        }
-
-        .lesson li {
-            margin-bottom: 8px;
+            background: #182235;
         }
 
         .question {
-            background: #f8fafc;
-            padding: 15px;
+            background: #090f1b;
+            padding: 18px;
+            border-radius: 13px;
+            margin-top: 16px;
+            border: 1px solid rgba(148, 163, 184, 0.10);
+        }
+
+        .question label {
+            display: block;
+            padding: 7px 0;
+            cursor: pointer;
+        }
+
+        .question input {
+            margin-right: 8px;
+        }
+
+        .assignment {
+            border-left: 3px solid #60a5fa;
+            padding: 18px;
+            margin-top: 20px;
+            background: #0b1220;
             border-radius: 10px;
-            margin-top: 15px;
+        }
+
+        .small-note {
+            color: #94a3b8;
+            font-size: 14px;
         }
 
         footer {
             text-align: center;
-            padding: 25px;
-            margin-top: 30px;
-            background: #172554;
-            color: white;
+            padding: 30px 15px;
+            background: #020202;
+            border-top: 1px solid rgba(96, 165, 250, 0.15);
+            color: #94a3b8;
         }
 
         @media (max-width: 600px) {
+            header {
+                padding: 40px 15px 35px;
+            }
 
             header h1 {
-                font-size: 26px;
+                font-size: 27px;
+            }
+
+            .logo {
+                font-size: 40px;
             }
 
             .subjects {
                 grid-template-columns: 1fr;
+            }
+
+            #content {
+                padding: 20px;
             }
         }
     </style>
@@ -160,35 +235,28 @@
 <body>
 
 <header>
-
-    <h1>📚 My SS2 Study Hub</h1>
-
-    <p>Learn • Revise • Understand • Succeed</p>
-
+    <div class="logo">📚</div>
+    <h1>My SS2 Study Hub</h1>
+    <p>LEARN • REVISE • UNDERSTAND • SUCCEED</p>
 </header>
-
 
 <div class="container">
 
     <div class="welcome">
-
-        <h2>Welcome! 👋</h2>
+        <h2>Welcome, Scholar 👋</h2>
 
         <p>
-            Welcome to your SS2 Study Hub.
+            Welcome to your personal SS2 Study Hub.
             Choose a subject below to start learning.
         </p>
 
-        <p>
-            Study your lessons, revise important points,
-            and test yourself with questions.
+        <p class="small-note">
+            Study lessons, revise important points,
+            complete assignments and test yourself with quizzes.
         </p>
-
     </div>
 
-
-    <h2>📚 Choose a Subject</h2>
-
+    <h2 class="section-title">📚 Choose a Subject</h2>
 
     <div class="subjects">
 
@@ -210,96 +278,92 @@
 
     </div>
 
-
     <div id="content">
-
-        <p>
-            👆 Choose a subject to see its topics.
-        </p>
-
+        <p>👆 Choose a subject to see its topics.</p>
     </div>
 
 </div>
 
-
 <footer>
-
     <p>My SS2 Study Hub © 2026</p>
-
+    <p class="small-note">Study smart • Stay consistent • Keep learning</p>
 </footer>
-
 
 <script>
 
 function showBiology() {
-
     document.getElementById("content").innerHTML = `
+        <div class="lesson">
 
-        <h2>🧬 Biology</h2>
+            <h2>🧬 Biology</h2>
 
-        <p>
-            Choose a Biology topic to begin studying.
-        </p>
+            <p>
+                Choose a Biology topic to begin studying.
+            </p>
 
-        <button class="topic" onclick="showNutrition()">
-            📖 Nutrition
-        </button>
+            <button class="topic" onclick="showNutrition()">
+                📖 Nutrition
+            </button>
 
-        <button class="topic">
-            🧪 Enzymes
-        </button>
+            <button class="topic">
+                🧪 Enzymes
+            </button>
 
-        <button class="topic">
-            🦷 Dentition
-        </button>
+            <button class="topic">
+                🦷 Dentition
+            </button>
 
-        <button class="topic">
-            🫁 Respiration
-        </button>
+            <button class="topic">
+                🫁 Respiration
+            </button>
 
-        <button class="topic">
-            ❤️ Transport System
-        </button>
+            <button class="topic">
+                ❤️ Transport System
+            </button>
 
-        <button class="topic">
-            🌱 Photosynthesis
-        </button>
+            <button class="topic">
+                🌱 Photosynthesis
+            </button>
 
+            <div class="assignment">
+                <h3>📝 Biology Assignments</h3>
+                <p class="small-note">
+                    Your Biology assignments will appear here.
+                </p>
+            </div>
+
+        </div>
     `;
 }
 
 
- process by which living organisms
+function showNutrition() {
+    document.getElementById("content").innerHTML = `
+        <div class="lesson">
+
+            <h2>📖 Nutrition</h2>
+
+            <h3>What is Nutrition?</h3>
+
+            <p>
+                Nutrition is the process by which living organisms
                 obtain and use food for energy, growth, repair,
                 maintenance and other life processes.
             </p>
 
-
             <h3>Why is Food Important?</h3>
 
             <ul>
-
                 <li>It provides energy for activities.</li>
-
                 <li>It helps the body grow.</li>
-
                 <li>It helps repair damaged tissues.</li>
-
                 <li>It helps maintain the body.</li>
-
-                <li>It helps organisms carry out life processes.</li>
-
+                <li>It supports important life processes.</li>
             </ul>
-
 
             <h3>Types of Nutrition</h3>
 
-            <p>
-                There are two major types of nutrition:
-            </p>
-
             <ol>
-
                 <li>
                     <strong>Autotrophic nutrition</strong> –
                     an organism makes its own food.
@@ -310,173 +374,342 @@ function showBiology() {
                     an organism obtains food from other organisms
                     or organic materials.
                 </li>
-
             </ol>
 
-
-            <h3>Examples</h3>
-
-            <ul>
-
-                <li>
-                    Green plants are examples of organisms
-                    that carry out autotrophic nutrition.
-                </li>
-
-
-
-            
-function showNutritionQuiz() {
-    document.getElementById("content").innerHTML = `
-        <div class="lesson">
-            <h2>🧠 Nutrition Quiz</h2>
-            <p>Choose the best answer for each question.</p>
+            <h3>🧠 Quick Revision</h3>
 
             <div class="question">
-                <p><strong>1. What is nutrition?</strong></p>
-                <label><input type="radio" name="q1" value="A"> A. The process of breathing</label><br>
-                <label><input type="radio" name="q1" value="B"> B. The process of obtaining and using food</label><br>
-                <label><input type="radio" name="q1" value="C"> C. The process of removing waste</label><br>
-                <label><input type="radio" name="q1" value="D"> D. The process of reproduction</label>
+                <strong>1. What is nutrition?</strong>
+                <p>
+                    Nutrition is the process by which organisms
+                    obtain and use food.
+                </p>
             </div>
 
             <div class="question">
-                <p><strong>2. Which type of nutrition allows an organism to make its own food?</strong></p>
-                <label><input type="radio" name="q2" value="A"> A. Heterotrophic</label><br>
-                <label><input type="radio" name="q2" value="B"> B. Autotrophic</label><br>
-                <label><input type="radio" name="q2" value="C"> C. Parasitic</label><br>
-                <label><input type="radio" name="q2" value="D"> D. Saprophytic</label>
+                <strong>2. Name the two major types of nutrition.</strong>
+                <p>
+                    Autotrophic nutrition and heterotrophic nutrition.
+                </p>
             </div>
 
             <div class="question">
-                <p><strong>3. Which of these is an example of an autotrophic organism?</strong></p>
-                <label><input type="radio" name="q3" value="A"> A. Human</label><br>
-                <label><input type="radio" name="q3" value="B"> B. Lion</label><br>
-                <label><input type="radio" name="q3" value="C"> C. Green plant</label><br>
-                <label><input type="radio" name="q3" value="D"> D. Dog</label>
+                <strong>
+                    3. Give one example of an autotrophic organism.
+                </strong>
+                <p>Green plants.</p>
             </div>
 
-            <button class="topic" onclick="checkNutritionQuiz()">✅ Submit Quiz</button>
+            <h3>📝 Assignment</h3>
 
-            <div id="quizResult"></div>
+            <div class="assignment">
+                <p>
+                    1. Define nutrition.
+                </p>
 
-            <button class="topic" onclick="showNutrition()">← Back to Nutrition</button>
-        </div>
-    `;
-}    
-function checkNutritionQuiz() {
-    let score = 0;
+                <p>
+                    2. State two types of nutrition.
+                </p>
 
-    if (document.querySelector('input[name="q1"]:checked')?.value === "B") score++;
-    if (document.querySelector('input[name="q2"]:checked')?.value === "B") score++;
-    if (document.querySelector('input[name="q3"]:checked')?.value === "C") score++;
+                <p>
+                    3. Explain the difference between
+                    autotrophic and heterotrophic nutrition.
+                </p>
+            </div>
 
-    document.getElementById("quizResult").innerHTML = `
-        <div class="question">
-            <h3>🎉 Quiz Complete!</h3>
-            <p>Your score is <strong>${score}/3</strong></p>
-            <p>${score === 3 ? "Excellent work! 🌟" : "Good effort! Review the lesson and try again. 💪"}</p>
+            <br>
+
+            <button class="topic" onclick="showNutritionQuiz()">
+                🧠 Take Nutrition Quiz
+            </button>
+
+            <button class="topic" onclick="showBiology()">
+                ← Back to Biology
+            </button>
+
         </div>
     `;
 }
-function showChemistry() {
 
+
+function showNutritionQuiz() {
     document.getElementById("content").innerHTML = `
+        <div class="lesson">
 
-        <h2>⚗️ Chemistry</h2>
+            <h2>🧠 Nutrition Quiz</h2>
 
-        <p>
-            Chemistry lessons will be added here.
-        </p>
+            <p>Choose the best answer for each question.</p>
 
-        <ul>
+            <div class="question">
 
-            <li>Atomic Structure</li>
+                <p>
+                    <strong>1. What is nutrition?</strong>
+                </p>
 
-            <li>Chemical Bonding</li>
+                <label>
+                    <input type="radio" name="q1" value="A">
+                    A. The process of breathing
+                </label>
 
-            <li>Gas Laws</li>
+                <label>
+                    <input type="radio" name="q1" value="B">
+                    B. The process of obtaining and using food
+                </label>
 
-            <li>Acids and Bases</li>
+                <label>
+                    <input type="radio" name="q1" value="C">
+                    C. The process of removing waste
+                </label>
 
-            <li>Periodic Table</li>
+                <label>
+                    <input type="radio" name="q1" value="D">
+                    D. The process of reproduction
+                </label>
 
-        </ul>
+            </div>
 
+
+            <div class="question">
+
+                <p>
+                    <strong>
+                        2. Which type of nutrition allows
+                        an organism to make its own food?
+                    </strong>
+                </p>
+
+                <label>
+                    <input type="radio" name="q2" value="A">
+                    A. Heterotrophic
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="B">
+                    B. Autotrophic
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="C">
+                    C. Parasitic
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="D">
+                    D. Saprophytic
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>
+                        3. Which of these is an example
+                        of an autotrophic organism?
+                    </strong>
+                </p>
+
+                <label>
+                    <input type="radio" name="q3" value="A">
+                    A. Human
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="B">
+                    B. Lion
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="C">
+                    C. Green plant
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="D">
+                    D. Dog
+                </label>
+
+            </div>
+
+            <button class="topic" onclick="checkNutritionQuiz()">
+                ✅ Submit Quiz
+            </button>
+
+            <div id="quizResult"></div>
+
+            <button class="topic" onclick="showNutrition()">
+                ← Back to Nutrition
+            </button>
+
+        </div>
+    `;
+}
+
+
+function checkNutritionQuiz() {
+
+    let score = 0;
+
+    if (document.querySelector('input[name="q1"]:checked')?.value === "B") {
+        score++;
+    }
+
+    if (document.querySelector('input[name="q2"]:checked')?.value === "B") {
+        score++;
+    }
+
+    if (document.querySelector('input[name="q3"]:checked')?.value === "C") {
+        score++;
+    }
+
+    document.getElementById("quizResult").innerHTML = `
+        <div class="question">
+
+            <h3>🎉 Quiz Complete!</h3>
+
+            <p>
+                Your score is <strong>${score}/3</strong>
+            </p>
+
+            <p>
+                ${
+                    score === 3
+                    ? "Excellent work! 🌟"
+                    : "Good effort! Review the lesson and try again. 💪"
+                }
+            </p>
+
+        </div>
+    `;
+}
+
+
+function showChemistry() {
+    document.getElementById("content").innerHTML = `
+        <div class="lesson">
+
+            <h2>⚗️ Chemistry</h2>
+
+            <p>
+                Choose a Chemistry topic to begin studying.
+            </p>
+
+            <button class="topic">
+                ⚛️ Atomic Structure
+            </button>
+
+            <button class="topic">
+                🔗 Chemical Bonding
+            </button>
+
+            <button class="topic">
+                💨 Gas Laws
+            </button>
+
+            <button class="topic">
+                🧪 Acids and Bases
+            </button>
+
+            <button class="topic">
+                🧩 Periodic Table
+            </button>
+
+            <div class="assignment">
+                <h3>📝 Chemistry Assignments</h3>
+                <p class="small-note">
+                    Your Chemistry assignments will appear here.
+                </p>
+            </div>
+
+        </div>
     `;
 }
 
 
 function showPhysics() {
-
     document.getElementById("content").innerHTML = `
+        <div class="lesson">
 
-        <h2>⚡ Physics</h2>
+            <h2>⚡ Physics</h2>
 
-        <p>
-            Physics lessons will be added here.
-        </p>
+            <p>
+                Choose a Physics topic to begin studying.
+            </p>
 
-        <ul>
+            <button class="topic">
+                🔥 Heat Transfer
+            </button>
 
-            <li>Heat Transfer</li>
+            <button class="topic">
+                🔌 Electricity
+            </button>
 
-            <li>Electricity</li>
+            <button class="topic">
+                📏 Ohm's Law
+            </button>
 
-            <li>Ohm's Law</li>
+            <button class="topic">
+                🚗 Motion
+            </button>
 
-            <li>Motion</li>
+            <button class="topic">
+                🌊 Waves
+            </button>
 
-            <li>Waves</li>
+            <div class="assignment">
+                <h3>📝 Physics Assignments</h3>
+                <p class="small-note">
+                    Your Physics assignments will appear here.
+                </p>
+            </div>
 
-        </ul>
-
+        </div>
     `;
 }
 
 
 function showMath() {
-
     document.getElementById("content").innerHTML = `
+        <div class="lesson">
 
-        <h2>📐 Mathematics</h2>
+            <h2>📐 Mathematics</h2>
 
-        <p>
-            Mathematics lessons will be added here.
-        </p>
+            <p>
+                Choose a Mathematics topic to begin studying.
+            </p>
 
-        <ul>
+            <button class="topic">
+                🔢 Algebra
+            </button>
 
-            <li>Algebra</li>
+            <button class="topic">
+                🟦 Quadratic Equations
+            </button>
 
-            <li>Quadratic Equations</li>
+            <button class="topic">
+                📐 Trigonometry
+            </button>
 
-            <li>Trigonometry</li>
+            <button class="topic">
+                📊 Statistics
+            </button>
 
-            <li>Statistics</li>
+            <button class="topic">
+                🎲 Probability
+            </button>
 
-            <li>Probability</li>
+            <div class="assignment">
+                <h3>📝 Mathematics Assignments</h3>
+                <p class="small-note">
+                    Your Mathematics assignments will appear here.
+                </p>
+            </div>
 
-        </ul>
-
+        </div>
     `;
 }
 
- function checkNutritionQuiz() {
-    let score = 0;
-
-    if (document.querySelector('input[name="q1"]:checked')?.value === "B") score++;
-    if (document.querySelector('input[name="q2"]:checked')?.value === "B") score++;
-    if (document.querySelector('input[name="q3"]:checked')?.value === "C") score++;
-
-    document.getElementById("quizResult").innerHTML = `
-        <div class="question">
-            <h3>🎉 Quiz Complete!</h3>
-            <p>Your score is <strong>${score}/3</strong></p>
-            <p>${score === 3 ? "Excellent work! 🌟" : "Good effort! Review the lesson and try again. 💪"}</p>
-        </div>
-    `;
- }   
 </script>
 
 </body>
