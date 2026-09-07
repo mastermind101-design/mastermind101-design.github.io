@@ -477,6 +477,21 @@ function showMath() {
     `;
 }
 
+ function checkNutritionQuiz() {
+    let score = 0;
+
+    if (document.querySelector('input[name="q1"]:checked')?.value === "B") score++;
+    if (document.querySelector('input[name="q2"]:checked')?.value === "B") score++;
+    if (document.querySelector('input[name="q3"]:checked')?.value === "C") score++;
+
+    document.getElementById("quizResult").innerHTML = `
+        <div class="question">
+            <h3>🎉 Quiz Complete!</h3>
+            <p>Your score is <strong>${score}/3</strong></p>
+            <p>${score === 3 ? "Excellent work! 🌟" : "Good effort! Review the lesson and try again. 💪"}</p>
+        </div>
+    `;
+ }   
 </script>
 
 </body>
