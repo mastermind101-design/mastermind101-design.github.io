@@ -14,8 +14,8 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background:
-        radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.22), transparent 30%),
-        radial-gradient(circle at 100% 100%, rgba(124, 58, 237, 0.20), transparent 30%),
+        radial-gradient(circle at 0% 0%, rgba(37,99,235,.20), transparent 30%),
+        radial-gradient(circle at 100% 100%, rgba(124,58,237,.18), transparent 30%),
         #050505;
     color: #f5f5f5;
     min-height: 100vh;
@@ -24,13 +24,13 @@ body {
 header {
     text-align: center;
     padding: 35px 15px;
-    background: rgba(10, 10, 20, 0.9);
-    border-bottom: 1px solid rgba(100, 150, 255, 0.25);
-    box-shadow: 0 0 35px rgba(37, 99, 235, 0.15);
+    background: rgba(10,10,20,.92);
+    border-bottom: 1px solid rgba(100,150,255,.25);
+    box-shadow: 0 0 35px rgba(37,99,235,.12);
 }
 
 .logo {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bold;
     letter-spacing: 2px;
 }
@@ -43,26 +43,21 @@ header {
 
 .container {
     width: 92%;
-    max-width: 1000px;
+    max-width: 1050px;
     margin: 30px auto;
 }
 
 .welcome {
-    background: rgba(20, 20, 30, 0.85);
+    background: rgba(20,20,30,.88);
     padding: 25px;
     border-radius: 18px;
-    border: 1px solid rgba(100, 150, 255, 0.18);
+    border: 1px solid rgba(100,150,255,.18);
     margin-bottom: 25px;
-    box-shadow: 0 0 25px rgba(50, 80, 200, 0.08);
-}
-
-.welcome h2 {
-    margin-top: 0;
 }
 
 .subject-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
     gap: 15px;
 }
 
@@ -74,14 +69,13 @@ header {
     font-size: 17px;
     font-weight: bold;
     cursor: pointer;
-    background: linear-gradient(135deg, #172554, #312e81);
-    transition: 0.25s;
-    box-shadow: 0 0 18px rgba(37, 99, 235, 0.12);
+    background: linear-gradient(135deg,#172554,#312e81);
+    transition: .25s;
 }
 
 .subject-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 25px rgba(99,102,241,.28);
 }
 
 #content {
@@ -89,12 +83,12 @@ header {
 }
 
 .card {
-    background: rgba(15, 15, 25, 0.92);
-    border: 1px solid rgba(100, 150, 255, 0.18);
+    background: rgba(15,15,25,.94);
+    border: 1px solid rgba(100,150,255,.18);
     border-radius: 18px;
     padding: 24px;
     margin-bottom: 20px;
-    box-shadow: 0 0 25px rgba(30, 60, 150, 0.08);
+    box-shadow: 0 0 25px rgba(30,60,150,.08);
 }
 
 .card h2 {
@@ -108,21 +102,21 @@ header {
 
 .topic-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
     gap: 14px;
     margin-top: 20px;
 }
 
 .topic-btn {
     background: #111827;
-    color: #f5f5f5;
+    color: white;
     border: 1px solid #26354f;
-    padding: 17px;
+    padding: 18px;
     border-radius: 12px;
     cursor: pointer;
     text-align: left;
     font-size: 15px;
-    transition: 0.2s;
+    transition: .2s;
 }
 
 .topic-btn:hover {
@@ -139,46 +133,24 @@ header {
     font-weight: bold;
 }
 
+.week {
+    color: #a5b4fc;
+    font-size: 13px;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.break-card {
+    border: 1px dashed #374151;
+    background: rgba(17,24,39,.55);
+}
+
 .assignment {
     margin-top: 22px;
     padding: 18px;
     border-left: 4px solid #6366f1;
-    background: rgba(49, 46, 129, 0.18);
+    background: rgba(49,46,129,.18);
     border-radius: 10px;
-}
-
-.quiz {
-    margin-top: 25px;
-}
-
-.question {
-    background: #0b1120;
-    padding: 18px;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #1e293b;
-}
-
-.question label {
-    display: block;
-    margin: 9px 0;
-    cursor: pointer;
-}
-
-.quiz button {
-    background: #4f46e5;
-    color: white;
-    border: none;
-    padding: 13px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.score {
-    margin-top: 15px;
-    font-weight: bold;
-    color: #86efac;
 }
 
 .back-btn {
@@ -198,9 +170,9 @@ footer {
     font-size: 13px;
 }
 
-@media (max-width: 600px) {
+@media(max-width:600px) {
     .logo {
-        font-size: 25px;
+        font-size: 24px;
     }
 
     .container {
@@ -249,9 +221,19 @@ footer {
 
 <script>
 
-/* =========================
-   MAIN BIOLOGY PAGE
-========================= */
+/* =====================================================
+   HOME
+===================================================== */
+
+function goHome() {
+    document.getElementById("content").innerHTML = "";
+    window.scrollTo({top:0, behavior:"smooth"});
+}
+
+
+/* =====================================================
+   BIOLOGY
+===================================================== */
 
 function showBiology() {
 
@@ -263,34 +245,27 @@ function showBiology() {
 
         <h2>🧬 Biology</h2>
 
-        <p>
-            <b>Current Scheme of Work — Weeks 1–4</b>
-        </p>
-
-        <p>
-            The first four weeks focus on the <span class="term">Digestive System</span>
-            and <span class="term">Transport System</span> in living organisms.
-        </p>
+        <p><b>Scheme of Work — Weeks 1–4</b></p>
 
         <div class="topic-grid">
 
-            <button class="topic-btn" onclick="showBioDigestive1()">
-                Week 1<br>
+            <button class="topic-btn" onclick="bioDigestive1()">
+                <div class="week">WEEK 1</div>
                 <b>Digestive System — Part 1</b>
             </button>
 
-            <button class="topic-btn" onclick="showBioDigestive2()">
-                Week 2<br>
+            <button class="topic-btn" onclick="bioDigestive2()">
+                <div class="week">WEEK 2</div>
                 <b>Digestive System — Part 2</b>
             </button>
 
-            <button class="topic-btn" onclick="showBioTransport1()">
-                Week 3<br>
+            <button class="topic-btn" onclick="bioTransport1()">
+                <div class="week">WEEK 3</div>
                 <b>Transport System — Part 1</b>
             </button>
 
-            <button class="topic-btn" onclick="showBioTransport2()">
-                Week 4<br>
+            <button class="topic-btn" onclick="bioTransport2()">
+                <div class="week">WEEK 4</div>
                 <b>Transport System — Part 2</b>
             </button>
 
@@ -301,11 +276,9 @@ function showBiology() {
 }
 
 
-/* =========================
-   DIGESTIVE SYSTEM PART 1
-========================= */
+/* BIOLOGY WEEK 1 */
 
-function showBioDigestive1() {
+function bioDigestive1() {
 
     document.getElementById("content").innerHTML = `
 
@@ -313,9 +286,11 @@ function showBioDigestive1() {
 
         <button class="back-btn" onclick="showBiology()">← Back to Biology</button>
 
+        <div class="week">WEEK 1</div>
+
         <h2>Digestive System — Part 1</h2>
 
-        <h3>Meaning of Digestion</h3>
+        <h3>What is Digestion?</h3>
 
         <p>
             <span class="term">Digestion</span> is the breakdown of large,
@@ -323,54 +298,28 @@ function showBioDigestive1() {
             that can be absorbed and used by the body.
         </p>
 
-        <p>
-            The digestive system consists mainly of the
-            <span class="term">alimentary canal</span> and the organs and
-            glands associated with digestion and absorption.
-        </p>
-
         <h3>The Alimentary Canal</h3>
 
         <p>
-            In mammals, the alimentary canal is a long tube through which
-            food passes. Its major parts include the mouth, pharynx,
-            oesophagus, stomach, small intestine, large intestine,
-            rectum and anus.
-        </p>
-
-        <h3>Digestive Systems in Different Animals</h3>
-
-        <p>
-            Different organisms have different digestive structures.
-            For example, an earthworm has a mouth, pharynx, gullet,
-            crop, gizzard, intestine and anus.
-        </p>
-
-        <p>
-            Some simple organisms have very simple digestive arrangements,
-            while organisms such as mammals possess a highly developed
-            alimentary canal.
+            The <span class="term">alimentary canal</span> is the continuous
+            passage through which food travels during digestion. In mammals,
+            it includes the mouth, pharynx, oesophagus, stomach, small
+            intestine, large intestine, rectum and anus.
         </p>
 
         <h3>Digestion in the Mouth</h3>
 
         <p>
-            Digestion begins in the mouth. The teeth break food into smaller
-            pieces while the food is mixed with saliva.
-        </p>
-
-        <p>
-            Saliva contains the enzyme <span class="term">amylase
-            (tyalin)</span>, which begins the digestion of starch into
-            maltose.
+            Digestion begins in the mouth. Teeth break food into smaller
+            pieces and mix it with saliva. Saliva contains the enzyme
+            <span class="term">amylase (tyalin)</span>, which begins the
+            digestion of starch.
         </p>
 
         <div class="assignment">
-            <h3>Quick Revision</h3>
-            <p>
-                Remember: <b>Digestion = large food molecules → small,
-                soluble, absorbable molecules.</b>
-            </p>
+            <b>Revision Focus:</b>
+            Know the meaning of digestion and the main parts of the
+            mammalian alimentary canal.
         </div>
 
     </div>
@@ -378,81 +327,57 @@ function showBioDigestive1() {
 }
 
 
-/* =========================
-   DIGESTIVE SYSTEM PART 2
-========================= */
+/* BIOLOGY WEEK 2 */
 
-function showBioDigestive2() {
+function bioDigestive2() {
 
     document.getElementById("content").innerHTML = `
 
     <div class="card lesson">
 
         <button class="back-btn" onclick="showBiology()">← Back to Biology</button>
+
+        <div class="week">WEEK 2</div>
 
         <h2>Digestive System — Part 2</h2>
 
         <h3>Digestion in the Stomach</h3>
 
         <p>
-            After food is swallowed, it moves through the oesophagus
-            by <span class="term">peristalsis</span> and enters the stomach.
+            Food moves from the mouth through the oesophagus by
+            <span class="term">peristalsis</span> and enters the stomach.
+            The stomach stores and churns food while gastric juice helps
+            in protein digestion.
         </p>
 
         <p>
-            The stomach temporarily stores food and mixes it with
-            gastric juice. Gastric juice contains substances including
-            <span class="term">pepsin</span> and hydrochloric acid.
+            The enzyme <span class="term">pepsin</span> helps break down
+            proteins. Hydrochloric acid provides an acidic medium and
+            helps destroy many microorganisms.
         </p>
 
-        <p>
-            Pepsin begins the digestion of proteins, while hydrochloric
-            acid provides an acidic medium and helps destroy harmful
-            microorganisms.
-        </p>
-
-        <h3>The Small Intestine</h3>
+        <h3>Digestion in the Small Intestine</h3>
 
         <p>
-            The partly digested food enters the duodenum. Here it mixes
-            with pancreatic juice and bile.
-        </p>
-
-        <p>
-            Pancreatic enzymes such as amylase, lipase and trypsin continue
-            digestion. <span class="term">Bile</span>, produced by the liver,
-            helps in the <span class="term">emulsification of fats</span>.
+            In the small intestine, food mixes with pancreatic juice,
+            intestinal juice and bile. Bile helps with the
+            <span class="term">emulsification of fats</span>.
         </p>
 
         <h3>Absorption</h3>
 
         <p>
-            The small intestine contains numerous tiny finger-like
-            projections called <span class="term">villi</span>.
-            They greatly increase the surface area for absorption.
-        </p>
-
-        <p>
-            Digested nutrients such as glucose and amino acids enter
-            the blood through the villi, while products of fat digestion
-            enter the <span class="term">lacteals</span>.
-        </p>
-
-        <h3>End Products of Digestion</h3>
-
-        <p>
-            Proteins are finally broken down into amino acids.
-            Fats and oils are broken down into fatty acids and glycerol,
-            while starch is ultimately converted to glucose.
+            The small intestine contains numerous
+            <span class="term">villi</span> which increase the surface
+            area for absorption. Digested nutrients enter the blood,
+            while products of fat digestion enter the
+            <span class="term">lacteals</span>.
         </p>
 
         <div class="assignment">
-            <h3>Quick Revision</h3>
-            <p>
-                Protein → amino acids<br>
-                Fat → fatty acids + glycerol<br>
-                Starch → glucose
-            </p>
+            <b>Revision Focus:</b>
+            Remember the major digestive enzymes and the importance
+            of villi in absorption.
         </div>
 
     </div>
@@ -460,73 +385,54 @@ function showBioDigestive2() {
 }
 
 
-/* =========================
-   TRANSPORT SYSTEM PART 1
-========================= */
+/* BIOLOGY WEEK 3 */
 
-function showBioTransport1() {
+function bioTransport1() {
 
     document.getElementById("content").innerHTML = `
 
     <div class="card lesson">
 
         <button class="back-btn" onclick="showBiology()">← Back to Biology</button>
+
+        <div class="week">WEEK 3</div>
 
         <h2>Transport System — Part 1</h2>
 
         <h3>Meaning of Transport</h3>
 
         <p>
-            <span class="term">Transport</span> is the movement of substances
-            from places where they are produced or absorbed to places where
-            they are needed, stored or removed from the body.
+            <span class="term">Transport</span> is the movement of materials
+            from where they are produced, absorbed or stored to places where
+            they are needed or removed.
         </p>
 
-        <h3>Why Transport is Necessary</h3>
-
-        <p>Transport systems are important because cells need materials such as:</p>
-
-        <ul>
-            <li>Oxygen for respiration</li>
-            <li>Water</li>
-            <li>Digested food such as glucose and amino acids</li>
-            <li>Mineral salts</li>
-            <li>Hormones</li>
-        </ul>
+        <h3>Why is Transport Necessary?</h3>
 
         <p>
-            Transport systems also remove waste products such as
-            carbon dioxide, excess water and nitrogenous wastes.
+            Cells need materials such as oxygen, water, nutrients and
+            mineral salts. Waste products such as carbon dioxide and
+            nitrogenous wastes must also be removed.
         </p>
 
-        <h3>Transport in Simple Organisms</h3>
+        <h3>Transport in Small Organisms</h3>
 
         <p>
-            Organisms such as Amoeba and Paramecium are small and have a
-            large surface-area-to-volume ratio. They can therefore exchange
+            Small organisms such as Amoeba and Paramecium can exchange
             many substances directly with their surroundings by
-            <span class="term">diffusion</span>.
-        </p>
-
-        <h3>Why Large Organisms Need Transport Systems</h3>
-
-        <p>
-            As organisms become larger, their surface-area-to-volume ratio
-            decreases. Diffusion alone becomes too slow to supply every cell
-            with enough materials.
+            <span class="term">diffusion</span>. Their large
+            surface-area-to-volume ratio makes this possible.
         </p>
 
         <p>
-            Multicellular organisms therefore develop specialised transport
-            systems to move substances quickly around the body.
+            In larger organisms, diffusion alone is not fast enough,
+            so specialised transport systems are required.
         </p>
 
         <div class="assignment">
-            <h3>Quick Revision</h3>
-            <p>
-                Small organisms can rely heavily on diffusion, while larger
-                organisms need specialised transport systems.
-            </p>
+            <b>Revision Focus:</b>
+            Understand why diffusion is suitable for small organisms
+            but insufficient for large multicellular organisms.
         </div>
 
     </div>
@@ -534,11 +440,9 @@ function showBioTransport1() {
 }
 
 
-/* =========================
-   TRANSPORT SYSTEM PART 2
-========================= */
+/* BIOLOGY WEEK 4 */
 
-function showBioTransport2() {
+function bioTransport2() {
 
     document.getElementById("content").innerHTML = `
 
@@ -546,80 +450,50 @@ function showBioTransport2() {
 
         <button class="back-btn" onclick="showBiology()">← Back to Biology</button>
 
+        <div class="week">WEEK 4</div>
+
         <h2>Transport System — Part 2</h2>
 
         <h3>Transport in Mammals</h3>
 
         <p>
-            Mammals have a specialised circulatory system involving the
-            <span class="term">heart</span>, blood vessels and blood.
-            The blood transports substances around the body.
+            Mammals have a specialised circulatory system made up of the
+            heart, blood and blood vessels. Blood transports substances
+            around the body.
         </p>
 
         <h3>Blood</h3>
 
         <p>
-            Blood consists of a liquid part called
-            <span class="term">plasma</span> and blood cells.
-            Plasma carries dissolved substances such as digested food,
-            hormones, salts, waste products and some gases.
+            Blood contains <span class="term">plasma</span> and blood cells.
+            Plasma transports dissolved substances including digested food,
+            hormones, salts and waste products.
         </p>
 
-        <h3>Main Blood Cells</h3>
+        <h3>Blood Cells</h3>
 
-        <ul>
-            <li>
-                <b>Red blood cells:</b> transport oxygen using haemoglobin.
-            </li>
-
-            <li>
-                <b>White blood cells:</b> help defend the body against
-                infection.
-            </li>
-
-            <li>
-                <b>Platelets:</b> help in blood clotting.
-            </li>
-        </ul>
+        <p>
+            <b>Red blood cells</b> transport oxygen using haemoglobin.
+            <b>White blood cells</b> help defend the body against infection,
+            while <b>platelets</b> help with blood clotting.
+        </p>
 
         <h3>Blood Vessels</h3>
 
         <p>
-            The three major types of blood vessels are
+            The three main blood vessels are
             <span class="term">arteries</span>,
             <span class="term">veins</span> and
             <span class="term">capillaries</span>.
-        </p>
-
-        <p>
-            Arteries generally carry blood away from the heart.
-            Veins generally carry blood towards the heart.
-            Capillaries are very small vessels where exchange of materials
-            occurs between the blood and body tissues.
-        </p>
-
-        <h3>Transport in Plants</h3>
-
-        <p>
-            Plants transport water and mineral salts from the roots to other
-            parts of the plant. Manufactured food is also transported from
-            areas where it is produced to areas where it is needed.
-        </p>
-
-        <p>
-            The movement of manufactured food in plants is called
-            <span class="term">translocation</span>, while the loss of water
-            vapour from leaves is known as <span class="term">transpiration</span>.
+            Arteries generally carry blood away from the heart, veins
+            generally carry blood towards the heart, and capillaries are
+            important sites of exchange.
         </p>
 
         <div class="assignment">
-            <h3>Quick Revision</h3>
-            <p>
-                Blood → main transport medium in mammals.<br>
-                Arteries → away from heart.<br>
-                Veins → towards heart.<br>
-                Capillaries → exchange of materials.
-            </p>
+            <b>Revision Focus:</b>
+            Learn the differences between arteries, veins and capillaries
+            and the functions of the main blood cells.
         </div>
 
     </div>
@@ -627,149 +501,9 @@ function showBioTransport2() {
 }
 
 
-/* =========================
-   CHEMISTRY
-========================= */
-
-function showChemistry() {
-
-    document.getElementById("content").innerHTML = `
-
-    <div class="card">
-
-        <button class="back-btn" onclick="goHome()">← Back to Subjects</button>
-
-        <h2>⚗️ Chemistry</h2>
-
-        <p>Choose a topic to revise.</p>
-
-        <div class="topic-grid">
-
-            <button class="topic-btn" onclick="showChemAtomic()">
-                Atomic Structure
-            </button>
-
-            <button class="topic-btn" onclick="showChemBonding()">
-                Chemical Bonding
-            </button>
-
-            <button class="topic-btn" onclick="showChemGas()">
-                Gas Laws
-            </button>
-
-            <button class="topic-btn" onclick="showChemAcids()">
-                Acids and Bases
-            </button>
-
-            <button class="topic-btn" onclick="showChemPeriodic()">
-                Periodic Table
-            </button>
-
-            <button class="topic-btn" onclick="showChemQuiz()">
-                📝 Chemistry Quiz
-            </button>
-
-        </div>
-
-    </div>
-    `;
-}
-
-function showChemAtomic() {
-    simpleLesson(
-        "Atomic Structure",
-        "Atoms are the basic units of matter. An atom contains a nucleus made up of protons and neutrons, surrounded by electrons.",
-        "Protons have positive charge, neutrons have no charge, and electrons have negative charge."
-    );
-}
-
-function showChemBonding() {
-    simpleLesson(
-        "Chemical Bonding",
-        "Chemical bonding is the force that holds atoms or ions together in a substance.",
-        "Important types include ionic bonding, covalent bonding and metallic bonding."
-    );
-}
-
-function showChemGas() {
-    simpleLesson(
-        "Gas Laws",
-        "Gas laws describe the relationship between pressure, volume and temperature of gases.",
-        "Important relationships include Boyle's law and Charles' law."
-    );
-}
-
-function showChemAcids() {
-    simpleLesson(
-        "Acids and Bases",
-        "Acids are substances that produce hydrogen ions in aqueous solution, while bases react with acids and can neutralise them.",
-        "The pH scale is commonly used to describe how acidic or alkaline a solution is."
-    );
-}
-
-function showChemPeriodic() {
-    simpleLesson(
-        "Periodic Table",
-        "The periodic table arranges elements according to their atomic numbers and repeating chemical properties.",
-        "Elements in the same group often have similar chemical properties."
-    );
-}
-
-function showChemQuiz() {
-
-    document.getElementById("content").innerHTML = `
-
-    <div class="card quiz">
-
-        <button class="back-btn" onclick="showChemistry()">← Back to Chemistry</button>
-
-        <h2>Chemistry Quiz</h2>
-
-        <div class="question">
-            <p><b>1. What is the charge of a proton?</b></p>
-            <label><input type="radio" name="cq1" value="a"> Negative</label>
-            <label><input type="radio" name="cq1" value="b"> Positive</label>
-            <label><input type="radio" name="cq1" value="c"> Neutral</label>
-        </div>
-
-        <div class="question">
-            <p><b>2. Which particle has no charge?</b></p>
-            <label><input type="radio" name="cq2" value="a"> Proton</label>
-            <label><input type="radio" name="cq2" value="b"> Electron</label>
-            <label><input type="radio" name="cq2" value="c"> Neutron</label>
-        </div>
-
-        <div class="question">
-            <p><b>3. What does the periodic table arrange?</b></p>
-            <label><input type="radio" name="cq3" value="a"> Elements</label>
-            <label><input type="radio" name="cq3" value="b"> Cells</label>
-            <label><input type="radio" name="cq3" value="c"> Organs</label>
-        </div>
-
-        <button onclick="checkChemQuiz()">Check Score</button>
-
-        <div id="chemScore" class="score"></div>
-
-    </div>
-    `;
-}
-
-function checkChemQuiz() {
-
-    let score = 0;
-
-    if (document.querySelector('input[name="cq1"]:checked')?.value === "b") score++;
-    if (document.querySelector('input[name="cq2"]:checked')?.value === "c") score++;
-    if (document.querySelector('input[name="cq3"]:checked')?.value === "a") score++;
-
-    document.getElementById("chemScore").innerText =
-        "You scored " + score + " / 3";
-}
-
-
-/* =========================
+/* =====================================================
    PHYSICS
-========================= */
+===================================================== */
 
 function showPhysics() {
 
@@ -781,30 +515,55 @@ function showPhysics() {
 
         <h2>⚡ Physics</h2>
 
+        <p><b>Scheme of Work — Weeks 1–10</b></p>
+
         <div class="topic-grid">
 
-            <button class="topic-btn" onclick="showPhysicsHeat()">
-                Heat Transfer
+            <button class="topic-btn" onclick="physicsLight1()">
+                <div class="week">WEEKS 1–2</div>
+                <b>Light Waves — Part 1 & 2</b>
             </button>
 
-            <button class="topic-btn" onclick="showPhysicsElectricity()">
-                Electricity
+            <button class="topic-btn" onclick="physicsSound()">
+                <div class="week">WEEK 3</div>
+                <b>Sound Waves</b>
             </button>
 
-            <button class="topic-btn" onclick="showPhysicsOhm()">
-                Ohm's Law
+            <button class="topic-btn" onclick="physicsEye()">
+                <div class="week">WEEK 4</div>
+                <b>Human Eye</b>
             </button>
 
-            <button class="topic-btn" onclick="showPhysicsMotion()">
-                Motion
+            <div class="topic-btn break-card">
+                <div class="week">WEEK 5</div>
+                <b>Midterm Tests / Midterm Break</b>
+                <p>No topic scheduled.</p>
+            </div>
+
+            <button class="topic-btn" onclick="physicsApplicationSound()">
+                <div class="week">WEEK 6</div>
+                <b>Application of Sound Waves</b>
             </button>
 
-            <button class="topic-btn" onclick="showPhysicsWaves()">
-                Waves
+            <div class="topic-btn break-card">
+                <div class="week">WEEK 7</div>
+                <b>Midterm Break</b>
+                <p>No topic scheduled.</p>
+            </div>
+
+            <button class="topic-btn" onclick="physicsCharges()">
+                <div class="week">WEEK 8</div>
+                <b>Electric Charges</b>
             </button>
 
-            <button class="topic-btn" onclick="showPhysicsQuiz()">
-                📝 Physics Quiz
+            <button class="topic-btn" onclick="physicsFields()">
+                <div class="week">WEEK 9</div>
+                <b>Description and Properties of Fields</b>
+            </button>
+
+            <button class="topic-btn" onclick="physicsGravity()">
+                <div class="week">WEEK 10</div>
+                <b>Gravitational Field</b>
             </button>
 
         </div>
@@ -813,101 +572,252 @@ function showPhysics() {
     `;
 }
 
-function showPhysicsHeat() {
-    simpleLesson(
-        "Heat Transfer",
-        "Heat is transferred from a hotter region to a colder region.",
-        "The three main methods are conduction, convection and radiation."
+
+function physicsLight1() {
+    lessonPage(
+        "WEEKS 1–2",
+        "Light Waves — Part 1 & 2",
+        "Light is a form of electromagnetic radiation that enables us to see objects. Light waves can travel through a vacuum and show properties such as reflection, refraction and diffraction.",
+        "This topic introduces the nature and properties of light waves and how light behaves when it meets different materials."
     );
 }
 
-function showPhysicsElectricity() {
-    simpleLesson(
-        "Electricity",
-        "Electric current is the rate of flow of electric charge through a conductor.",
-        "Current is measured in amperes (A)."
+function physicsSound() {
+    lessonPage(
+        "WEEK 3",
+        "Sound Waves",
+        "Sound is produced by vibrating objects and travels through a medium as a wave. Sound cannot travel through a vacuum.",
+        "Important ideas include vibration, frequency, wavelength, amplitude and the speed of sound."
     );
 }
 
-function showPhysicsOhm() {
-    simpleLesson(
-        "Ohm's Law",
-        "Ohm's law states that, at constant temperature, current through a conductor is directly proportional to the potential difference across it.",
-        "The formula is V = IR."
+function physicsEye() {
+    lessonPage(
+        "WEEK 4",
+        "Human Eye",
+        "The human eye is a sense organ that detects light and allows us to see. It contains structures such as the cornea, iris, pupil, lens and retina.",
+        "The eye focuses light onto the retina, where light-sensitive cells help form the information sent to the brain."
     );
 }
 
-function showPhysicsMotion() {
-    simpleLesson(
-        "Motion",
-        "Motion is the change in position of an object with time.",
-        "Speed is distance divided by time, while velocity includes direction."
+function physicsApplicationSound() {
+    lessonPage(
+        "WEEK 6",
+        "Application of Sound Waves",
+        "Sound waves have many practical applications in science, medicine, communication and technology.",
+        "Examples include medical scanning, communication systems, sonar and the study of objects using reflected sound."
     );
 }
 
-function showPhysicsWaves() {
-    simpleLesson(
-        "Waves",
-        "A wave is a disturbance that transfers energy from one point to another.",
-        "Examples include sound waves, water waves and electromagnetic waves."
+function physicsCharges() {
+    lessonPage(
+        "WEEK 8",
+        "Electric Charges",
+        "Electric charge is a property of matter responsible for electrical effects. There are two types of charge: positive and negative.",
+        "Like charges repel while unlike charges attract. Electric charge is associated with particles such as protons and electrons."
     );
 }
 
-function showPhysicsQuiz() {
+function physicsFields() {
+    lessonPage(
+        "WEEK 9",
+        "Description and Properties of Fields",
+        "A field is a region around an object where another object can experience a force.",
+        "Fields can be represented using field lines. Examples include gravitational, electric and magnetic fields."
+    );
+}
+
+function physicsGravity() {
+    lessonPage(
+        "WEEK 10",
+        "Gravitational Field",
+        "A gravitational field is the region around a mass in which another mass experiences a gravitational force.",
+        "The gravitational field explains why objects are attracted towards massive bodies such as the Earth."
+    );
+}
+
+
+/* =====================================================
+   CHEMISTRY
+===================================================== */
+
+function showChemistry() {
 
     document.getElementById("content").innerHTML = `
 
-    <div class="card quiz">
+    <div class="card">
 
-        <button class="back-btn" onclick="showPhysics()">← Back to Physics</button>
+        <button class="back-btn" onclick="goHome()">← Back to Subjects</button>
 
-        <h2>Physics Quiz</h2>
+        <h2>⚗️ Chemistry</h2>
 
-        <div class="question">
-            <p><b>1. What is the SI unit of current?</b></p>
-            <label><input type="radio" name="pq1" value="a"> Volt</label>
-            <label><input type="radio" name="pq1" value="b"> Ampere</label>
-            <label><input type="radio" name="pq1" value="c"> Ohm</label>
+        <p><b>Scheme of Work — Weeks 1–14</b></p>
+
+        <div class="topic-grid">
+
+            <button class="topic-btn" onclick="chemPollution()">
+                <div class="week">WEEK 1</div>
+                <b>Water and Air Pollution</b>
+            </button>
+
+            <button class="topic-btn" onclick="chemElectrolysis()">
+                <div class="week">WEEK 2</div>
+                <b>Electrolysis</b>
+            </button>
+
+            <button class="topic-btn" onclick="chemCells()">
+                <div class="week">WEEK 3</div>
+                <b>Electrochemical Cells</b>
+            </button>
+
+            <button class="topic-btn" onclick="chemTitration()">
+                <div class="week">WEEK 4</div>
+                <b>Acid and Base Titration</b>
+            </button>
+
+            <button class="topic-btn" onclick="chemTrial()">
+                <div class="week">WEEK 5</div>
+                <b>Trial Titration and Calculations</b>
+            </button>
+
+            <button class="topic-btn" onclick="chemSolubility()">
+                <div class="week">WEEK 6</div>
+                <b>Solubility and Solubility Curves</b>
+            </button>
+
+            <div class="topic-btn break-card">
+                <div class="week">WEEK 7</div>
+                <b>Midterm Break</b>
+                <p>No topic scheduled.</p>
+            </div>
+
+            <button class="topic-btn" onclick="chemEquilibrium()">
+                <div class="week">WEEK 8</div>
+                <b>Chemical Equilibrium</b>
+            </button>
+
+            <button class="topic-btn" onclick="chemKinetics()">
+                <div class="week">WEEK 9</div>
+                <b>Chemical Kinetics</b>
+            </button>
+
+            <button class="topic-btn" onclick="chemHeat()">
+                <div class="week">WEEK 10</div>
+                <b>Heat of Reaction</b>
+            </button>
+
+            <button class="topic-btn" onclick="chemEnergetics()">
+                <div class="week">WEEK 11</div>
+                <b>Energetics of Reactions</b>
+            </button>
+
+            <div class="topic-btn break-card">
+                <div class="week">WEEKS 12–14</div>
+                <b>Examination / Closure</b>
+                <p>No lesson scheduled.</p>
+            </div>
+
         </div>
-
-        <div class="question">
-            <p><b>2. Which formula represents Ohm's law?</b></p>
-            <label><input type="radio" name="pq2" value="a"> V = IR</label>
-            <label><input type="radio" name="pq2" value="b"> P = IV</label>
-            <label><input type="radio" name="pq2" value="c"> F = ma</label>
-        </div>
-
-        <div class="question">
-            <p><b>3. Which method of heat transfer can occur through empty space?</b></p>
-            <label><input type="radio" name="pq3" value="a"> Conduction</label>
-            <label><input type="radio" name="pq3" value="b"> Convection</label>
-            <label><input type="radio" name="pq3" value="c"> Radiation</label>
-        </div>
-
-        <button onclick="checkPhysicsQuiz()">Check Score</button>
-
-        <div id="physicsScore" class="score"></div>
 
     </div>
     `;
 }
 
-function checkPhysicsQuiz() {
 
-    let score = 0;
+function chemPollution() {
+    lessonPage(
+        "WEEK 1",
+        "Water and Air Pollution",
+        "Pollution occurs when harmful substances are introduced into the environment. Water pollution affects rivers, lakes and other water sources, while air pollution affects the atmosphere.",
+        "The topic looks at common pollutants, their sources, effects on living organisms and ways pollution can be reduced."
+    );
+}
 
-    if (document.querySelector('input[name="pq1"]:checked')?.value === "b") score++;
-    if (document.querySelector('input[name="pq2"]:checked')?.value === "a") score++;
-    if (document.querySelector('input[name="pq3"]:checked')?.value === "c") score++;
+function chemElectrolysis() {
+    lessonPage(
+        "WEEK 2",
+        "Electrolysis",
+        "Electrolysis is the chemical decomposition of an electrolyte by passing an electric current through it.",
+        "The process involves electrodes and the movement of ions. It is useful in the extraction and purification of some substances."
+    );
+}
 
-    document.getElementById("physicsScore").innerText =
-        "You scored " + score + " / 3";
+function chemCells() {
+    lessonPage(
+        "WEEK 3",
+        "Electrochemical Cells",
+        "An electrochemical cell involves chemical and electrical energy being converted from one form to another.",
+        "Electrochemical cells are important in batteries and other systems that produce or use electrical energy through chemical reactions."
+    );
+}
+
+function chemTitration() {
+    lessonPage(
+        "WEEK 4",
+        "Acid and Base Titration",
+        "Titration is a laboratory method used to determine the concentration of a solution by reacting it with a solution of known concentration.",
+        "Acid-base titration commonly uses an indicator to help identify the end point of the reaction."
+    );
+}
+
+function chemTrial() {
+    lessonPage(
+        "WEEK 5",
+        "Trial Titration and Calculations",
+        "A trial titration is carried out first to obtain an approximate titre before more accurate titration readings are taken.",
+        "The results can then be used in calculations involving concentration, volume and the mole relationship between reacting substances."
+    );
+}
+
+function chemSolubility() {
+    lessonPage(
+        "WEEK 6",
+        "Solubility and Solubility Curves",
+        "Solubility describes the maximum amount of a substance that can dissolve in a given amount of solvent under specified conditions.",
+        "Solubility curves show how the solubility of substances changes, commonly with temperature."
+    );
+}
+
+function chemEquilibrium() {
+    lessonPage(
+        "WEEK 8",
+        "Chemical Equilibrium",
+        "Chemical equilibrium occurs in a reversible reaction when the forward and backward reactions occur at equal rates.",
+        "At equilibrium, the concentrations of the substances remain constant even though the reactions continue."
+    );
+}
+
+function chemKinetics() {
+    lessonPage(
+        "WEEK 9",
+        "Chemical Kinetics",
+        "Chemical kinetics is the study of the rate at which chemical reactions occur.",
+        "Factors such as concentration, temperature, surface area and catalysts can affect reaction rate."
+    );
+}
+
+function chemHeat() {
+    lessonPage(
+        "WEEK 10",
+        "Heat of Reaction",
+        "The heat of reaction is the amount of heat energy absorbed or released during a chemical reaction.",
+        "Some reactions release heat while others absorb heat from their surroundings."
+    );
+}
+
+function chemEnergetics() {
+    lessonPage(
+        "WEEK 11",
+        "Energetics of Reactions",
+        "Energetics deals with the energy changes that occur during chemical reactions.",
+        "It helps us understand why some reactions are exothermic and others are endothermic."
+    );
 }
 
 
-/* =========================
+/* =====================================================
    MATHEMATICS
-========================= */
+===================================================== */
 
 function showMath() {
 
@@ -919,135 +829,69 @@ function showMath() {
 
         <h2>📐 Mathematics</h2>
 
+        <p>Topics currently available for revision:</p>
+
         <div class="topic-grid">
 
-            <button class="topic-btn" onclick="showMathAlgebra()">
+            <button class="topic-btn" onclick="mathLesson('Algebra')">
                 Algebra
             </button>
 
-            <button class="topic-btn" onclick="showMathQuadratic()">
+            <button class="topic-btn" onclick="mathLesson('Quadratic Equations')">
                 Quadratic Equations
             </button>
 
-            <button class="topic-btn" onclick="showMathTrig()">
+            <button class="topic-btn" onclick="mathLesson('Trigonometry')">
                 Trigonometry
             </button>
 
-            <button class="topic-btn" onclick="showMathStatistics()">
+            <button class="topic-btn" onclick="mathLesson('Statistics')">
                 Statistics
             </button>
 
-            <button class="topic-btn" onclick="showMathProbability()">
+            <button class="topic-btn" onclick="mathLesson('Probability')">
                 Probability
             </button>
 
-            <button class="topic-btn" onclick="showMathQuiz()">
-                📝 Mathematics Quiz
-            </button>
-
         </div>
 
     </div>
     `;
 }
 
-function showMathAlgebra() {
-    simpleLesson(
-        "Algebra",
-        "Algebra uses letters and symbols to represent unknown numbers or quantities.",
-        "Expressions can be simplified by collecting like terms and applying algebraic rules."
-    );
-}
+function mathLesson(title) {
 
-function showMathQuadratic() {
-    simpleLesson(
-        "Quadratic Equations",
-        "A quadratic equation is an equation whose highest power of the variable is 2.",
-        "A common form is ax² + bx + c = 0."
-    );
-}
+    let text = {
+        "Algebra":
+        "Algebra uses letters and symbols to represent unknown quantities and relationships between numbers.",
 
-function showMathTrig() {
-    simpleLesson(
-        "Trigonometry",
-        "Trigonometry studies the relationship between the sides and angles of triangles.",
-        "The basic ratios are sine, cosine and tangent."
-    );
-}
+        "Quadratic Equations":
+        "A quadratic equation is an equation in which the highest power of the variable is 2.",
 
-function showMathStatistics() {
-    simpleLesson(
-        "Statistics",
+        "Trigonometry":
+        "Trigonometry studies relationships between angles and sides of triangles.",
+
+        "Statistics":
         "Statistics involves collecting, organising, presenting and interpreting data.",
-        "Common measures include mean, median and mode."
+
+        "Probability":
+        "Probability measures how likely an event is to occur."
+    };
+
+    lessonPage(
+        "",
+        title,
+        text[title],
+        "This section can later be expanded with your school notes, worked examples and exercises."
     );
 }
 
-function showMathProbability() {
-    simpleLesson(
-        "Probability",
-        "Probability measures how likely an event is to happen.",
-        "Probability ranges from 0 to 1, where 0 means impossible and 1 means certain."
-    );
-}
 
-function showMathQuiz() {
+/* =====================================================
+   GENERAL LESSON PAGE
+===================================================== */
 
-    document.getElementById("content").innerHTML = `
-
-    <div class="card quiz">
-
-        <button class="back-btn" onclick="showMath()">← Back to Mathematics</button>
-
-        <h2>Mathematics Quiz</h2>
-
-        <div class="question">
-            <p><b>1. What is the value of 2 + 3?</b></p>
-            <label><input type="radio" name="mq1" value="a"> 4</label>
-            <label><input type="radio" name="mq1" value="b"> 5</label>
-            <label><input type="radio" name="mq1" value="c"> 6</label>
-        </div>
-
-        <div class="question">
-            <p><b>2. Which is a quadratic equation?</b></p>
-            <label><input type="radio" name="mq2" value="a"> x + 2 = 0</label>
-            <label><input type="radio" name="mq2" value="b"> x² + 3x + 2 = 0</label>
-            <label><input type="radio" name="mq2" value="c"> 2x = 4</label>
-        </div>
-
-        <div class="question">
-            <p><b>3. Which is a measure of central tendency?</b></p>
-            <label><input type="radio" name="mq3" value="a"> Mean</label>
-            <label><input type="radio" name="mq3" value="b"> Angle</label>
-            <label><input type="radio" name="mq3" value="c"> Radius</label>
-        </div>
-
-        <button onclick="checkMathQuiz()">Check Score</button>
-
-        <div id="mathScore" class="score"></div>
-
-    </div>
-    `;
-}
-
-function checkMathQuiz() {
-
-    let score = 0;
-
-    if (document.querySelector('input[name="mq1"]:checked')?.value === "b") score++;
-    if (document.querySelector('input[name="mq2"]:checked')?.value === "b") score++;
-    if (document.querySelector('input[name="mq3"]:checked')?.value === "a") score++;
-
-    document.getElementById("mathScore").innerText =
-        "You scored " + score + " / 3";
-}
-
-
-/* =========================
-   SIMPLE LESSON FUNCTION
-========================= */
-
-function simpleLesson(title, meaning, details) {
+function lessonPage(week,title,meaning,details) {
 
     document.getElementById("content").innerHTML = `
 
@@ -1055,41 +899,26 @@ function simpleLesson(title, meaning, details) {
 
         <button class="back-btn" onclick="goHome()">← Back to Subjects</button>
 
+        ${week ? `<div class="week">${week}</div>` : ""}
+
         <h2>${title}</h2>
 
         <h3>Introduction</h3>
 
         <p>${meaning}</p>
 
-        <h3>What You Should Know</h3>
+        <h3>What This Topic Covers</h3>
 
         <p>${details}</p>
 
         <div class="assignment">
-            <h3>Revision Tip</h3>
-            <p>
-                Read the definition carefully, understand the main idea,
-                and practise questions on the topic.
-            </p>
+            <b>Study Note:</b>
+            This is a short introductory section for now.
+            The full school note can be added here later.
         </div>
 
     </div>
     `;
-}
-
-
-/* =========================
-   HOME
-========================= */
-
-function goHome() {
-
-    document.getElementById("content").innerHTML = "";
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
 }
 
 </script>
