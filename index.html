@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>My SS2 Study Hub</title>
 
 <style>
@@ -11,227 +10,205 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color: #f8fafc;
     background:
-        radial-gradient(circle at 5% 10%, rgba(37, 99, 235, 0.18), transparent 28%),
-        radial-gradient(circle at 95% 25%, rgba(124, 58, 237, 0.16), transparent 30%),
-        radial-gradient(circle at 50% 100%, rgba(14, 165, 233, 0.10), transparent 30%),
-        #030303;
+        radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.22), transparent 30%),
+        radial-gradient(circle at 100% 100%, rgba(124, 58, 237, 0.20), transparent 30%),
+        #050505;
+    color: #f5f5f5;
     min-height: 100vh;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    box-shadow:
-        inset 0 0 100px rgba(37, 99, 235, 0.08),
-        inset 0 0 180px rgba(124, 58, 237, 0.07);
 }
 
 header {
     text-align: center;
-    padding: 55px 20px 45px;
-    background: rgba(3, 7, 18, 0.90);
-    border-bottom: 1px solid rgba(96, 165, 250, 0.18);
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.45);
+    padding: 35px 15px;
+    background: rgba(10, 10, 20, 0.9);
+    border-bottom: 1px solid rgba(100, 150, 255, 0.25);
+    box-shadow: 0 0 35px rgba(37, 99, 235, 0.15);
 }
 
 .logo {
-    font-size: 48px;
-    margin-bottom: 10px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 34px;
-    letter-spacing: 1px;
-}
-
-header p {
-    color: #a5b4fc;
-    margin: 12px 0 0;
-    font-size: 14px;
+    font-size: 32px;
+    font-weight: bold;
     letter-spacing: 2px;
 }
 
-.container {
-    width: 100%;
-    max-width: 950px;
-    margin: auto;
-    padding: 30px 16px 50px;
+.tagline {
+    margin-top: 8px;
+    color: #aab7d4;
+    font-size: 15px;
 }
 
-.welcome,
-#content {
-    background: rgba(15, 23, 42, 0.80);
-    border: 1px solid rgba(148, 163, 184, 0.13);
-    border-radius: 18px;
-    box-shadow:
-        0 15px 45px rgba(0, 0, 0, 0.4),
-        0 0 35px rgba(37, 99, 235, 0.04);
+.container {
+    width: 92%;
+    max-width: 1000px;
+    margin: 30px auto;
 }
 
 .welcome {
+    background: rgba(20, 20, 30, 0.85);
     padding: 25px;
-    margin-bottom: 30px;
-}
-
-h2 {
-    color: #bfdbfe;
+    border-radius: 18px;
+    border: 1px solid rgba(100, 150, 255, 0.18);
+    margin-bottom: 25px;
+    box-shadow: 0 0 25px rgba(50, 80, 200, 0.08);
 }
 
 .welcome h2 {
     margin-top: 0;
 }
 
-.section-title {
-    text-align: center;
-    margin: 35px 0 18px;
-}
-
-.subjects {
+.subject-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
 }
 
-button {
-    border: 1px solid rgba(255, 255, 255, 0.10);
+.subject-btn {
+    border: none;
+    padding: 22px 15px;
     border-radius: 15px;
-    padding: 20px 15px;
     color: white;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.25s ease;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    background: linear-gradient(135deg, #172554, #312e81);
+    transition: 0.25s;
+    box-shadow: 0 0 18px rgba(37, 99, 235, 0.12);
 }
 
-button:hover {
+.subject-btn:hover {
     transform: translateY(-3px);
-}
-
-.biology {
-    background: linear-gradient(135deg, #123524, #07150f);
-}
-
-.chemistry {
-    background: linear-gradient(135deg, #3b250e, #170e05);
-}
-
-.physics {
-    background: linear-gradient(135deg, #102d49, #06111c);
-}
-
-.math {
-    background: linear-gradient(135deg, #30204a, #10091a);
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.3);
 }
 
 #content {
     margin-top: 30px;
-    padding: 25px;
+}
+
+.card {
+    background: rgba(15, 15, 25, 0.92);
+    border: 1px solid rgba(100, 150, 255, 0.18);
+    border-radius: 18px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 25px rgba(30, 60, 150, 0.08);
+}
+
+.card h2 {
+    color: #93c5fd;
+    margin-top: 0;
+}
+
+.card h3 {
+    color: #c4b5fd;
+}
+
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.topic-btn {
+    background: #111827;
+    color: #f5f5f5;
+    border: 1px solid #26354f;
+    padding: 17px;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.topic-btn:hover {
+    background: #172554;
+    border-color: #4f6db8;
 }
 
 .lesson {
-    line-height: 1.75;
+    line-height: 1.7;
 }
 
-.lesson h3 {
+.term {
     color: #93c5fd;
+    font-weight: bold;
+}
+
+.assignment {
+    margin-top: 22px;
+    padding: 18px;
+    border-left: 4px solid #6366f1;
+    background: rgba(49, 46, 129, 0.18);
+    border-radius: 10px;
+}
+
+.quiz {
     margin-top: 25px;
 }
 
-.topic {
-    display: block;
-    width: 100%;
-    margin: 12px 0;
-    padding: 16px;
-    text-align: left;
-    background: #111827;
-    border: 1px solid rgba(148, 163, 184, 0.12);
-    box-shadow: none;
-}
-
-.topic:hover {
-    background: #182235;
-}
-
 .question {
-    background: #090f1b;
+    background: #0b1120;
     padding: 18px;
-    border-radius: 13px;
-    margin-top: 16px;
-    border: 1px solid rgba(148, 163, 184, 0.10);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #1e293b;
 }
 
 .question label {
     display: block;
-    padding: 7px 0;
+    margin: 9px 0;
     cursor: pointer;
 }
 
-.question input {
-    margin-right: 8px;
-}
-
-.assignment {
-    border-left: 3px solid #60a5fa;
-    padding: 18px;
-    margin-top: 20px;
-    background: #0b1220;
+.quiz button {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    padding: 13px 20px;
     border-radius: 10px;
-}
-
-.small-note {
-    color: #94a3b8;
-    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .score {
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-    background: #111827;
-    border-radius: 12px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #86efac;
+}
+
+.back-btn {
+    background: #1f2937;
+    color: white;
+    border: 1px solid #374151;
+    padding: 10px 16px;
+    border-radius: 9px;
+    cursor: pointer;
+    margin-bottom: 18px;
 }
 
 footer {
     text-align: center;
     padding: 30px 15px;
-    background: #020202;
-    border-top: 1px solid rgba(96, 165, 250, 0.15);
-    color: #94a3b8;
+    color: #7f8aa3;
+    font-size: 13px;
 }
 
 @media (max-width: 600px) {
-
-    header {
-        padding: 40px 15px 35px;
-    }
-
-    header h1 {
-        font-size: 27px;
-    }
-
     .logo {
-        font-size: 40px;
+        font-size: 25px;
     }
 
-    .subjects {
-        grid-template-columns: 1fr;
+    .container {
+        width: 94%;
     }
 
-    #content {
-        padding: 20px;
+    .card {
+        padding: 18px;
     }
 }
 </style>
@@ -240,630 +217,412 @@ footer {
 <body>
 
 <header>
-    <div class="logo">📚</div>
-    <h1>My SS2 Study Hub</h1>
-    <p>LEARN • REVISE • UNDERSTAND • SUCCEED</p>
+    <div class="logo">MY SS2 STUDY HUB</div>
+    <div class="tagline">Learn • Revise • Understand • Succeed</div>
 </header>
 
 <div class="container">
 
     <div class="welcome">
-        <h2>Welcome, Scholar 👋</h2>
-
+        <h2>Welcome to My SS2 Study Hub</h2>
         <p>
-            Welcome to your personal SS2 Study Hub.
-            Choose a subject below to start learning.
-        </p>
-
-        <p class="small-note">
-            Study lessons, revise important points, complete assignments
-            and test yourself with quizzes.
+            Your personal study space for revision, assignments and quizzes.
+            Choose a subject below to begin.
         </p>
     </div>
 
-    <h2 class="section-title">📚 Choose a Subject</h2>
-
-    <div class="subjects">
-
-        <button class="biology" onclick="showBiology()">
-            🧬 Biology
-        </button>
-
-        <button class="chemistry" onclick="showChemistry()">
-            ⚗️ Chemistry
-        </button>
-
-        <button class="physics" onclick="showPhysics()">
-            ⚡ Physics
-        </button>
-
-        <button class="math" onclick="showMath()">
-            📐 Mathematics
-        </button>
-
+    <div class="subject-grid">
+        <button class="subject-btn" onclick="showBiology()">🧬 Biology</button>
+        <button class="subject-btn" onclick="showChemistry()">⚗️ Chemistry</button>
+        <button class="subject-btn" onclick="showPhysics()">⚡ Physics</button>
+        <button class="subject-btn" onclick="showMath()">📐 Mathematics</button>
     </div>
 
-    <div id="content">
-        <p>👆 Choose a subject to see its topics.</p>
-    </div>
+    <div id="content"></div>
 
 </div>
 
 <footer>
-    <p>My SS2 Study Hub © 2026</p>
-    <p class="small-note">
-        Study smart • Stay consistent • Keep learning
-    </p>
+    My SS2 Study Hub • Study smart. Stay consistent.
 </footer>
 
 
 <script>
 
 /* =========================
-   BIOLOGY
+   MAIN BIOLOGY PAGE
 ========================= */
 
 function showBiology() {
 
     document.getElementById("content").innerHTML = `
 
-        <div class="lesson">
+    <div class="card">
 
-            <h2>🧬 Biology</h2>
+        <button class="back-btn" onclick="goHome()">← Back to Subjects</button>
 
-            <p>
-                Choose a Biology topic to begin studying.
-            </p>
+        <h2>🧬 Biology</h2>
 
-            <button class="topic" onclick="showBioNutrition()">
-                📖 Nutrition
+        <p>
+            <b>Current Scheme of Work — Weeks 1–4</b>
+        </p>
+
+        <p>
+            The first four weeks focus on the <span class="term">Digestive System</span>
+            and <span class="term">Transport System</span> in living organisms.
+        </p>
+
+        <div class="topic-grid">
+
+            <button class="topic-btn" onclick="showBioDigestive1()">
+                Week 1<br>
+                <b>Digestive System — Part 1</b>
             </button>
 
-            <button class="topic" onclick="showBioEnzymes()">
-                🧪 Enzymes
+            <button class="topic-btn" onclick="showBioDigestive2()">
+                Week 2<br>
+                <b>Digestive System — Part 2</b>
             </button>
 
-            <button class="topic" onclick="showBioDentition()">
-                🦷 Dentition
+            <button class="topic-btn" onclick="showBioTransport1()">
+                Week 3<br>
+                <b>Transport System — Part 1</b>
             </button>
 
-            <button class="topic" onclick="showBioRespiration()">
-                🫁 Respiration
+            <button class="topic-btn" onclick="showBioTransport2()">
+                Week 4<br>
+                <b>Transport System — Part 2</b>
             </button>
-
-            <button class="topic" onclick="showBioTransport()">
-                ❤️ Transport System
-            </button>
-
-            <button class="topic" onclick="showBioPhotosynthesis()">
-                🌱 Photosynthesis
-            </button>
-
-            <div class="assignment">
-
-                <h3>📝 Biology Assignments</h3>
-
-                <p>
-                    Complete the assignments inside each topic.
-                </p>
-
-            </div>
 
         </div>
+
+    </div>
     `;
 }
 
 
-function showBioNutrition() {
+/* =========================
+   DIGESTIVE SYSTEM PART 1
+========================= */
+
+function showBioDigestive1() {
 
     document.getElementById("content").innerHTML = `
 
-        <div class="lesson">
+    <div class="card lesson">
 
-            <h2>📖 Biology — Nutrition</h2>
+        <button class="back-btn" onclick="showBiology()">← Back to Biology</button>
 
-            <h3>What is Nutrition?</h3>
+        <h2>Digestive System — Part 1</h2>
 
+        <h3>Meaning of Digestion</h3>
+
+        <p>
+            <span class="term">Digestion</span> is the breakdown of large,
+            complex food molecules into smaller, simple, soluble substances
+            that can be absorbed and used by the body.
+        </p>
+
+        <p>
+            The digestive system consists mainly of the
+            <span class="term">alimentary canal</span> and the organs and
+            glands associated with digestion and absorption.
+        </p>
+
+        <h3>The Alimentary Canal</h3>
+
+        <p>
+            In mammals, the alimentary canal is a long tube through which
+            food passes. Its major parts include the mouth, pharynx,
+            oesophagus, stomach, small intestine, large intestine,
+            rectum and anus.
+        </p>
+
+        <h3>Digestive Systems in Different Animals</h3>
+
+        <p>
+            Different organisms have different digestive structures.
+            For example, an earthworm has a mouth, pharynx, gullet,
+            crop, gizzard, intestine and anus.
+        </p>
+
+        <p>
+            Some simple organisms have very simple digestive arrangements,
+            while organisms such as mammals possess a highly developed
+            alimentary canal.
+        </p>
+
+        <h3>Digestion in the Mouth</h3>
+
+        <p>
+            Digestion begins in the mouth. The teeth break food into smaller
+            pieces while the food is mixed with saliva.
+        </p>
+
+        <p>
+            Saliva contains the enzyme <span class="term">amylase
+            (tyalin)</span>, which begins the digestion of starch into
+            maltose.
+        </p>
+
+        <div class="assignment">
+            <h3>Quick Revision</h3>
             <p>
-                Nutrition is the process by which living organisms
-                obtain and use food for energy, growth, repair,
-                maintenance and other life processes.
+                Remember: <b>Digestion = large food molecules → small,
+                soluble, absorbable molecules.</b>
             </p>
-
-            <h3>Importance of Food</h3>
-
-            <ul>
-                <li>Provides energy.</li>
-                <li>Supports growth.</li>
-                <li>Repairs damaged tissues.</li>
-                <li>Helps maintain the body.</li>
-                <li>Supports life processes.</li>
-            </ul>
-
-            <h3>Types of Nutrition</h3>
-
-            <ol>
-                <li>
-                    <strong>Autotrophic nutrition</strong> —
-                    organisms make their own food.
-                </li>
-
-                <li>
-                    <strong>Heterotrophic nutrition</strong> —
-                    organisms obtain food from other organisms
-                    or organic materials.
-                </li>
-            </ol>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>1. Define nutrition.</p>
-
-                <p>2. State two types of nutrition.</p>
-
-                <p>
-                    3. Explain the difference between autotrophic
-                    and heterotrophic nutrition.
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showBioNutritionQuiz()">
-                🧠 Take Nutrition Quiz
-            </button>
-
-            <button class="topic" onclick="showBiology()">
-                ← Back to Biology
-            </button>
-
         </div>
+
+    </div>
     `;
 }
 
 
-function showBioNutritionQuiz() {
+/* =========================
+   DIGESTIVE SYSTEM PART 2
+========================= */
+
+function showBioDigestive2() {
 
     document.getElementById("content").innerHTML = `
 
-        <div class="lesson">
+    <div class="card lesson">
 
-            <h2>🧠 Nutrition Quiz</h2>
+        <button class="back-btn" onclick="showBiology()">← Back to Biology</button>
 
+        <h2>Digestive System — Part 2</h2>
+
+        <h3>Digestion in the Stomach</h3>
+
+        <p>
+            After food is swallowed, it moves through the oesophagus
+            by <span class="term">peristalsis</span> and enters the stomach.
+        </p>
+
+        <p>
+            The stomach temporarily stores food and mixes it with
+            gastric juice. Gastric juice contains substances including
+            <span class="term">pepsin</span> and hydrochloric acid.
+        </p>
+
+        <p>
+            Pepsin begins the digestion of proteins, while hydrochloric
+            acid provides an acidic medium and helps destroy harmful
+            microorganisms.
+        </p>
+
+        <h3>The Small Intestine</h3>
+
+        <p>
+            The partly digested food enters the duodenum. Here it mixes
+            with pancreatic juice and bile.
+        </p>
+
+        <p>
+            Pancreatic enzymes such as amylase, lipase and trypsin continue
+            digestion. <span class="term">Bile</span>, produced by the liver,
+            helps in the <span class="term">emulsification of fats</span>.
+        </p>
+
+        <h3>Absorption</h3>
+
+        <p>
+            The small intestine contains numerous tiny finger-like
+            projections called <span class="term">villi</span>.
+            They greatly increase the surface area for absorption.
+        </p>
+
+        <p>
+            Digested nutrients such as glucose and amino acids enter
+            the blood through the villi, while products of fat digestion
+            enter the <span class="term">lacteals</span>.
+        </p>
+
+        <h3>End Products of Digestion</h3>
+
+        <p>
+            Proteins are finally broken down into amino acids.
+            Fats and oils are broken down into fatty acids and glycerol,
+            while starch is ultimately converted to glucose.
+        </p>
+
+        <div class="assignment">
+            <h3>Quick Revision</h3>
             <p>
-                Choose the best answer.
+                Protein → amino acids<br>
+                Fat → fatty acids + glycerol<br>
+                Starch → glucose
             </p>
-
-            <div class="question">
-
-                <p>
-                    <strong>
-                        1. What is nutrition?
-                    </strong>
-                </p>
-
-                <label>
-                    <input type="radio" name="bn1" value="A">
-                    A. The process of breathing
-                </label>
-
-                <label>
-                    <input type="radio" name="bn1" value="B">
-                    B. The process of obtaining and using food
-                </label>
-
-                <label>
-                    <input type="radio" name="bn1" value="C">
-                    C. The process of removing waste
-                </label>
-
-                <label>
-                    <input type="radio" name="bn1" value="D">
-                    D. The process of reproduction
-                </label>
-
-            </div>
-
-
-            <div class="question">
-
-                <p>
-                    <strong>
-                        2. Which type of nutrition allows an organism
-                        to make its own food?
-                    </strong>
-                </p>
-
-                <label>
-                    <input type="radio" name="bn2" value="A">
-                    A. Heterotrophic
-                </label>
-
-                <label>
-                    <input type="radio" name="bn2" value="B">
-                    B. Autotrophic
-                </label>
-
-                <label>
-                    <input type="radio" name="bn2" value="C">
-                    C. Parasitic
-                </label>
-
-                <label>
-                    <input type="radio" name="bn2" value="D">
-                    D. Saprophytic
-                </label>
-
-            </div>
-
-
-            <div class="question">
-
-                <p>
-                    <strong>
-                        3. Which is an example of an autotrophic organism?
-                    </strong>
-                </p>
-
-                <label>
-                    <input type="radio" name="bn3" value="A">
-                    A. Human
-                </label>
-
-                <label>
-                    <input type="radio" name="bn3" value="B">
-                    B. Lion
-                </label>
-
-                <label>
-                    <input type="radio" name="bn3" value="C">
-                    C. Green plant
-                </label>
-
-                <label>
-                    <input type="radio" name="bn3" value="D">
-                    D. Dog
-                </label>
-
-            </div>
-
-
-            <button class="topic" onclick="checkBioNutritionQuiz()">
-                ✅ Submit Quiz
-            </button>
-
-            <div id="quizResult"></div>
-
-            <button class="topic" onclick="showBioNutrition()">
-                ← Back to Nutrition
-            </button>
-
         </div>
+
+    </div>
     `;
 }
 
 
-function checkBioNutritionQuiz() {
+/* =========================
+   TRANSPORT SYSTEM PART 1
+========================= */
 
-    let score = 0;
-
-    if (
-        document.querySelector('input[name="bn1"]:checked')?.value === "B"
-    ) {
-        score++;
-    }
-
-    if (
-        document.querySelector('input[name="bn2"]:checked')?.value === "B"
-    ) {
-        score++;
-    }
-
-    if (
-        document.querySelector('input[name="bn3"]:checked')?.value === "C"
-    ) {
-        score++;
-    }
-
-    document.getElementById("quizResult").innerHTML = `
-
-        <div class="score">
-
-            <h3>🎉 Quiz Complete!</h3>
-
-            <p>
-                Your score is
-                <strong>${score}/3</strong>
-            </p>
-
-            <p>
-                ${
-                    score === 3
-                    ? "Excellent work! 🌟"
-                    : "Good effort! Review the lesson and try again. 💪"
-                }
-            </p>
-
-        </div>
-
-    `;
-}
-
-
-function showBioEnzymes() {
+function showBioTransport1() {
 
     document.getElementById("content").innerHTML = `
 
-        <div class="lesson">
+    <div class="card lesson">
 
-            <h2>🧪 Biology — Enzymes</h2>
+        <button class="back-btn" onclick="showBiology()">← Back to Biology</button>
 
-            <h3>What are Enzymes?</h3>
+        <h2>Transport System — Part 1</h2>
 
+        <h3>Meaning of Transport</h3>
+
+        <p>
+            <span class="term">Transport</span> is the movement of substances
+            from places where they are produced or absorbed to places where
+            they are needed, stored or removed from the body.
+        </p>
+
+        <h3>Why Transport is Necessary</h3>
+
+        <p>Transport systems are important because cells need materials such as:</p>
+
+        <ul>
+            <li>Oxygen for respiration</li>
+            <li>Water</li>
+            <li>Digested food such as glucose and amino acids</li>
+            <li>Mineral salts</li>
+            <li>Hormones</li>
+        </ul>
+
+        <p>
+            Transport systems also remove waste products such as
+            carbon dioxide, excess water and nitrogenous wastes.
+        </p>
+
+        <h3>Transport in Simple Organisms</h3>
+
+        <p>
+            Organisms such as Amoeba and Paramecium are small and have a
+            large surface-area-to-volume ratio. They can therefore exchange
+            many substances directly with their surroundings by
+            <span class="term">diffusion</span>.
+        </p>
+
+        <h3>Why Large Organisms Need Transport Systems</h3>
+
+        <p>
+            As organisms become larger, their surface-area-to-volume ratio
+            decreases. Diffusion alone becomes too slow to supply every cell
+            with enough materials.
+        </p>
+
+        <p>
+            Multicellular organisms therefore develop specialised transport
+            systems to move substances quickly around the body.
+        </p>
+
+        <div class="assignment">
+            <h3>Quick Revision</h3>
             <p>
-                Enzymes are biological catalysts produced by living
-                organisms. They speed up chemical reactions without
-                being used up in the reaction.
+                Small organisms can rely heavily on diffusion, while larger
+                organisms need specialised transport systems.
             </p>
-
-            <h3>Properties of Enzymes</h3>
-
-            <ul>
-                <li>They are biological catalysts.</li>
-                <li>They are usually proteins.</li>
-                <li>They are specific in their action.</li>
-                <li>Temperature affects their activity.</li>
-                <li>pH affects their activity.</li>
-            </ul>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. Define an enzyme.
-                </p>
-
-                <p>
-                    2. State three properties of enzymes.
-                </p>
-
-                <p>
-                    3. Explain why temperature affects enzyme activity.
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showBiology()">
-                ← Back to Biology
-            </button>
-
         </div>
+
+    </div>
     `;
 }
 
 
-function showBioDentition() {
+/* =========================
+   TRANSPORT SYSTEM PART 2
+========================= */
+
+function showBioTransport2() {
 
     document.getElementById("content").innerHTML = `
 
-        <div class="lesson">
+    <div class="card lesson">
 
-            <h2>🦷 Biology — Dentition</h2>
+        <button class="back-btn" onclick="showBiology()">← Back to Biology</button>
 
-            <h3>Meaning of Dentition</h3>
+        <h2>Transport System — Part 2</h2>
 
+        <h3>Transport in Mammals</h3>
+
+        <p>
+            Mammals have a specialised circulatory system involving the
+            <span class="term">heart</span>, blood vessels and blood.
+            The blood transports substances around the body.
+        </p>
+
+        <h3>Blood</h3>
+
+        <p>
+            Blood consists of a liquid part called
+            <span class="term">plasma</span> and blood cells.
+            Plasma carries dissolved substances such as digested food,
+            hormones, salts, waste products and some gases.
+        </p>
+
+        <h3>Main Blood Cells</h3>
+
+        <ul>
+            <li>
+                <b>Red blood cells:</b> transport oxygen using haemoglobin.
+            </li>
+
+            <li>
+                <b>White blood cells:</b> help defend the body against
+                infection.
+            </li>
+
+            <li>
+                <b>Platelets:</b> help in blood clotting.
+            </li>
+        </ul>
+
+        <h3>Blood Vessels</h3>
+
+        <p>
+            The three major types of blood vessels are
+            <span class="term">arteries</span>,
+            <span class="term">veins</span> and
+            <span class="term">capillaries</span>.
+        </p>
+
+        <p>
+            Arteries generally carry blood away from the heart.
+            Veins generally carry blood towards the heart.
+            Capillaries are very small vessels where exchange of materials
+            occurs between the blood and body tissues.
+        </p>
+
+        <h3>Transport in Plants</h3>
+
+        <p>
+            Plants transport water and mineral salts from the roots to other
+            parts of the plant. Manufactured food is also transported from
+            areas where it is produced to areas where it is needed.
+        </p>
+
+        <p>
+            The movement of manufactured food in plants is called
+            <span class="term">translocation</span>, while the loss of water
+            vapour from leaves is known as <span class="term">transpiration</span>.
+        </p>
+
+        <div class="assignment">
+            <h3>Quick Revision</h3>
             <p>
-                Dentition refers to the number, arrangement and
-                types of teeth found in an organism.
+                Blood → main transport medium in mammals.<br>
+                Arteries → away from heart.<br>
+                Veins → towards heart.<br>
+                Capillaries → exchange of materials.
             </p>
-
-            <h3>Types of Human Teeth</h3>
-
-            <ul>
-                <li><strong>Incisors</strong> — used mainly for cutting.</li>
-                <li><strong>Canines</strong> — used mainly for tearing.</li>
-                <li><strong>Premolars</strong> — help crush food.</li>
-                <li><strong>Molars</strong> — help grind food.</li>
-            </ul>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. Define dentition.
-                </p>
-
-                <p>
-                    2. Name the four types of human teeth.
-                </p>
-
-                <p>
-                    3. State one function of incisors.
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showBiology()">
-                ← Back to Biology
-            </button>
-
         </div>
-    `;
-}
 
-
-function showBioRespiration() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>🫁 Biology — Respiration</h2>
-
-            <h3>Meaning of Respiration</h3>
-
-            <p>
-                Respiration is the process by which cells release
-                energy from food.
-            </p>
-
-            <h3>Aerobic Respiration</h3>
-
-            <p>
-                Aerobic respiration uses oxygen to release energy
-                from food.
-            </p>
-
-            <h3>Anaerobic Respiration</h3>
-
-            <p>
-                Anaerobic respiration releases energy without
-                using oxygen.
-            </p>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. Define respiration.
-                </p>
-
-                <p>
-                    2. Differentiate between aerobic and anaerobic
-                    respiration.
-                </p>
-
-                <p>
-                    3. State why respiration is important.
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showBiology()">
-                ← Back to Biology
-            </button>
-
-        </div>
-    `;
-}
-
-
-function showBioTransport() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>❤️ Biology — Transport System</h2>
-
-            <h3>Meaning</h3>
-
-            <p>
-                Transport involves the movement of substances
-                from one part of an organism to another.
-            </p>
-
-            <h3>Transport in Humans</h3>
-
-            <p>
-                The circulatory system transports substances such
-                as oxygen, nutrients and waste products around the body.
-            </p>
-
-            <h3>Blood</h3>
-
-            <ul>
-                <li>Red blood cells</li>
-                <li>White blood cells</li>
-                <li>Platelets</li>
-                <li>Plasma</li>
-            </ul>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. What is transport?
-                </p>
-
-                <p>
-                    2. Name four components of blood.
-                </p>
-
-                <p>
-                    3. State one function of red blood cells.
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showBiology()">
-                ← Back to Biology
-            </button>
-
-        </div>
-    `;
-}
-
-
-function showBioPhotosynthesis() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>🌱 Biology — Photosynthesis</h2>
-
-            <h3>Meaning</h3>
-
-            <p>
-                Photosynthesis is the process by which green plants
-                manufacture food using light energy.
-            </p>
-
-            <h3>Requirements</h3>
-
-            <ul>
-                <li>Light</li>
-                <li>Carbon dioxide</li>
-                <li>Water</li>
-                <li>Chlorophyll</li>
-            </ul>
-
-            <h3>Importance</h3>
-
-            <p>
-                Photosynthesis provides food for plants and contributes
-                oxygen to the atmosphere.
-            </p>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. Define photosynthesis.
-                </p>
-
-                <p>
-                    2. State four requirements for photosynthesis.
-                </p>
-
-                <p>
-                    3. State two importance of photosynthesis.
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showBiology()">
-                ← Back to Biology
-            </button>
-
-        </div>
+    </div>
     `;
 }
 
@@ -876,466 +635,135 @@ function showChemistry() {
 
     document.getElementById("content").innerHTML = `
 
-        <div class="lesson">
+    <div class="card">
 
-            <h2>⚗️ Chemistry</h2>
+        <button class="back-btn" onclick="goHome()">← Back to Subjects</button>
 
-            <p>
-                Choose a Chemistry topic.
-            </p>
+        <h2>⚗️ Chemistry</h2>
 
-            <button class="topic" onclick="showChemAtomic()">
-                ⚛️ Atomic Structure
+        <p>Choose a topic to revise.</p>
+
+        <div class="topic-grid">
+
+            <button class="topic-btn" onclick="showChemAtomic()">
+                Atomic Structure
             </button>
 
-            <button class="topic" onclick="showChemBonding()">
-                🔗 Chemical Bonding
+            <button class="topic-btn" onclick="showChemBonding()">
+                Chemical Bonding
             </button>
 
-            <button class="topic" onclick="showChemGas()">
-                💨 Gas Laws
+            <button class="topic-btn" onclick="showChemGas()">
+                Gas Laws
             </button>
 
-            <button class="topic" onclick="showChemAcids()">
-                🧪 Acids and Bases
+            <button class="topic-btn" onclick="showChemAcids()">
+                Acids and Bases
             </button>
 
-            <button class="topic" onclick="showChemPeriodic()">
-                🧩 Periodic Table
+            <button class="topic-btn" onclick="showChemPeriodic()">
+                Periodic Table
             </button>
 
-            <button class="topic" onclick="showChemQuiz()">
-                🧠 Chemistry Quiz
+            <button class="topic-btn" onclick="showChemQuiz()">
+                📝 Chemistry Quiz
             </button>
 
         </div>
+
+    </div>
     `;
 }
-
 
 function showChemAtomic() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>⚛️ Atomic Structure</h2>
-
-            <p>
-                An atom is the smallest unit of an element that
-                retains the chemical properties of that element.
-            </p>
-
-            <h3>Subatomic Particles</h3>
-
-            <ul>
-                <li><strong>Protons</strong> — positively charged.</li>
-                <li><strong>Neutrons</strong> — have no charge.</li>
-                <li><strong>Electrons</strong> — negatively charged.</li>
-            </ul>
-
-            <h3>Quick Revision</h3>
-
-            <p>
-                The nucleus contains protons and neutrons.
-                Electrons occupy regions around the nucleus.
-            </p>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. Define an atom.
-                </p>
-
-                <p>
-                    2. Name the three main subatomic particles.
-                </p>
-
-                <p>
-                    3. State the charge of each particle.
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showChemistry()">
-                ← Back to Chemistry
-            </button>
-
-        </div>
-    `;
+    simpleLesson(
+        "Atomic Structure",
+        "Atoms are the basic units of matter. An atom contains a nucleus made up of protons and neutrons, surrounded by electrons.",
+        "Protons have positive charge, neutrons have no charge, and electrons have negative charge."
+    );
 }
-
 
 function showChemBonding() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>🔗 Chemical Bonding</h2>
-
-            <h3>Meaning</h3>
-
-            <p>
-                Chemical bonding is the force that holds atoms or
-                ions together in a substance.
-            </p>
-
-            <h3>Major Types</h3>
-
-            <ul>
-                <li><strong>Ionic bonding</strong></li>
-                <li><strong>Covalent bonding</strong></li>
-                <li><strong>Metallic bonding</strong></li>
-            </ul>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. What is chemical bonding?
-                </p>
-
-                <p>
-                    2. Name three types of chemical bonding.
-                </p>
-
-                <p>
-                    3. Distinguish between ionic and covalent bonding.
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showChemistry()">
-                ← Back to Chemistry
-            </button>
-
-        </div>
-    `;
+    simpleLesson(
+        "Chemical Bonding",
+        "Chemical bonding is the force that holds atoms or ions together in a substance.",
+        "Important types include ionic bonding, covalent bonding and metallic bonding."
+    );
 }
-
 
 function showChemGas() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>💨 Gas Laws</h2>
-
-            <h3>Boyle's Law</h3>
-
-            <p>
-                At constant temperature, the pressure of a fixed mass
-                of gas is inversely proportional to its volume.
-            </p>
-
-            <h3>Charles' Law</h3>
-
-            <p>
-                At constant pressure, the volume of a fixed mass of gas
-                is directly proportional to its absolute temperature.
-            </p>
-
-            <h3>Pressure Law</h3>
-
-            <p>
-                At constant volume, the pressure of a fixed mass of gas
-                is directly proportional to its absolute temperature.
-            </p>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. State Boyle's law.
-                </p>
-
-                <p>
-                    2. State Charles' law.
-                </p>
-
-                <p>
-                    3. What must remain constant in Boyle's law?
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showChemistry()">
-                ← Back to Chemistry
-            </button>
-
-        </div>
-    `;
+    simpleLesson(
+        "Gas Laws",
+        "Gas laws describe the relationship between pressure, volume and temperature of gases.",
+        "Important relationships include Boyle's law and Charles' law."
+    );
 }
-
 
 function showChemAcids() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>🧪 Acids and Bases</h2>
-
-            <h3>Acids</h3>
-
-            <p>
-                Acids are substances that produce hydrogen ions
-                in aqueous solution.
-            </p>
-
-            <h3>Bases</h3>
-
-            <p>
-                Bases are substances that react with acids and can
-                neutralize them.
-            </p>
-
-            <h3>pH Scale</h3>
-
-            <p>
-                The pH scale is used to indicate how acidic or alkaline
-                a solution is.
-            </p>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. Define an acid.
-                </p>
-
-                <p>
-                    2. Define a base.
-                </p>
-
-                <p>
-                    3. What is the purpose of the pH scale?
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showChemistry()">
-                ← Back to Chemistry
-            </button>
-
-        </div>
-    `;
+    simpleLesson(
+        "Acids and Bases",
+        "Acids are substances that produce hydrogen ions in aqueous solution, while bases react with acids and can neutralise them.",
+        "The pH scale is commonly used to describe how acidic or alkaline a solution is."
+    );
 }
-
 
 function showChemPeriodic() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>🧩 Periodic Table</h2>
-
-            <p>
-                The periodic table is an arrangement of elements
-                according to increasing atomic number and recurring
-                chemical properties.
-            </p>
-
-            <h3>Groups</h3>
-
-            <p>
-                Elements in the same group generally have similar
-                chemical properties because they have related
-                outer-electron arrangements.
-            </p>
-
-            <h3>Periods</h3>
-
-            <p>
-                Horizontal rows of the periodic table are called periods.
-            </p>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. What is the periodic table?
-                </p>
-
-                <p>
-                    2. What are vertical columns called?
-                </p>
-
-                <p>
-                    3. What are horizontal rows called?
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showChemistry()">
-                ← Back to Chemistry
-            </button>
-
-        </div>
-    `;
+    simpleLesson(
+        "Periodic Table",
+        "The periodic table arranges elements according to their atomic numbers and repeating chemical properties.",
+        "Elements in the same group often have similar chemical properties."
+    );
 }
-
 
 function showChemQuiz() {
 
     document.getElementById("content").innerHTML = `
 
-        <div class="lesson">
+    <div class="card quiz">
 
-            <h2>🧠 Chemistry Quiz</h2>
+        <button class="back-btn" onclick="showChemistry()">← Back to Chemistry</button>
 
-            <div class="question">
+        <h2>Chemistry Quiz</h2>
 
-                <p>
-                    <strong>
-                        1. Which particle has a negative charge?
-                    </strong>
-                </p>
-
-                <label>
-                    <input type="radio" name="cq1" value="A">
-                    A. Proton
-                </label>
-
-                <label>
-                    <input type="radio" name="cq1" value="B">
-                    B. Neutron
-                </label>
-
-                <label>
-                    <input type="radio" name="cq1" value="C">
-                    C. Electron
-                </label>
-
-                <label>
-                    <input type="radio" name="cq1" value="D">
-                    D. Nucleus
-                </label>
-
-            </div>
-
-            <div class="question">
-
-                <p>
-                    <strong>
-                        2. Which law relates gas pressure and volume
-                        at constant temperature?
-                    </strong>
-                </p>
-
-                <label>
-                    <input type="radio" name="cq2" value="A">
-                    A. Boyle's law
-                </label>
-
-                <label>
-                    <input type="radio" name="cq2" value="B">
-                    B. Charles' law
-                </label>
-
-                <label>
-                    <input type="radio" name="cq2" value="C">
-                    C. Ohm's law
-                </label>
-
-                <label>
-                    <input type="radio" name="cq2" value="D">
-                    D. Hooke's law
-                </label>
-
-            </div>
-
-            <div class="question">
-
-                <p>
-                    <strong>
-                        3. What is the pH scale used to indicate?
-                    </strong>
-                </p>
-
-                <label>
-                    <input type="radio" name="cq3" value="A">
-                    A. Mass
-                </label>
-
-                <label>
-                    <input type="radio" name="cq3" value="B">
-                    B. Acidity or alkalinity
-                </label>
-
-                <label>
-                    <input type="radio" name="cq3" value="C">
-                    C. Density
-                </label>
-
-                <label>
-                    <input type="radio" name="cq3" value="D">
-                    D. Temperature
-                </label>
-
-            </div>
-
-            <button class="topic" onclick="checkChemQuiz()">
-                ✅ Submit Quiz
-            </button>
-
-            <div id="chemQuizResult"></div>
-
-            <button class="topic" onclick="showChemistry()">
-                ← Back to Chemistry
-            </button>
-
+        <div class="question">
+            <p><b>1. What is the charge of a proton?</b></p>
+            <label><input type="radio" name="cq1" value="a"> Negative</label>
+            <label><input type="radio" name="cq1" value="b"> Positive</label>
+            <label><input type="radio" name="cq1" value="c"> Neutral</label>
         </div>
+
+        <div class="question">
+            <p><b>2. Which particle has no charge?</b></p>
+            <label><input type="radio" name="cq2" value="a"> Proton</label>
+            <label><input type="radio" name="cq2" value="b"> Electron</label>
+            <label><input type="radio" name="cq2" value="c"> Neutron</label>
+        </div>
+
+        <div class="question">
+            <p><b>3. What does the periodic table arrange?</b></p>
+            <label><input type="radio" name="cq3" value="a"> Elements</label>
+            <label><input type="radio" name="cq3" value="b"> Cells</label>
+            <label><input type="radio" name="cq3" value="c"> Organs</label>
+        </div>
+
+        <button onclick="checkChemQuiz()">Check Score</button>
+
+        <div id="chemScore" class="score"></div>
+
+    </div>
     `;
 }
-
 
 function checkChemQuiz() {
 
     let score = 0;
 
-    if (
-        document.querySelector('input[name="cq1"]:checked')?.value === "C"
-    ) score++;
+    if (document.querySelector('input[name="cq1"]:checked')?.value === "b") score++;
+    if (document.querySelector('input[name="cq2"]:checked')?.value === "c") score++;
+    if (document.querySelector('input[name="cq3"]:checked')?.value === "a") score++;
 
-    if (
-        document.querySelector('input[name="cq2"]:checked')?.value === "A"
-    ) score++;
-
-    if (
-        document.querySelector('input[name="cq3"]:checked')?.value === "B"
-    ) score++;
-
-    document.getElementById("chemQuizResult").innerHTML = `
-
-        <div class="score">
-
-            <h3>🎉 Chemistry Quiz Complete!</h3>
-
-            <p>
-                Your score is
-                <strong>${score}/3</strong>
-            </p>
-
-            <p>
-                ${
-                    score === 3
-                    ? "Excellent work! 🌟"
-                    : "Good effort! Review the topics and try again. 💪"
-                }
-            </p>
-
-        </div>
-    `;
+    document.getElementById("chemScore").innerText =
+        "You scored " + score + " / 3";
 }
 
 
@@ -1347,471 +775,133 @@ function showPhysics() {
 
     document.getElementById("content").innerHTML = `
 
-        <div class="lesson">
+    <div class="card">
 
-            <h2>⚡ Physics</h2>
+        <button class="back-btn" onclick="goHome()">← Back to Subjects</button>
 
-            <p>
-                Choose a Physics topic.
-            </p>
+        <h2>⚡ Physics</h2>
 
-            <button class="topic" onclick="showPhysicsHeat()">
-                🔥 Heat Transfer
+        <div class="topic-grid">
+
+            <button class="topic-btn" onclick="showPhysicsHeat()">
+                Heat Transfer
             </button>
 
-            <button class="topic" onclick="showPhysicsElectricity()">
-                🔌 Electricity
+            <button class="topic-btn" onclick="showPhysicsElectricity()">
+                Electricity
             </button>
 
-            <button class="topic" onclick="showPhysicsOhm()">
-                📏 Ohm's Law
+            <button class="topic-btn" onclick="showPhysicsOhm()">
+                Ohm's Law
             </button>
 
-            <button class="topic" onclick="showPhysicsMotion()">
-                🚗 Motion
+            <button class="topic-btn" onclick="showPhysicsMotion()">
+                Motion
             </button>
 
-            <button class="topic" onclick="showPhysicsWaves()">
-                🌊 Waves
+            <button class="topic-btn" onclick="showPhysicsWaves()">
+                Waves
             </button>
 
-            <button class="topic" onclick="showPhysicsQuiz()">
-                🧠 Physics Quiz
+            <button class="topic-btn" onclick="showPhysicsQuiz()">
+                📝 Physics Quiz
             </button>
 
         </div>
+
+    </div>
     `;
 }
-
 
 function showPhysicsHeat() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>🔥 Physics — Heat Transfer</h2>
-
-            <h3>Conduction</h3>
-
-            <p>
-                Conduction is the transfer of heat through a substance
-                without bulk movement of the substance.
-            </p>
-
-            <h3>Convection</h3>
-
-            <p>
-                Convection involves heat transfer through the movement
-                of a fluid.
-            </p>
-
-            <h3>Radiation</h3>
-
-            <p>
-                Radiation transfers heat through electromagnetic waves
-                and does not require a material medium.
-            </p>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. Define conduction.
-                </p>
-
-                <p>
-                    2. Define convection.
-                </p>
-
-                <p>
-                    3. Name the three methods of heat transfer.
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showPhysics()">
-                ← Back to Physics
-            </button>
-
-        </div>
-    `;
+    simpleLesson(
+        "Heat Transfer",
+        "Heat is transferred from a hotter region to a colder region.",
+        "The three main methods are conduction, convection and radiation."
+    );
 }
-
 
 function showPhysicsElectricity() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>🔌 Physics — Electricity</h2>
-
-            <h3>Electric Current</h3>
-
-            <p>
-                Electric current is the rate of flow of electric charge.
-            </p>
-
-            <h3>Voltage</h3>
-
-            <p>
-                Voltage is the potential difference between two points
-                in an electric circuit.
-            </p>
-
-            <h3>Resistance</h3>
-
-            <p>
-                Resistance is the opposition to the flow of electric current.
-            </p>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. Define electric current.
-                </p>
-
-                <p>
-                    2. Define voltage.
-                </p>
-
-                <p>
-                    3. What is electrical resistance?
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showPhysics()">
-                ← Back to Physics
-            </button>
-
-        </div>
-    `;
+    simpleLesson(
+        "Electricity",
+        "Electric current is the rate of flow of electric charge through a conductor.",
+        "Current is measured in amperes (A)."
+    );
 }
-
 
 function showPhysicsOhm() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>📏 Physics — Ohm's Law</h2>
-
-            <h3>Statement</h3>
-
-            <p>
-                Ohm's law states that, at constant temperature,
-                the current through a conductor is directly proportional
-                to the potential difference across it.
-            </p>
-
-            <h3>Formula</h3>
-
-            <p>
-                V = IR
-            </p>
-
-            <p>
-                V = voltage, I = current, R = resistance.
-            </p>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. State Ohm's law.
-                </p>
-
-                <p>
-                    2. Write the formula for Ohm's law.
-                </p>
-
-                <p>
-                    3. State what V, I and R represent.
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showPhysics()">
-                ← Back to Physics
-            </button>
-
-        </div>
-    `;
+    simpleLesson(
+        "Ohm's Law",
+        "Ohm's law states that, at constant temperature, current through a conductor is directly proportional to the potential difference across it.",
+        "The formula is V = IR."
+    );
 }
-
 
 function showPhysicsMotion() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>🚗 Physics — Motion</h2>
-
-            <h3>Meaning of Motion</h3>
-
-            <p>
-                Motion is the change in position of an object with time
-                relative to a reference point.
-            </p>
-
-            <h3>Speed</h3>
-
-            <p>
-                Speed is the distance travelled per unit time.
-            </p>
-
-            <p>
-                Speed = Distance ÷ Time
-            </p>
-
-            <h3>Velocity</h3>
-
-            <p>
-                Velocity is speed in a specified direction.
-            </p>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. Define motion.
-                </p>
-
-                <p>
-                    2. Define speed.
-                </p>
-
-                <p>
-                    3. Distinguish between speed and velocity.
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showPhysics()">
-                ← Back to Physics
-            </button>
-
-        </div>
-    `;
+    simpleLesson(
+        "Motion",
+        "Motion is the change in position of an object with time.",
+        "Speed is distance divided by time, while velocity includes direction."
+    );
 }
-
 
 function showPhysicsWaves() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>🌊 Physics — Waves</h2>
-
-            <h3>Meaning</h3>
-
-            <p>
-                A wave is a disturbance that transfers energy from
-                one place to another.
-            </p>
-
-            <h3>Types of Waves</h3>
-
-            <ul>
-                <li>Transverse waves</li>
-                <li>Longitudinal waves</li>
-            </ul>
-
-            <h3>Examples</h3>
-
-            <p>
-                Light is an example of a transverse electromagnetic wave,
-                while sound in air is a longitudinal mechanical wave.
-            </p>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. Define a wave.
-                </p>
-
-                <p>
-                    2. Name two types of waves.
-                </p>
-
-                <p>
-                    3. Give one example of each type.
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showPhysics()">
-                ← Back to Physics
-            </button>
-
-        </div>
-    `;
+    simpleLesson(
+        "Waves",
+        "A wave is a disturbance that transfers energy from one point to another.",
+        "Examples include sound waves, water waves and electromagnetic waves."
+    );
 }
-
 
 function showPhysicsQuiz() {
 
     document.getElementById("content").innerHTML = `
 
-        <div class="lesson">
+    <div class="card quiz">
 
-            <h2>🧠 Physics Quiz</h2>
+        <button class="back-btn" onclick="showPhysics()">← Back to Physics</button>
 
-            <div class="question">
+        <h2>Physics Quiz</h2>
 
-                <p>
-                    <strong>
-                        1. Which method of heat transfer can occur
-                        through empty space?
-                    </strong>
-                </p>
-
-                <label>
-                    <input type="radio" name="pq1" value="A">
-                    A. Conduction
-                </label>
-
-                <label>
-                    <input type="radio" name="pq1" value="B">
-                    B. Convection
-                </label>
-
-                <label>
-                    <input type="radio" name="pq1" value="C">
-                    C. Radiation
-                </label>
-
-                <label>
-                    <input type="radio" name="pq1" value="D">
-                    D. Evaporation
-                </label>
-
-            </div>
-
-            <div class="question">
-
-                <p>
-                    <strong>
-                        2. Which equation represents Ohm's law?
-                    </strong>
-                </p>
-
-                <label>
-                    <input type="radio" name="pq2" value="A">
-                    A. V = IR
-                </label>
-
-                <label>
-                    <input type="radio" name="pq2" value="B">
-                    B. P = IV²
-                </label>
-
-                <label>
-                    <input type="radio" name="pq2" value="C">
-                    C. F = ma²
-                </label>
-
-                <label>
-                    <input type="radio" name="pq2" value="D">
-                    D. E = mc
-                </label>
-
-            </div>
-
-            <div class="question">
-
-                <p>
-                    <strong>
-                        3. What is speed?
-                    </strong>
-                </p>
-
-                <label>
-                    <input type="radio" name="pq3" value="A">
-                    A. Distance divided by time
-                </label>
-
-                <label>
-                    <input type="radio" name="pq3" value="B">
-                    B. Time divided by distance
-                </label>
-
-                <label>
-                    <input type="radio" name="pq3" value="C">
-                    C. Mass divided by time
-                </label>
-
-                <label>
-                    <input type="radio" name="pq3" value="D">
-                    D. Force divided by distance
-                </label>
-
-            </div>
-
-            <button class="topic" onclick="checkPhysicsQuiz()">
-                ✅ Submit Quiz
-            </button>
-
-            <div id="physicsQuizResult"></div>
-
-            <button class="topic" onclick="showPhysics()">
-                ← Back to Physics
-            </button>
-
+        <div class="question">
+            <p><b>1. What is the SI unit of current?</b></p>
+            <label><input type="radio" name="pq1" value="a"> Volt</label>
+            <label><input type="radio" name="pq1" value="b"> Ampere</label>
+            <label><input type="radio" name="pq1" value="c"> Ohm</label>
         </div>
+
+        <div class="question">
+            <p><b>2. Which formula represents Ohm's law?</b></p>
+            <label><input type="radio" name="pq2" value="a"> V = IR</label>
+            <label><input type="radio" name="pq2" value="b"> P = IV</label>
+            <label><input type="radio" name="pq2" value="c"> F = ma</label>
+        </div>
+
+        <div class="question">
+            <p><b>3. Which method of heat transfer can occur through empty space?</b></p>
+            <label><input type="radio" name="pq3" value="a"> Conduction</label>
+            <label><input type="radio" name="pq3" value="b"> Convection</label>
+            <label><input type="radio" name="pq3" value="c"> Radiation</label>
+        </div>
+
+        <button onclick="checkPhysicsQuiz()">Check Score</button>
+
+        <div id="physicsScore" class="score"></div>
+
+    </div>
     `;
 }
-
 
 function checkPhysicsQuiz() {
 
     let score = 0;
 
-    if (
-        document.querySelector('input[name="pq1"]:checked')?.value === "C"
-    ) score++;
+    if (document.querySelector('input[name="pq1"]:checked')?.value === "b") score++;
+    if (document.querySelector('input[name="pq2"]:checked')?.value === "a") score++;
+    if (document.querySelector('input[name="pq3"]:checked')?.value === "c") score++;
 
-    if (
-        document.querySelector('input[name="pq2"]:checked')?.value === "A"
-    ) score++;
-
-    if (
-        document.querySelector('input[name="pq3"]:checked')?.value === "A"
-    ) score++;
-
-    document.getElementById("physicsQuizResult").innerHTML = `
-
-        <div class="score">
-
-            <h3>🎉 Physics Quiz Complete!</h3>
-
-            <p>
-                Your score is
-                <strong>${score}/3</strong>
-            </p>
-
-            <p>
-                ${
-                    score === 3
-                    ? "Excellent work! 🌟"
-                    : "Good effort! Review the topics and try again. 💪"
-                }
-            </p>
-
-        </div>
-    `;
+    document.getElementById("physicsScore").innerText =
+        "You scored " + score + " / 3";
 }
 
 
@@ -1823,468 +913,186 @@ function showMath() {
 
     document.getElementById("content").innerHTML = `
 
-        <div class="lesson">
+    <div class="card">
 
-            <h2>📐 Mathematics</h2>
+        <button class="back-btn" onclick="goHome()">← Back to Subjects</button>
 
-            <p>
-                Choose a Mathematics topic.
-            </p>
+        <h2>📐 Mathematics</h2>
 
-            <button class="topic" onclick="showMathAlgebra()">
-                🔢 Algebra
+        <div class="topic-grid">
+
+            <button class="topic-btn" onclick="showMathAlgebra()">
+                Algebra
             </button>
 
-            <button class="topic" onclick="showMathQuadratic()">
-                🟦 Quadratic Equations
+            <button class="topic-btn" onclick="showMathQuadratic()">
+                Quadratic Equations
             </button>
 
-            <button class="topic" onclick="showMathTrig()">
-                📐 Trigonometry
+            <button class="topic-btn" onclick="showMathTrig()">
+                Trigonometry
             </button>
 
-            <button class="topic" onclick="showMathStatistics()">
-                📊 Statistics
+            <button class="topic-btn" onclick="showMathStatistics()">
+                Statistics
             </button>
 
-            <button class="topic" onclick="showMathProbability()">
-                🎲 Probability
+            <button class="topic-btn" onclick="showMathProbability()">
+                Probability
             </button>
 
-            <button class="topic" onclick="showMathQuiz()">
-                🧠 Mathematics Quiz
+            <button class="topic-btn" onclick="showMathQuiz()">
+                📝 Mathematics Quiz
             </button>
 
         </div>
+
+    </div>
     `;
 }
-
 
 function showMathAlgebra() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>🔢 Mathematics — Algebra</h2>
-
-            <h3>Meaning</h3>
-
-            <p>
-                Algebra is a branch of mathematics that uses letters,
-                symbols and numbers to represent quantities and
-                relationships.
-            </p>
-
-            <h3>Example</h3>
-
-            <p>
-                If x + 5 = 12, then x = 7.
-            </p>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. Solve: x + 8 = 15.
-                </p>
-
-                <p>
-                    2. Solve: 2x = 18.
-                </p>
-
-                <p>
-                    3. Solve: x − 6 = 10.
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showMath()">
-                ← Back to Mathematics
-            </button>
-
-        </div>
-    `;
+    simpleLesson(
+        "Algebra",
+        "Algebra uses letters and symbols to represent unknown numbers or quantities.",
+        "Expressions can be simplified by collecting like terms and applying algebraic rules."
+    );
 }
-
 
 function showMathQuadratic() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>🟦 Mathematics — Quadratic Equations</h2>
-
-            <h3>Meaning</h3>
-
-            <p>
-                A quadratic equation is an equation that can be written
-                in the form ax² + bx + c = 0, where a is not zero.
-            </p>
-
-            <h3>Example</h3>
-
-            <p>
-                x² − 5x + 6 = 0
-            </p>
-
-            <p>
-                This can be factorised as:
-                (x − 2)(x − 3) = 0
-            </p>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. Define a quadratic equation.
-                </p>
-
-                <p>
-                    2. Identify a, b and c in
-                    2x² + 5x − 3 = 0.
-                </p>
-
-                <p>
-                    3. Factorise x² − 7x + 12.
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showMath()">
-                ← Back to Mathematics
-            </button>
-
-        </div>
-    `;
+    simpleLesson(
+        "Quadratic Equations",
+        "A quadratic equation is an equation whose highest power of the variable is 2.",
+        "A common form is ax² + bx + c = 0."
+    );
 }
-
 
 function showMathTrig() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>📐 Mathematics — Trigonometry</h2>
-
-            <h3>Basic Ratios</h3>
-
-            <p>
-                In a right-angled triangle:
-            </p>
-
-            <ul>
-                <li>sin θ = opposite ÷ hypotenuse</li>
-                <li>cos θ = adjacent ÷ hypotenuse</li>
-                <li>tan θ = opposite ÷ adjacent</li>
-            </ul>
-
-            <h3>Memory Aid</h3>
-
-            <p>
-                SOH — CAH — TOA
-            </p>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. State the formula for sin θ.
-                </p>
-
-                <p>
-                    2. State the formula for cos θ.
-                </p>
-
-                <p>
-                    3. State the formula for tan θ.
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showMath()">
-                ← Back to Mathematics
-            </button>
-
-        </div>
-    `;
+    simpleLesson(
+        "Trigonometry",
+        "Trigonometry studies the relationship between the sides and angles of triangles.",
+        "The basic ratios are sine, cosine and tangent."
+    );
 }
-
 
 function showMathStatistics() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>📊 Mathematics — Statistics</h2>
-
-            <h3>Meaning</h3>
-
-            <p>
-                Statistics is concerned with collecting, presenting,
-                analysing and interpreting data.
-            </p>
-
-            <h3>Mean</h3>
-
-            <p>
-                Mean = Sum of observations ÷ Number of observations
-            </p>
-
-            <h3>Median</h3>
-
-            <p>
-                The median is the middle value when data is arranged
-                in order.
-            </p>
-
-            <h3>Mode</h3>
-
-            <p>
-                The mode is the value that occurs most frequently.
-            </p>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. Define mean.
-                </p>
-
-                <p>
-                    2. Define median.
-                </p>
-
-                <p>
-                    3. Define mode.
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showMath()">
-                ← Back to Mathematics
-            </button>
-
-        </div>
-    `;
+    simpleLesson(
+        "Statistics",
+        "Statistics involves collecting, organising, presenting and interpreting data.",
+        "Common measures include mean, median and mode."
+    );
 }
-
 
 function showMathProbability() {
-
-    document.getElementById("content").innerHTML = `
-
-        <div class="lesson">
-
-            <h2>🎲 Mathematics — Probability</h2>
-
-            <h3>Meaning</h3>
-
-            <p>
-                Probability is a measure of how likely an event is
-                to occur.
-            </p>
-
-            <h3>Basic Formula</h3>
-
-            <p>
-                Probability =
-                Number of favourable outcomes ÷
-                Total number of equally likely outcomes
-            </p>
-
-            <p>
-                Probability lies between 0 and 1 inclusive.
-            </p>
-
-            <div class="assignment">
-
-                <h3>📝 Assignment</h3>
-
-                <p>
-                    1. Define probability.
-                </p>
-
-                <p>
-                    2. State the basic probability formula.
-                </p>
-
-                <p>
-                    3. What is the probability of an impossible event?
-                </p>
-
-            </div>
-
-            <button class="topic" onclick="showMath()">
-                ← Back to Mathematics
-            </button>
-
-        </div>
-    `;
+    simpleLesson(
+        "Probability",
+        "Probability measures how likely an event is to happen.",
+        "Probability ranges from 0 to 1, where 0 means impossible and 1 means certain."
+    );
 }
-
 
 function showMathQuiz() {
 
     document.getElementById("content").innerHTML = `
 
-        <div class="lesson">
+    <div class="card quiz">
 
-            <h2>🧠 Mathematics Quiz</h2>
+        <button class="back-btn" onclick="showMath()">← Back to Mathematics</button>
 
-            <div class="question">
+        <h2>Mathematics Quiz</h2>
 
-                <p>
-                    <strong>
-                        1. Solve: x + 5 = 12.
-                    </strong>
-                </p>
-
-                <label>
-                    <input type="radio" name="mq1" value="A">
-                    A. 5
-                </label>
-
-                <label>
-                    <input type="radio" name="mq1" value="B">
-                    B. 6
-                </label>
-
-                <label>
-                    <input type="radio" name="mq1" value="C">
-                    C. 7
-                </label>
-
-                <label>
-                    <input type="radio" name="mq1" value="D">
-                    D. 8
-                </label>
-
-            </div>
-
-            <div class="question">
-
-                <p>
-                    <strong>
-                        2. What is the mode of 2, 3, 3, 4, 5?
-                    </strong>
-                </p>
-
-                <label>
-                    <input type="radio" name="mq2" value="A">
-                    A. 2
-                </label>
-
-                <label>
-                    <input type="radio" name="mq2" value="B">
-                    B. 3
-                </label>
-
-                <label>
-                    <input type="radio" name="mq2" value="C">
-                    C. 4
-                </label>
-
-                <label>
-                    <input type="radio" name="mq2" value="D">
-                    D. 5
-                </label>
-
-            </div>
-
-            <div class="question">
-
-                <p>
-                    <strong>
-                        3. Which formula represents tan θ
-                        in a right-angled triangle?
-                    </strong>
-                </p>
-
-                <label>
-                    <input type="radio" name="mq3" value="A">
-                    A. Adjacent ÷ hypotenuse
-                </label>
-
-                <label>
-                    <input type="radio" name="mq3" value="B">
-                    B. Opposite ÷ hypotenuse
-                </label>
-
-                <label>
-                    <input type="radio" name="mq3" value="C">
-                    C. Opposite ÷ adjacent
-                </label>
-
-                <label>
-                    <input type="radio" name="mq3" value="D">
-                    D. Hypotenuse ÷ opposite
-                </label>
-
-            </div>
-
-            <button class="topic" onclick="checkMathQuiz()">
-                ✅ Submit Quiz
-            </button>
-
-            <div id="mathQuizResult"></div>
-
-            <button class="topic" onclick="showMath()">
-                ← Back to Mathematics
-            </button>
-
+        <div class="question">
+            <p><b>1. What is the value of 2 + 3?</b></p>
+            <label><input type="radio" name="mq1" value="a"> 4</label>
+            <label><input type="radio" name="mq1" value="b"> 5</label>
+            <label><input type="radio" name="mq1" value="c"> 6</label>
         </div>
+
+        <div class="question">
+            <p><b>2. Which is a quadratic equation?</b></p>
+            <label><input type="radio" name="mq2" value="a"> x + 2 = 0</label>
+            <label><input type="radio" name="mq2" value="b"> x² + 3x + 2 = 0</label>
+            <label><input type="radio" name="mq2" value="c"> 2x = 4</label>
+        </div>
+
+        <div class="question">
+            <p><b>3. Which is a measure of central tendency?</b></p>
+            <label><input type="radio" name="mq3" value="a"> Mean</label>
+            <label><input type="radio" name="mq3" value="b"> Angle</label>
+            <label><input type="radio" name="mq3" value="c"> Radius</label>
+        </div>
+
+        <button onclick="checkMathQuiz()">Check Score</button>
+
+        <div id="mathScore" class="score"></div>
+
+    </div>
     `;
 }
-
 
 function checkMathQuiz() {
 
     let score = 0;
 
-    if (
-        document.querySelector('input[name="mq1"]:checked')?.value === "C"
-    ) score++;
+    if (document.querySelector('input[name="mq1"]:checked')?.value === "b") score++;
+    if (document.querySelector('input[name="mq2"]:checked')?.value === "b") score++;
+    if (document.querySelector('input[name="mq3"]:checked')?.value === "a") score++;
 
-    if (
-        document.querySelector('input[name="mq2"]:checked')?.value === "B"
-    ) score++;
+    document.getElementById("mathScore").innerText =
+        "You scored " + score + " / 3";
+}
 
-    if (
-        document.querySelector('input[name="mq3"]:checked')?.value === "C"
-    ) score++;
 
-    document.getElementById("mathQuizResult").innerHTML = `
+/* =========================
+   SIMPLE LESSON FUNCTION
+========================= */
 
-        <div class="score">
+function simpleLesson(title, meaning, details) {
 
-            <h3>🎉 Mathematics Quiz Complete!</h3>
+    document.getElementById("content").innerHTML = `
 
+    <div class="card lesson">
+
+        <button class="back-btn" onclick="goHome()">← Back to Subjects</button>
+
+        <h2>${title}</h2>
+
+        <h3>Introduction</h3>
+
+        <p>${meaning}</p>
+
+        <h3>What You Should Know</h3>
+
+        <p>${details}</p>
+
+        <div class="assignment">
+            <h3>Revision Tip</h3>
             <p>
-                Your score is
-                <strong>${score}/3</strong>
+                Read the definition carefully, understand the main idea,
+                and practise questions on the topic.
             </p>
-
-            <p>
-                ${
-                    score === 3
-                    ? "Excellent work! 🌟"
-                    : "Good effort! Review the topics and try again. 💪"
-                }
-            </p>
-
         </div>
+
+    </div>
     `;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+function goHome() {
+
+    document.getElementById("content").innerHTML = "";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 </script>
 
 </body>
-    </html>
+</html>
