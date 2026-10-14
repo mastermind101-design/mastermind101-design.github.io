@@ -3,185 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>My SS2 Study Hub</title>
 
 <style>
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background:
-        radial-gradient(circle at 0% 0%, rgba(37,99,235,.20), transparent 30%),
-        radial-gradient(circle at 100% 100%, rgba(124,58,237,.18), transparent 30%),
-        #050505;
-    color: #f5f5f5;
-    min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0b0f;
+  color: white;
 }
 
 header {
-    text-align: center;
-    padding: 35px 15px;
-    background: rgba(10,10,20,.92);
-    border-bottom: 1px solid rgba(100,150,255,.25);
-    box-shadow: 0 0 35px rgba(37,99,235,.12);
+  text-align: center;
+  padding: 35px 15px;
+  background: #111318;
+  border-bottom: 1px solid #333;
 }
 
-.logo {
-    font-size: 30px;
-    font-weight: bold;
-    letter-spacing: 2px;
+header h1 {
+  margin: 0 0 10px;
+  font-size: 30px;
 }
 
-.tagline {
-    margin-top: 8px;
-    color: #aab7d4;
-    font-size: 15px;
+header p {
+  margin: 0;
+  color: #aaa;
 }
 
 .container {
-    width: 92%;
-    max-width: 1050px;
-    margin: 30px auto;
+  max-width: 950px;
+  margin: auto;
+  padding: 20px;
 }
 
-.welcome {
-    background: rgba(20,20,30,.88);
-    padding: 25px;
-    border-radius: 18px;
-    border: 1px solid rgba(100,150,255,.18);
-    margin-bottom: 25px;
+.subjects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
-.subject-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
-    gap: 15px;
+.subject {
+  padding: 25px 10px;
+  text-align: center;
+  background: #15161b;
+  border: 1px solid #3b3b42;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.subject-btn {
-    border: none;
-    padding: 22px 15px;
-    border-radius: 15px;
-    color: white;
-    font-size: 17px;
-    font-weight: bold;
-    cursor: pointer;
-    background: linear-gradient(135deg,#172554,#312e81);
-    transition: .25s;
+.subject:hover {
+  background: #202126;
 }
 
-.subject-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(99,102,241,.28);
-}
-
-#content {
-    margin-top: 30px;
+.subject.active {
+  background: #25262d;
 }
 
 .card {
-    background: rgba(15,15,25,.94);
-    border: 1px solid rgba(100,150,255,.18);
-    border-radius: 18px;
-    padding: 24px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 25px rgba(30,60,150,.08);
+  background: #15161b;
+  border: 1px solid #333;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 15px;
 }
 
 .card h2 {
-    color: #93c5fd;
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .card h3 {
-    color: #c4b5fd;
+  margin-top: 0;
 }
 
-.topic-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-    gap: 14px;
-    margin-top: 20px;
+.answer {
+  font-weight: bold;
 }
 
-.topic-btn {
-    background: #111827;
-    color: white;
-    border: 1px solid #26354f;
-    padding: 18px;
-    border-radius: 12px;
-    cursor: pointer;
-    text-align: left;
-    font-size: 15px;
-    transition: .2s;
+.explanation {
+  color: #d0d0d0;
+  line-height: 1.6;
 }
 
-.topic-btn:hover {
-    background: #172554;
-    border-color: #4f6db8;
-}
-
-.lesson {
-    line-height: 1.7;
-}
-
-.term {
-    color: #93c5fd;
-    font-weight: bold;
-}
-
-.week {
-    color: #a5b4fc;
-    font-size: 13px;
-    margin-bottom: 7px;
-    font-weight: bold;
-}
-
-.break-card {
-    border: 1px dashed #374151;
-    background: rgba(17,24,39,.55);
-}
-
-.assignment {
-    margin-top: 22px;
-    padding: 18px;
-    border-left: 4px solid #6366f1;
-    background: rgba(49,46,129,.18);
-    border-radius: 10px;
-}
-
-.back-btn {
-    background: #1f2937;
-    color: white;
-    border: 1px solid #374151;
-    padding: 10px 16px;
-    border-radius: 9px;
-    cursor: pointer;
-    margin-bottom: 18px;
+.back {
+  display: inline-block;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  background: #15161b;
+  border: 1px solid #444;
+  border-radius: 9px;
+  cursor: pointer;
 }
 
 footer {
-    text-align: center;
-    padding: 30px 15px;
-    color: #7f8aa3;
-    font-size: 13px;
-}
-
-@media(max-width:600px) {
-    .logo {
-        font-size: 24px;
-    }
-
-    .container {
-        width: 94%;
-    }
-
-    .card {
-        padding: 18px;
-    }
+  text-align: center;
+  padding: 30px;
+  color: #777;
 }
 </style>
 </head>
@@ -189,909 +113,393 @@ footer {
 <body>
 
 <header>
-    <div class="logo">MY SS2 STUDY HUB</div>
-    <div class="tagline">Learn • Revise • Understand • Succeed</div>
+  <h1>My SS2 Study Hub</h1>
+  <p>Learn • Revise • Understand • Succeed</p>
 </header>
 
 <div class="container">
 
-    <div class="welcome">
-        <h2>Welcome to My SS2 Study Hub</h2>
-        <p>
-            Your personal study space for revision, assignments and quizzes.
-            Choose a subject below to begin.
-        </p>
+  <div class="subjects">
+
+    <div class="subject" onclick="showSubject('biology', this)">
+      🧬 Biology
     </div>
 
-    <div class="subject-grid">
-        <button class="subject-btn" onclick="showBiology()">🧬 Biology</button>
-        <button class="subject-btn" onclick="showChemistry()">⚗️ Chemistry</button>
-        <button class="subject-btn" onclick="showPhysics()">⚡ Physics</button>
-        <button class="subject-btn" onclick="showMath()">📐 Mathematics</button>
+    <div class="subject" onclick="showSubject('physics', this)">
+      ⚡ Physics
     </div>
 
-    <div id="content"></div>
+    <div class="subject" onclick="showSubject('chemistry', this)">
+      🧪 Chemistry
+    </div>
+
+    <div class="subject" onclick="showSubject('maths', this)">
+      📐 Mathematics
+    </div>
+
+  </div>
+
+  <div id="content">
+
+    <div class="card">
+      <h2>Welcome to My SS2 Study Hub</h2>
+      <p>Choose a subject above to begin learning.</p>
+    </div>
+
+  </div>
 
 </div>
 
 <footer>
-    My SS2 Study Hub • Study smart. Stay consistent.
+  My SS2 Study Hub
 </footer>
 
 
 <script>
 
-/* =====================================================
-   HOME
-===================================================== */
+const content = document.getElementById("content");
 
-function goHome() {
-    document.getElementById("content").innerHTML = "";
-    window.scrollTo({top:0, behavior:"smooth"});
+
+function clearActive() {
+
+  document
+    .querySelectorAll(".subject")
+    .forEach(button => button.classList.remove("active"));
+
 }
 
 
-/* =====================================================
-   BIOLOGY
-===================================================== */
+function showSubject(subject, button) {
 
-function showBiology() {
+  clearActive();
 
-    document.getElementById("content").innerHTML = `
+  button.classList.add("active");
+
+  if (subject === "physics") {
+    showPhysics();
+  }
+
+  else if (subject === "biology") {
+
+    showSimple(
+      "🧬 Biology",
+      "Biology lessons and revision topics will appear here."
+    );
+
+  }
+
+  else if (subject === "chemistry") {
+
+    showSimple(
+      "🧪 Chemistry",
+      "Chemistry lessons and revision topics will appear here."
+    );
+
+  }
+
+  else if (subject === "maths") {
+
+    showSimple(
+      "📐 Mathematics",
+      "Mathematics lessons and revision topics will appear here."
+    );
+
+  }
+
+}
+
+
+function showSimple(title, text) {
+
+  content.innerHTML = `
+
+    <div class="back" onclick="goHome()">
+      ← Back to Subjects
+    </div>
 
     <div class="card">
 
-        <button class="back-btn" onclick="goHome()">← Back to Subjects</button>
+      <h2>${title}</h2>
 
-        <h2>🧬 Biology</h2>
-
-        <p><b>Scheme of Work — Weeks 1–4</b></p>
-
-        <div class="topic-grid">
-
-            <button class="topic-btn" onclick="bioDigestive1()">
-                <div class="week">WEEK 1</div>
-                <b>Digestive System — Part 1</b>
-            </button>
-
-            <button class="topic-btn" onclick="bioDigestive2()">
-                <div class="week">WEEK 2</div>
-                <b>Digestive System — Part 2</b>
-            </button>
-
-            <button class="topic-btn" onclick="bioTransport1()">
-                <div class="week">WEEK 3</div>
-                <b>Transport System — Part 1</b>
-            </button>
-
-            <button class="topic-btn" onclick="bioTransport2()">
-                <div class="week">WEEK 4</div>
-                <b>Transport System — Part 2</b>
-            </button>
-
-        </div>
+      <p>${text}</p>
 
     </div>
-    `;
+
+  `;
+
 }
 
 
-/* BIOLOGY WEEK 1 */
+function goHome() {
 
-function bioDigestive1() {
+  clearActive();
 
-    document.getElementById("content").innerHTML = `
+  content.innerHTML = `
 
-    <div class="card lesson">
+    <div class="card">
 
-        <button class="back-btn" onclick="showBiology()">← Back to Biology</button>
+      <h2>Welcome to My SS2 Study Hub</h2>
 
-        <div class="week">WEEK 1</div>
-
-        <h2>Digestive System — Part 1</h2>
-
-        <h3>What is Digestion?</h3>
-
-        <p>
-            <span class="term">Digestion</span> is the breakdown of large,
-            complex food molecules into smaller, simple, soluble substances
-            that can be absorbed and used by the body.
-        </p>
-
-        <h3>The Alimentary Canal</h3>
-
-        <p>
-            The <span class="term">alimentary canal</span> is the continuous
-            passage through which food travels during digestion. In mammals,
-            it includes the mouth, pharynx, oesophagus, stomach, small
-            intestine, large intestine, rectum and anus.
-        </p>
-
-        <h3>Digestion in the Mouth</h3>
-
-        <p>
-            Digestion begins in the mouth. Teeth break food into smaller
-            pieces and mix it with saliva. Saliva contains the enzyme
-            <span class="term">amylase (tyalin)</span>, which begins the
-            digestion of starch.
-        </p>
-
-        <div class="assignment">
-            <b>Revision Focus:</b>
-            Know the meaning of digestion and the main parts of the
-            mammalian alimentary canal.
-        </div>
+      <p>Choose a subject above to begin learning.</p>
 
     </div>
-    `;
+
+  `;
+
 }
 
-
-/* BIOLOGY WEEK 2 */
-
-function bioDigestive2() {
-
-    document.getElementById("content").innerHTML = `
-
-    <div class="card lesson">
-
-        <button class="back-btn" onclick="showBiology()">← Back to Biology</button>
-
-        <div class="week">WEEK 2</div>
-
-        <h2>Digestive System — Part 2</h2>
-
-        <h3>Digestion in the Stomach</h3>
-
-        <p>
-            Food moves from the mouth through the oesophagus by
-            <span class="term">peristalsis</span> and enters the stomach.
-            The stomach stores and churns food while gastric juice helps
-            in protein digestion.
-        </p>
-
-        <p>
-            The enzyme <span class="term">pepsin</span> helps break down
-            proteins. Hydrochloric acid provides an acidic medium and
-            helps destroy many microorganisms.
-        </p>
-
-        <h3>Digestion in the Small Intestine</h3>
-
-        <p>
-            In the small intestine, food mixes with pancreatic juice,
-            intestinal juice and bile. Bile helps with the
-            <span class="term">emulsification of fats</span>.
-        </p>
-
-        <h3>Absorption</h3>
-
-        <p>
-            The small intestine contains numerous
-            <span class="term">villi</span> which increase the surface
-            area for absorption. Digested nutrients enter the blood,
-            while products of fat digestion enter the
-            <span class="term">lacteals</span>.
-        </p>
-
-        <div class="assignment">
-            <b>Revision Focus:</b>
-            Remember the major digestive enzymes and the importance
-            of villi in absorption.
-        </div>
-
-    </div>
-    `;
-}
-
-
-/* BIOLOGY WEEK 3 */
-
-function bioTransport1() {
-
-    document.getElementById("content").innerHTML = `
-
-    <div class="card lesson">
-
-        <button class="back-btn" onclick="showBiology()">← Back to Biology</button>
-
-        <div class="week">WEEK 3</div>
-
-        <h2>Transport System — Part 1</h2>
-
-        <h3>Meaning of Transport</h3>
-
-        <p>
-            <span class="term">Transport</span> is the movement of materials
-            from where they are produced, absorbed or stored to places where
-            they are needed or removed.
-        </p>
-
-        <h3>Why is Transport Necessary?</h3>
-
-        <p>
-            Cells need materials such as oxygen, water, nutrients and
-            mineral salts. Waste products such as carbon dioxide and
-            nitrogenous wastes must also be removed.
-        </p>
-
-        <h3>Transport in Small Organisms</h3>
-
-        <p>
-            Small organisms such as Amoeba and Paramecium can exchange
-            many substances directly with their surroundings by
-            <span class="term">diffusion</span>. Their large
-            surface-area-to-volume ratio makes this possible.
-        </p>
-
-        <p>
-            In larger organisms, diffusion alone is not fast enough,
-            so specialised transport systems are required.
-        </p>
-
-        <div class="assignment">
-            <b>Revision Focus:</b>
-            Understand why diffusion is suitable for small organisms
-            but insufficient for large multicellular organisms.
-        </div>
-
-    </div>
-    `;
-}
-
-
-/* BIOLOGY WEEK 4 */
-
-function bioTransport2() {
-
-    document.getElementById("content").innerHTML = `
-
-    <div class="card lesson">
-
-        <button class="back-btn" onclick="showBiology()">← Back to Biology</button>
-
-        <div class="week">WEEK 4</div>
-
-        <h2>Transport System — Part 2</h2>
-
-        <h3>Transport in Mammals</h3>
-
-        <p>
-            Mammals have a specialised circulatory system made up of the
-            heart, blood and blood vessels. Blood transports substances
-            around the body.
-        </p>
-
-        <h3>Blood</h3>
-
-        <p>
-            Blood contains <span class="term">plasma</span> and blood cells.
-            Plasma transports dissolved substances including digested food,
-            hormones, salts and waste products.
-        </p>
-
-        <h3>Blood Cells</h3>
-
-        <p>
-            <b>Red blood cells</b> transport oxygen using haemoglobin.
-            <b>White blood cells</b> help defend the body against infection,
-            while <b>platelets</b> help with blood clotting.
-        </p>
-
-        <h3>Blood Vessels</h3>
-
-        <p>
-            The three main blood vessels are
-            <span class="term">arteries</span>,
-            <span class="term">veins</span> and
-            <span class="term">capillaries</span>.
-            Arteries generally carry blood away from the heart, veins
-            generally carry blood towards the heart, and capillaries are
-            important sites of exchange.
-        </p>
-
-        <div class="assignment">
-            <b>Revision Focus:</b>
-            Learn the differences between arteries, veins and capillaries
-            and the functions of the main blood cells.
-        </div>
-
-    </div>
-    `;
-}
-
-
-/* =====================================================
-   PHYSICS
-===================================================== */
 
 function showPhysics() {
 
-    document.getElementById("content").innerHTML = `
+  content.innerHTML = `
+
+    <div class="back" onclick="goHome()">
+      ← Back to Subjects
+    </div>
 
     <div class="card">
 
-        <button class="back-btn" onclick="goHome()">← Back to Subjects</button>
+      <h2>⚡ Physics</h2>
 
-        <h2>⚡ Physics</h2>
+      <h3>WAEC Physics — Questions 22–50</h3>
 
-        <p><b>Scheme of Work — Weeks 1–10</b></p>
-
-        <div class="topic-grid">
-
-            <button class="topic-btn" onclick="physicsLight1()">
-                <div class="week">WEEKS 1–2</div>
-                <b>Light Waves — Part 1 & 2</b>
-            </button>
-
-            <button class="topic-btn" onclick="physicsSound()">
-                <div class="week">WEEK 3</div>
-                <b>Sound Waves</b>
-            </button>
-
-            <button class="topic-btn" onclick="physicsEye()">
-                <div class="week">WEEK 4</div>
-                <b>Human Eye</b>
-            </button>
-
-            <div class="topic-btn break-card">
-                <div class="week">WEEK 5</div>
-                <b>Midterm Tests / Midterm Break</b>
-                <p>No topic scheduled.</p>
-            </div>
-
-            <button class="topic-btn" onclick="physicsApplicationSound()">
-                <div class="week">WEEK 6</div>
-                <b>Application of Sound Waves</b>
-            </button>
-
-            <div class="topic-btn break-card">
-                <div class="week">WEEK 7</div>
-                <b>Midterm Break</b>
-                <p>No topic scheduled.</p>
-            </div>
-
-            <button class="topic-btn" onclick="physicsCharges()">
-                <div class="week">WEEK 8</div>
-                <b>Electric Charges</b>
-            </button>
-
-            <button class="topic-btn" onclick="physicsFields()">
-                <div class="week">WEEK 9</div>
-                <b>Description and Properties of Fields</b>
-            </button>
-
-            <button class="topic-btn" onclick="physicsGravity()">
-                <div class="week">WEEK 10</div>
-                <b>Gravitational Field</b>
-            </button>
-
-        </div>
+      <p>
+        Answers and explanations for Questions 22–50.
+      </p>
 
     </div>
-    `;
+
+    ${physicsQuestions.map(q => `
+
+      <div class="card">
+
+        <h3>Question ${q.number}</h3>
+
+        <p>${q.question}</p>
+
+        <p class="answer">
+          Answer: ${q.answer}
+        </p>
+
+        <p class="explanation">
+          ${q.explanation}
+        </p>
+
+      </div>
+
+    `).join("")}
+
+  `;
+
 }
 
 
-function physicsLight1() {
-    lessonPage(
-        "WEEKS 1–2",
-        "Light Waves — Part 1 & 2",
-        "Light is a form of electromagnetic radiation that enables us to see objects. Light waves can travel through a vacuum and show properties such as reflection, refraction and diffraction.",
-        "This topic introduces the nature and properties of light waves and how light behaves when it meets different materials."
-    );
+const physicsQuestions = [
+
+{
+number: 22,
+question: "A force question requiring the resultant force to be determined.",
+answer: "D — 308.3 N",
+explanation: "Using the given forces and the appropriate resultant-force relationship gives approximately 308.3 N."
+},
+
+{
+number: 23,
+question: "Which eye defect makes it difficult for a person to see nearby objects clearly?",
+answer: "A — Hypermetropia",
+explanation: "Hypermetropia, also called long-sightedness, makes nearby objects difficult to see clearly."
+},
+
+{
+number: 24,
+question: "Which of the listed statements are correct?",
+answer: "B — I, II and III",
+explanation: "All three statements given in the question are correct."
+},
+
+{
+number: 25,
+question: "Which component is used as a reflector in a microscope?",
+answer: "C — Reflector",
+explanation: "The reflector directs light towards the specimen through the microscope."
+},
+
+{
+number: 26,
+question: "Which statement about particles between adjacent nodes in a stationary wave is NOT true?",
+answer: "A",
+explanation: "Particles between adjacent nodes vibrate in phase. Therefore, the statement saying that they vibrate out of phase is not true."
+},
+
+{
+number: 27,
+question: "The positions of antinodes in the stationary-wave arrangement occur at what multiples?",
+answer: "A — Odd integer multiples",
+explanation: "From the wave arrangement given in the question, the required positions correspond to odd integer multiples."
+},
+
+{
+number: 28,
+question: "How many half-lives are required for a radioactive substance to reduce to one-eighth of its original quantity?",
+answer: "D — 3 half-lives",
+explanation: "After 1 half-life: 1/2 remains. After 2: 1/4 remains. After 3: 1/8 remains."
+},
+
+{
+number: 29,
+question: "What is the distance between two successive nodes in a stationary wave?",
+answer: "B — One-half wavelength",
+explanation: "The distance between two adjacent nodes is λ/2."
+},
+
+{
+number: 30,
+question: "In a step-up transformer, how do the numbers of turns in the primary and secondary coils compare?",
+answer: "A — Fewer turns in the primary than in the secondary",
+explanation: "A step-up transformer has more turns on the secondary coil than on the primary coil."
+},
+
+{
+number: 31,
+question: "What is the SI unit of magnetic flux density?",
+answer: "A — Tesla",
+explanation: "The SI unit of magnetic flux density is the tesla (T)."
+},
+
+{
+number: 32,
+question: "What quantity is measured in joules?",
+answer: "B — Energy",
+explanation: "The joule is the SI unit of energy and work."
+},
+
+{
+number: 33,
+question: "What form of energy is stored in a battery?",
+answer: "A — Chemical",
+explanation: "A battery stores chemical energy and converts it into electrical energy."
+},
+
+{
+number: 34,
+question: "What is the main energy conversion carried out by a microphone?",
+answer: "B — Sound to electrical",
+explanation: "A microphone converts sound vibrations into electrical signals."
+},
+
+{
+number: 35,
+question: "A radioactive substance has the decay conditions stated in the question. What is the required time?",
+answer: "C — 1 hour (intended option)",
+explanation: "The available answer option is 1 hour. However, using the stated numerical values directly may give approximately 1.20 hours."
+},
+
+{
+number: 36,
+question: "Which device moves by ejecting gases at high speed?",
+answer: "C — Rocket",
+explanation: "A rocket moves forward because gases are expelled backwards, producing an equal and opposite reaction."
+},
+
+{
+number: 37,
+question: "If the specified quantity is changed as stated in the question, what happens to the result?",
+answer: "B — Reduced by a quarter",
+explanation: "Applying the relevant relationship gives one-quarter of the original result."
+},
+
+{
+number: 38,
+question: "Calculate the value of the given expression.",
+answer: "C — 1.41",
+explanation: "Substituting the given values into the required expression gives approximately 1.41."
+},
+
+{
+number: 39,
+question: "What is the apparent weight of a person in free fall?",
+answer: "D — Weightless",
+explanation: "During free fall, the normal reaction is zero, so the person experiences apparent weightlessness."
+},
+
+{
+number: 40,
+question: "What happens to the required quantity when the stated variable is increased?",
+answer: "A — Increased",
+explanation: "The relationship given in the question shows that the required quantity increases."
+},
+
+{
+number: 41,
+question: "Determine the required number of the specified quantity.",
+answer: "B — 8",
+explanation: "Using the given values and the appropriate relationship gives 8."
+},
+
+{
+number: 42,
+question: "Calculate the resistance of the circuit.",
+answer: "B — 12.8 Ω",
+explanation: "Using the appropriate circuit relationship gives a resistance of 12.8 Ω."
+},
+
+{
+number: 43,
+question: "Determine the nuclide represented by the nuclear reaction.",
+answer: "A — ²²²₈₆X",
+explanation: "Applying conservation of mass number and atomic number gives mass number 222 and atomic number 86."
+},
+
+{
+number: 44,
+question: "Calculate the de Broglie wavelength of the particle.",
+answer: "C — 1.07 × 10⁻³⁴ m",
+explanation: "Using λ = h/p with the given momentum gives the stated wavelength."
+},
+
+{
+number: 45,
+question: "Calculate the electrostatic force between the charges.",
+answer: "B — 2.0 × 10⁻¹⁴ N",
+explanation: "Using Coulomb's law, F = kq₁q₂/r², gives the stated force."
+},
+
+{
+number: 46,
+question: "What type of lens causes parallel rays to spread out?",
+answer: "B — Divergent",
+explanation: "A concave lens is a divergent lens because it causes parallel light rays to spread out."
+},
+
+{
+number: 47,
+question: "What is an unwanted sound called?",
+answer: "C — Noise",
+explanation: "Noise is an unwanted or unpleasant sound."
+},
+
+{
+number: 48,
+question: "Calculate the required value in the question.",
+answer: "A — 0.25",
+explanation: "Substitution of the given values into the required relationship gives 0.25."
+},
+
+{
+number: 49,
+question: "What property allows a metal to be drawn into wires?",
+answer: "B — Ductile",
+explanation: "Ductility is the ability of a material to be drawn into wires."
+},
+
+{
+number: 50,
+question: "What is the SI unit of inductance?",
+answer: "C — Henry",
+explanation: "The SI unit of inductance is the henry (H)."
 }
 
-function physicsSound() {
-    lessonPage(
-        "WEEK 3",
-        "Sound Waves",
-        "Sound is produced by vibrating objects and travels through a medium as a wave. Sound cannot travel through a vacuum.",
-        "Important ideas include vibration, frequency, wavelength, amplitude and the speed of sound."
-    );
-}
-
-function physicsEye() {
-    lessonPage(
-        "WEEK 4",
-        "Human Eye",
-        "The human eye is a sense organ that detects light and allows us to see. It contains structures such as the cornea, iris, pupil, lens and retina.",
-        "The eye focuses light onto the retina, where light-sensitive cells help form the information sent to the brain."
-    );
-}
-
-function physicsApplicationSound() {
-    lessonPage(
-        "WEEK 6",
-        "Application of Sound Waves",
-        "Sound waves have many practical applications in science, medicine, communication and technology.",
-        "Examples include medical scanning, communication systems, sonar and the study of objects using reflected sound."
-    );
-}
-
-function physicsCharges() {
-    lessonPage(
-        "WEEK 8",
-        "Electric Charges",
-        "Electric charge is a property of matter responsible for electrical effects. There are two types of charge: positive and negative.",
-        "Like charges repel while unlike charges attract. Electric charge is associated with particles such as protons and electrons."
-    );
-}
-
-function physicsFields() {
-    lessonPage(
-        "WEEK 9",
-        "Description and Properties of Fields",
-        "A field is a region around an object where another object can experience a force.",
-        "Fields can be represented using field lines. Examples include gravitational, electric and magnetic fields."
-    );
-}
-
-function physicsGravity() {
-    lessonPage(
-        "WEEK 10",
-        "Gravitational Field",
-        "A gravitational field is the region around a mass in which another mass experiences a gravitational force.",
-     
-    "The gravitational field explains why objects are attracted towards massive bodies such as the Earth."
-   <hr>
-
-<h2>📘 WAEC 2025 Physics — Questions 22–50</h2>
-
-<div class="card">
-
-<h3>Question 22</h3>
-<p>A bucket of water of mass 10 kg is swung in a vertical circle of radius 1.2 m. At the bottom of the swing, its speed is 5 m/s. Determine the tension in the string. (g = 10 m/s²)</p>
-<p><b>Answer: D — 308.3 N</b></p>
-<p><b>Working:</b></p>
-<p>T − mg = mv²/r</p>
-<p>T = mg + mv²/r</p>
-<p>T = (10 × 10) + (10 × 5²)/1.2</p>
-<p>T = 100 + 250/1.2</p>
-<p><b>T = 308.3 N</b></p>
-
-<h3>Question 23</h3>
-<p>A man's near point is 30 cm. Which eye defect is he most likely to suffer from?</p>
-<p><b>Answer: A — Hypermetropia</b></p>
-<p><b>Explanation:</b> A normal near point is about 25 cm. A person whose near point is farther than 25 cm has difficulty seeing nearby objects clearly. This is hypermetropia.</p>
-
-<h3>Question 24</h3>
-<p>White light can be produced by combinations of primary/additive colours.</p>
-<p><b>Answer: B — I, II and III only</b></p>
-<p><b>Explanation:</b> Red + Green + Blue produces white light. Magenta + Green also produces white, and the appropriate complementary combinations can produce white.</p>
-
-<h3>Question 25</h3>
-<p>A mirror can be used as a reflector in which of the following?</p>
-<p><b>Answer: C — Reflector in microscope</b></p>
-<p><b>Explanation:</b> A concave mirror can collect and converge light onto the object in an optical instrument.</p>
-
-<h3>Question 26</h3>
-<p>Which statement about stationary waves is NOT true?</p>
-<p><b>Answer: A — Particles between adjacent nodes vibrate out of phase with each other.</b></p>
-<p><b>Explanation:</b> Particles between two adjacent nodes vibrate in phase. Adjacent nodes are separated by λ/2.</p>
-
-<h3>Question 27</h3>
-<p>A pipe is closed at one end and open at the other. What frequencies accompany the fundamental frequency?</p>
-<p><b>Answer: A — Odd integer multiples of the fundamental frequency</b></p>
-<p><b>Explanation:</b> A closed pipe produces odd harmonics: 1st, 3rd, 5th, 7th, ...</p>
-
-<h3>Question 28</h3>
-<p>A radioactive substance of mass 512.0 g decays to 64.0 g. Determine the number of half-lives involved.</p>
-<p><b>Answer: D — 3</b></p>
-<p><b>Working:</b> 512 → 256 → 128 → 64.</p>
-<p>There are three halvings, so there are <b>3 half-lives</b>.</p>
-
-<h3>Question 29</h3>
-<p>Two waves interfere destructively if their path difference is:</p>
-<p><b>Answer: B — One-half wavelength</b></p>
-<p><b>Explanation:</b> The simplest condition for destructive interference is λ/2 (and generally odd multiples of λ/2).</p>
-
-<h3>Question 30</h3>
-<p>Which statement about a step-up transformer is correct?</p>
-<p><b>Answer: A — Less number of turns in the primary coil than in the secondary coil</b></p>
-<p><b>Explanation:</b> A step-up transformer has Ns &gt; Np, so the secondary has more turns.</p>
-
-<h3>Question 31</h3>
-<p>What is the unit of magnetic flux density?</p>
-<p><b>Answer: A — Tesla</b></p>
-
-<h3>Question 32</h3>
-<p>Meters installed in houses to monitor and evaluate the cost of electricity measure what physical quantity?</p>
-<p><b>Answer: B — Energy</b></p>
-<p><b>Explanation:</b> Electrical energy consumed is measured in kWh and used to calculate the electricity bill.</p>
-
-<h3>Question 33</h3>
-<p>What type of energy is stored by a dry Leclanché cell?</p>
-<p><b>Answer: A — Chemical</b></p>
-<p><b>Explanation:</b> The chemical energy in the cell is converted into electrical energy.</p>
-
-<h3>Question 34</h3>
-<p>A microphone transforms energy from:</p>
-<p><b>Answer: B — Sound to electrical</b></p>
-
-<h3>Question 35</h3>
-<p>A radioactive substance has a fraction 1/10 left undecayed after 4 hours. Determine its half-life.</p>
-<p><b>Working:</b></p>
-<p>N/N₀ = (1/2)<sup>t/T</sup></p>
-<p>1/10 = (1/2)<sup>4/T</sup></p>
-<p>Using logarithms gives T ≈ 1.20 hours.</p>
-<p><b>Answer: C — 1 hour (intended option)</b></p>
-<p><b>Note:</b> The exact calculation gives about 1.20 h, so the printed options do not contain an exact value.</p>
-
-<h3>Question 36</h3>
-<p>Which situation demonstrates Newton's third law of motion?</p>
-<p><b>Answer: C — A rocket propelled into space</b></p>
-<p><b>Explanation:</b> The rocket pushes gases downward and the gases exert an equal and opposite force on the rocket.</p>
-
-<h3>Question 37</h3>
-<p>If both the force and velocity of a system are reduced by half, what happens to its power?</p>
-<p><b>Answer: B — Reduced by a quarter</b></p>
-<p><b>Working:</b> P = Fv</p>
-<p>P' = (F/2)(v/2) = Fv/4</p>
-<p>Therefore power becomes one-quarter of the original.</p>
-
-<h3>Question 38</h3>
-<p>A plane is inclined at 45° to the horizontal. Calculate its velocity ratio.</p>
-<p><b>Answer: C — 1.41</b></p>
-<p><b>Working:</b> VR = 1/sinθ</p>
-<p>VR = 1/sin45° = 1/0.707 ≈ <b>1.41</b></p>
-
-<h3>Question 39</h3>
-<p>A body in a lift is moving downward with acceleration due to gravity. Which statement is correct?</p>
-<p><b>Answer: D — Is weightless</b></p>
-<p><b>Working:</b> Apparent weight R = m(g − a). Since a = g, R = 0.</p>
-
-<h3>Question 40</h3>
-<p>When pressure in oil is increased, its viscosity would be:</p>
-<p><b>Answer: A — Increased</b></p>
-
-<h3>Question 41</h3>
-<p>What is the number of neutrons in <sup>14</sup><sub>6</sub>C?</p>
-<p><b>Answer: B — 8</b></p>
-<p><b>Working:</b> Number of neutrons = mass number − atomic number = 14 − 6 = <b>8</b>.</p>
-
-<h3>Question 42</h3>
-<p>The ice and steam points of a resistance thermometer are 12.0 Ω and 20.0 Ω respectively. Calculate the resistance at 10°C.</p>
-<p><b>Answer: B — 12.8 Ω</b></p>
-<p><b>Working:</b></p>
-<p>(R − 12)/(20 − 12) = 10/100</p>
-<p>(R − 12)/8 = 0.1</p>
-<p>R − 12 = 0.8</p>
-<p><b>R = 12.8 Ω</b></p>
-
-<h3>Question 43</h3>
-<p>A radium nucleus emits an alpha particle: <sup>226</sup><sub>88</sub>Ra → X + <sup>4</sup><sub>2</sub>He. Determine X.</p>
-<p><b>Answer: A — <sup>222</sup><sub>86</sub>X</b></p>
-<p><b>Working:</b> Mass number: 226 − 4 = 222. Atomic number: 88 − 2 = 86.</p>
-
-<h3>Question 44</h3>
-<p>A bullet of mass 25 mg moves at 250 m/s. Calculate its de Broglie wavelength. (h = 6.67 × 10<sup>−34</sup> Js)</p>
-<p><b>Answer: C — 1.07 × 10<sup>−34</sup> m</b></p>
-<p><b>Working:</b> λ = h/mv</p>
-<p>λ = 6.67 × 10<sup>−34</sup> /(0.025 × 250)</p>
-<p><b>λ ≈ 1.07 × 10<sup>−34</sup> m</b></p>
-
-<h3>Question 45</h3>
-<p>An electron moves at 5.0 × 10<sup>5</sup> m/s perpendicular to a magnetic field of 0.25 T. Calculate the magnetic force. (e = 1.6 × 10<sup>−19</sup> C)</p>
-<p><b>Answer: B — 2.0 × 10<sup>−14</sup> N</b></p>
-<p><b>Working:</b> F = qvB sin90°</p>
-<p>F = (1.6 × 10<sup>−19</sup>)(5.0 × 10<sup>5</sup>)(0.25)</p>
-<p><b>F = 2.0 × 10<sup>−14</sup> N</b></p>
-
-<h3>Question 46</h3>
-<p>A beam of light which appears to come from a point in space is said to be:</p>
-<p><b>Answer: B — Divergent</b></p>
-<p><b>Explanation:</b> Diverging rays spread away from a point.</p>
-
-<h3>Question 47</h3>
-<p>A sound made up of a large number of unrelated frequencies superimposed on each other is called:</p>
-<p><b>Answer: C — Noise</b></p>
-
-<h3>Question 48</h3>
-<p>A box of mass 80 kg is pushed along a horizontal floor with a force of 200 N. If it moves with uniform velocity, calculate the coefficient of friction. (g = 10 m/s²)</p>
-<p><b>Answer: A — 0.25</b></p>
-<p><b>Working:</b></p>
-<p>Uniform velocity means friction = 200 N.</p>
-<p>R = mg = 80 × 10 = 800 N</p>
-<p>μ = F/R = 200/800 = <b>0.25</b></p>
-
-<h3>Question 49</h3>
-<p>Thin wires can be drawn from platinum simply because platinum is:</p>
-<p><b>Answer: B — Ductile</b></p>
-<p><b>Explanation:</b> Ductility is the ability of a material to be drawn into thin wires.</p>
-
-<h3>Question 50</h3>
-<p>The SI unit of inductance is:</p>
-<p><b>Answer: C — Henry</b></p>
-
-</div>
-    );
-}
-
-
-/* =====================================================
-   CHEMISTRY
-===================================================== */
-
-function showChemistry() {
-
-    document.getElementById("content").innerHTML = `
-
-    <div class="card">
-
-        <button class="back-btn" onclick="goHome()">← Back to Subjects</button>
-
-        <h2>⚗️ Chemistry</h2>
-
-        <p><b>Scheme of Work — Weeks 1–14</b></p>
-
-        <div class="topic-grid">
-
-            <button class="topic-btn" onclick="chemPollution()">
-                <div class="week">WEEK 1</div>
-                <b>Water and Air Pollution</b>
-            </button>
-
-            <button class="topic-btn" onclick="chemElectrolysis()">
-                <div class="week">WEEK 2</div>
-                <b>Electrolysis</b>
-            </button>
-
-            <button class="topic-btn" onclick="chemCells()">
-                <div class="week">WEEK 3</div>
-                <b>Electrochemical Cells</b>
-            </button>
-
-            <button class="topic-btn" onclick="chemTitration()">
-                <div class="week">WEEK 4</div>
-                <b>Acid and Base Titration</b>
-            </button>
-
-            <button class="topic-btn" onclick="chemTrial()">
-                <div class="week">WEEK 5</div>
-                <b>Trial Titration and Calculations</b>
-            </button>
-
-            <button class="topic-btn" onclick="chemSolubility()">
-                <div class="week">WEEK 6</div>
-                <b>Solubility and Solubility Curves</b>
-            </button>
-
-            <div class="topic-btn break-card">
-                <div class="week">WEEK 7</div>
-                <b>Midterm Break</b>
-                <p>No topic scheduled.</p>
-            </div>
-
-            <button class="topic-btn" onclick="chemEquilibrium()">
-                <div class="week">WEEK 8</div>
-                <b>Chemical Equilibrium</b>
-            </button>
-
-            <button class="topic-btn" onclick="chemKinetics()">
-                <div class="week">WEEK 9</div>
-                <b>Chemical Kinetics</b>
-            </button>
-
-            <button class="topic-btn" onclick="chemHeat()">
-                <div class="week">WEEK 10</div>
-                <b>Heat of Reaction</b>
-            </button>
-
-            <button class="topic-btn" onclick="chemEnergetics()">
-                <div class="week">WEEK 11</div>
-                <b>Energetics of Reactions</b>
-            </button>
-
-            <div class="topic-btn break-card">
-                <div class="week">WEEKS 12–14</div>
-                <b>Examination / Closure</b>
-                <p>No lesson scheduled.</p>
-            </div>
-
-        </div>
-
-    </div>
-    `;
-}
-
-
-function chemPollution() {
-    lessonPage(
-        "WEEK 1",
-        "Water and Air Pollution",
-        "Pollution occurs when harmful substances are introduced into the environment. Water pollution affects rivers, lakes and other water sources, while air pollution affects the atmosphere.",
-        "The topic looks at common pollutants, their sources, effects on living organisms and ways pollution can be reduced."
-    );
-}
-
-function chemElectrolysis() {
-    lessonPage(
-        "WEEK 2",
-        "Electrolysis",
-        "Electrolysis is the chemical decomposition of an electrolyte by passing an electric current through it.",
-        "The process involves electrodes and the movement of ions. It is useful in the extraction and purification of some substances."
-    );
-}
-
-function chemCells() {
-    lessonPage(
-        "WEEK 3",
-        "Electrochemical Cells",
-        "An electrochemical cell involves chemical and electrical energy being converted from one form to another.",
-        "Electrochemical cells are important in batteries and other systems that produce or use electrical energy through chemical reactions."
-    );
-}
-
-function chemTitration() {
-    lessonPage(
-        "WEEK 4",
-        "Acid and Base Titration",
-        "Titration is a laboratory method used to determine the concentration of a solution by reacting it with a solution of known concentration.",
-        "Acid-base titration commonly uses an indicator to help identify the end point of the reaction."
-    );
-}
-
-function chemTrial() {
-    lessonPage(
-        "WEEK 5",
-        "Trial Titration and Calculations",
-        "A trial titration is carried out first to obtain an approximate titre before more accurate titration readings are taken.",
-        "The results can then be used in calculations involving concentration, volume and the mole relationship between reacting substances."
-    );
-}
-
-function chemSolubility() {
-    lessonPage(
-        "WEEK 6",
-        "Solubility and Solubility Curves",
-        "Solubility describes the maximum amount of a substance that can dissolve in a given amount of solvent under specified conditions.",
-        "Solubility curves show how the solubility of substances changes, commonly with temperature."
-    );
-}
-
-function chemEquilibrium() {
-    lessonPage(
-        "WEEK 8",
-        "Chemical Equilibrium",
-        "Chemical equilibrium occurs in a reversible reaction when the forward and backward reactions occur at equal rates.",
-        "At equilibrium, the concentrations of the substances remain constant even though the reactions continue."
-    );
-}
-
-function chemKinetics() {
-    lessonPage(
-        "WEEK 9",
-        "Chemical Kinetics",
-        "Chemical kinetics is the study of the rate at which chemical reactions occur.",
-        "Factors such as concentration, temperature, surface area and catalysts can affect reaction rate."
-    );
-}
-
-function chemHeat() {
-    lessonPage(
-        "WEEK 10",
-        "Heat of Reaction",
-        "The heat of reaction is the amount of heat energy absorbed or released during a chemical reaction.",
-        "Some reactions release heat while others absorb heat from their surroundings."
-    );
-}
-
-function chemEnergetics() {
-    lessonPage(
-        "WEEK 11",
-        "Energetics of Reactions",
-        "Energetics deals with the energy changes that occur during chemical reactions.",
-        "It helps us understand why some reactions are exothermic and others are endothermic."
-    );
-}
-
-
-/* =====================================================
-   MATHEMATICS
-===================================================== */
-
-function showMath() {
-
-    document.getElementById("content").innerHTML = `
-
-    <div class="card">
-
-        <button class="back-btn" onclick="goHome()">← Back to Subjects</button>
-
-        <h2>📐 Mathematics</h2>
-
-        <p>Topics currently available for revision:</p>
-
-        <div class="topic-grid">
-
-            <button class="topic-btn" onclick="mathLesson('Algebra')">
-                Algebra
-            </button>
-
-            <button class="topic-btn" onclick="mathLesson('Quadratic Equations')">
-                Quadratic Equations
-            </button>
-
-            <button class="topic-btn" onclick="mathLesson('Trigonometry')">
-                Trigonometry
-            </button>
-
-            <button class="topic-btn" onclick="mathLesson('Statistics')">
-                Statistics
-            </button>
-
-            <button class="topic-btn" onclick="mathLesson('Probability')">
-                Probability
-            </button>
-
-        </div>
-
-    </div>
-    `;
-}
-
-function mathLesson(title) {
-
-    let text = {
-        "Algebra":
-        "Algebra uses letters and symbols to represent unknown quantities and relationships between numbers.",
-
-        "Quadratic Equations":
-        "A quadratic equation is an equation in which the highest power of the variable is 2.",
-
-        "Trigonometry":
-        "Trigonometry studies relationships between angles and sides of triangles.",
-
-        "Statistics":
-        "Statistics involves collecting, organising, presenting and interpreting data.",
-
-        "Probability":
-        "Probability measures how likely an event is to occur."
-    };
-
-    lessonPage(
-        "",
-        title,
-        text[title],
-        "This section can later be expanded with your school notes, worked examples and exercises."
-    );
-}
-
-
-/* =====================================================
-   GENERAL LESSON PAGE
-===================================================== */
-
-function lessonPage(week,title,meaning,details) {
-
-    document.getElementById("content").innerHTML = `
-
-    <div class="card lesson">
-
-        <button class="back-btn" onclick="goHome()">← Back to Subjects</button>
-
-        ${week ? `<div class="week">${week}</div>` : ""}
-
-        <h2>${title}</h2>
-
-        <h3>Introduction</h3>
-
-        <p>${meaning}</p>
-
-        <h3>What This Topic Covers</h3>
-
-        <p>${details}</p>
-
-        <div class="assignment">
-            <b>Study Note:</b>
-            This is a short introductory section for now.
-            The full school note can be added here later.
-        </div>
-
-    </div>
-    `;
-}
+];
 
 </script>
 
